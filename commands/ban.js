@@ -24,6 +24,7 @@ module.exports = {
             const member = await interaction.guild.members.fetch(user.id);
 
             const errEmbed = new EmbedBuilder()
+                .setTitle(`<a:r2_rice:868583626227478591> 封禁失敗`)
                 .setDescription(`你不能封禁 ${user}，因為他的權限組高於或等同於你。\n \n所以說...沒有權限還想濫權阿，\n操你媽世界上就是有你這種屁孩亂玩指令= =\n \n還是自以為踢掉自己很好玩？\n到底哪來的自閉兒阿>:(`)
                 .setColor(0xff4e4e)
                 .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
@@ -35,7 +36,8 @@ module.exports = {
 
             await member.ban({ reason });
 
-            const embed = new EmbedBuilder()
+             const embed = new EmbedBuilder()
+                .setTitle(`<a:r3_rice:868583679465758820> 封禁成功`)
                 .setDescription(`管理員已封禁 ${user} ，\n因為：\` ${reason} \`\n \n希望這位酷割或帥姐不要玻璃心碎滿地\n開小號埋怨管理員阿哈哈。`)
                 .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
                 .setColor(0xff4e4e)

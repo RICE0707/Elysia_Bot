@@ -20,6 +20,7 @@ module.exports = {
             await interaction.guild.members.unban(userId);
 
             const embed = new EmbedBuilder()
+                .setTitle(`<a:r3_rice:868583679465758820> 解封成功`)
                 .setDescription(`管理員已解除封禁 ${userId}，\n \n希望這不是管理員手殘按到，不然挺智障的哈哈\n不過也希望這位酷割或帥姐不要在他媽的違規囉～`)
                 .setColor(0x76ff4d)
                 .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
@@ -33,6 +34,7 @@ module.exports = {
             console.log(err);
 
             const errEmbed = new EmbedBuilder()
+                    .setTitle(`<a:r2_rice:868583626227478591> 解封失敗`)
                     .setDescription(`請輸入使用者ID，不然我們美麗的花瓶是找不到人的。\n或者這位成員根本沒有被封禁\n請她媽輸入指令時動點腦、動點眼，\n花瓶現在對你很失望。`)
                     .setColor(0xff4e4e)
                     .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
