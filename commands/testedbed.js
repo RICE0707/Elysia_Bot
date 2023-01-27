@@ -1,10 +1,10 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require(`@discordjs/builders`);
+const { EmbedBuilder } = require(`discord.js`);
 
 module.exports = {
     data: new SlashCommandBuilder()
-    .setName('測試指令')
-    .setDescription('這是一個測試指令'),
+    .setName(`測試指令`)
+    .setDescription(`這是一個測試指令`),
     async execute(interaction) {
 
         const embed = new EmbedBuilder()
