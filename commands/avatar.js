@@ -16,7 +16,7 @@ module.exports = {
             let userAvatar = user.displayAvatarURL({ size: 1024 });
 
             const embed = new EmbedBuilder()
-            .setColor(`Blue`)
+            .setColor(0xd3d7da)
             .setURL(`${user.avatarURL({size: 1024})}`)
             .setAuthor({ name: '你就是個偷窺狂吧！', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Js_V2' })
             .setTitle(`${user.username} 的使用者頭像`)
