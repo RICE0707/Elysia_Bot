@@ -1,6 +1,6 @@
-const {client} = require('discord.js');
-const config = require("../../config.json");
+const {Client} = require('discord.js');
 const mongoose = require('mongoose');
+const config = require("../../config.json");
 
 module.exports = {
     name: "ready",
@@ -14,6 +14,6 @@ module.exports = {
             console.log(`[提示] 資料庫已連接成功`)
         }
 
-        console.log(`[提示] ${client.user.tag} 已開啟！`);
+        console.log(`[提示] ${client.user.username} 已開啟！`);
     },
 };

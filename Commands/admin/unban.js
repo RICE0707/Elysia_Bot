@@ -6,15 +6,15 @@ module.exports = {
 		.setDescription(`解除封禁指定的群組成員`)
         .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers)
         .addStringOption(option =>
-            option.setName(`使用者ＩＤ`)
-            .setDescription(`輸入欲解除封禁的群組成員的使用者ＩＤ`)
+            option.setName(`使用者`)
+            .setDescription(`輸入欲解除封禁的群組成員的使用者`)
             .setRequired(true)
         ),
 
     async execute(interaction) {
         const {channel, options} = interaction;
 
-        const userId = options.getString("使用者ＩＤ") || "我忘了打ID了哈哈";
+        const userId = options.getString("使用者");
 
         try {
             await interaction.guild.members.unban(userId);
