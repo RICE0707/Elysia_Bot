@@ -11,15 +11,20 @@ HI，我是一個易碎的花瓶<br/>
 ├ /封禁成員 - 封禁指定的群組成員<br/>
 ├ /解除封禁成員 - 解除封禁指定的群組成員<br/>
 └ /踢出成員 - 踢出指定的群組成員<br/><br/>
-​
+
 使用者功能<br/>
 ├ /機器人資訊 - 取得機器人資訊<br/>
 ├ /輝煌伺服器資訊 - 取得輝煌伺服器資訊<br/>
 ├ /伺服器資訊 - 取得伺服器資訊<br/>
 ├ /使用者資訊 - 取得使用者的ID、名稱、創帳日期等資訊<br/>
 └ /使用者頭像 - 取得使用者的頭像<br/><br/>
-​
+
 娛樂類功能<br/>
 ├ /操你媽 - 讓機器人問候你媽<br/>
 └ /海草 - 召喚海草(需有管理權限)<br/>
 
+相關連結<br/>
+├ [Discord](https://discord.gg/5MHGpAFGEN)<br/>
+├ [GitHub](https://github.com/RICE0707/Elysia_Js_V2)<br/>
+├ [邀請我](https://discord.com/api/oauth2/authorize?client_id=1032948551107497994&permissions=8&scope=bot)<br/>
+└ [每天都可以投一票！](https://discordservers.tw/bots/1032948551107497994)<br/>
