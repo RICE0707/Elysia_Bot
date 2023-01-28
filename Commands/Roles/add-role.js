@@ -1,4 +1,4 @@
-const rrSchema = require("../../Models/Events/interactions/ReactionRoles");
+const rrSchema = require("../../Models/ReactionRoles");
 const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 
 module.exports = {

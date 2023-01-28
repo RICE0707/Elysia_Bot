@@ -4,7 +4,7 @@ module.exports = {
     name: "interactionCreate",
 
     async execute(interaction, client) {
-        const { custonId, values, guild, member } = interaction;
+        const { customId, values, guild, member } = interaction;
         if (interaction.isChatInputCommand()) {
             const command = client.commands.get(interaction.commandName);
             if (!command) {
@@ -22,7 +22,7 @@ module.exports = {
                     })
                 );
             }
-        } else if (interaction.isSelectMenu()) {
+        } else if(interaction.isSelectMenu()) {
             if (customId == "reaction-roles") {
                 for (let i = 0; i < values.length; i++) {
                     const roleId = values[i];
@@ -45,5 +45,5 @@ module.exports = {
         }   else {
             return;
         }
-        },
-    };
+    },
+};

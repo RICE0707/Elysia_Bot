@@ -24,7 +24,7 @@ function loadEvents(client) {
                     client.once(event.name, (...args) => event.execute(...args, client));
                 else client.on(event.name, (...args) => event.execute(...args, client));
             }
-            table.addRow(file, "已載入");
+            table.addRow(file, "載入");
             continue;
         }
     }

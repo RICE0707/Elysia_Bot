@@ -7,23 +7,23 @@ function loadCommands(client) {
 
 	const commandsFolder = fs.readdirSync('./Commands');
 	for (const folder of commandsFolder) {
-		const commandFiles = fs.readdirSync(`./Commands/${folder}`).filter(file => file.endsWith('.js'));
+		const commandFiles = fs.readdirSync(`./Commands/${folder}`).filter((file) => file.endsWith('.js'));
 
 		for (const file of commandFiles) {
-			const commandFile = require(`./Commands/${folder}/${file}`);
+			const commandFile = require(`../Commands/${folder}/${file}`);
 
 			client.commands.set(commandFile.data.name, commandFile);
 
-			commandsArray.push(command.data.toJSON());
+			commandsArray.push(commandFile.data.toJSON());
 
-			table.addRow(file, "已載入");
+			table.addRow(file, "載入");
 			continue;
 		}
 	}
 
 	client.application.commands.set(commandsArray);
 
-	return console.log(table.toDtring(), `\n[提示] 指令已註冊完成。`);
+	return console.log(table.toString(), `\n[提示] 指令已註冊完成。`);
 }
 
 module.exports = {loadCommands};
