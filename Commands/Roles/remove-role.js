@@ -4,7 +4,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("移除身分組")
-        .setDescription("移除身分組到身分組選擇面板")
+        .setDescription("從身分組選擇面板移除身分組")
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles)
         .addRoleOption(option =>
             option.setName("身份組")
