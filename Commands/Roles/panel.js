@@ -1,5 +1,5 @@
 const rrSchema = require("../../Models/ReactionRoles");
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder, SelectMenuBuilder } = require("discord.js");
+const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -36,7 +36,7 @@ module.exports = {
 
                 const menuComponents = [
                     new ActionRowBuilder().addComponents(
-                        new SelectMenuBuilder()
+                        new StringSelectMenuBuilder()
                             .setCustomId('reaction-roles')
                             .setMaxVallues(options.length)
                             .addOptions(options),
