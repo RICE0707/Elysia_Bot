@@ -4,7 +4,7 @@ const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ActionRowBuilder
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("發送身分組選擇面板")
-        .setDescription("發送欲給成員領取的自動身分組的面板")
+        .setDescription("發送成員領取可身分組的面板")
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles),
         async execute(interaction) {
             const { options, guildId, guild, channel } = interaction;

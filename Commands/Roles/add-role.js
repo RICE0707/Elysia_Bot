@@ -4,7 +4,7 @@ const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
 module.exports = {
     data: new SlashCommandBuilder()
         .setName("新增身分組")
-        .setDescription("新增目前身分組選擇面板的身分組")
+        .setDescription("新增身分組到身分組選擇面板")
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles)
         .addRoleOption(option =>
             option.setName("身份組")
