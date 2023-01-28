@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "@discordjs/builders": "^1.4.0",
+    "ascii-table": "^0.0.9",
     "cpu-stat": "^2.0.1",
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "mongoose": "^6.9.0"
   },
   "devDependencies": {
     "eslint": "^8.32.0"
