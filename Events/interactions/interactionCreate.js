@@ -40,7 +40,7 @@ module.exports = {
                     }
                 }
 
-                interaction.reply({ content: "> 身分組已更新！", ephemeral: true });
+                interaction.reply({ content: ">  <a:r3_rice:868583679465758820> 已更新身份組！", ephemeral: true });
             }
         }   else {
             return;
