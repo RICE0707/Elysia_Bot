@@ -10,7 +10,7 @@ module.exports = {
             const embed = new EmbedBuilder()
             .setColor(0xd3d7da)
             .setAuthor({ name: '你就是個偷窺狂吧！', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Js_V2' })
-            .setDescription('感謝邀請，本機器人由 <@502072207502082048> 開發與維護，但本機器人只是他的練手用Bot，可能會有許多奇怪的漏洞，不建議在生產環境中做使用，目前24H運作中，除非託管倒了或節點爆掉。')
+            .setDescription('感謝邀請，本機器人由 <@502072207502082048> 開發與維護，但本機器人只是他的練手用Bot，可能會有許多奇怪的漏洞，不建議在生產環境中做使用，機器人目前24H運作中，除非託管倒了或節點爆掉。')
             .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
             .setTitle(`HI，我是一個易碎的花瓶`)
             .addFields(
