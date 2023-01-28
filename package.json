@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@discordjs/builders": "^1.4.0",
+    "cpu-stat": "^2.0.1",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3"
   },

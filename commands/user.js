@@ -25,8 +25,8 @@ module.exports = {
             .addFields(
                 { name: `使用者名稱`, value: `${user.tag}`, inline: true },
                 { name: `使用者ＩＤ`, value: `${user.id}`, inline: true },
-                { name: '\u200B', value: '\u200B', inline: true },
-                { name: `使用者創帳時間`, value: `<t:${~~(user.createdTimestamp/1000)}:f>`, inline: true },
+                { name: `使用者創帳時間`, value: `<t:${parseInt(member.user.createdAt / 1000)}:f>`, inline: true },
+                { name: `使用者入群時間`, value: `<t:${parseInt(member.joinedAt / 1000)}:f>`, inline: true },
                 { name: `是否為機器人？`, value: `${user.bot? '是':'否'}`, inline: true },
             )
             .setTimestamp()
