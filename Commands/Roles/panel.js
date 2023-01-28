@@ -16,8 +16,12 @@ module.exports = {
                     return interaction.reply({ content: "> 這個伺服器沒有任何數據！", ephemeral: true});
 
                 const panelEmbed = new EmbedBuilder()
-                    .setDescription("請選擇你要領取的身分組")
+                    .setTitle(`<a:r3_rice:868583679465758820> 白嫖身分組的時候到了！`)
+                    .setDescription("請選擇你要白嫖身分組")
                     .setColor(0xff4e4e)
+                    .setTimestamp()
+                    .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
+                    .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
                 const options = data.roles.map(x => {
                     const role = guild.roles.cache.get(x.roleId);
@@ -41,7 +45,7 @@ module.exports = {
 
                 channel.send({ embeds: [panelEmbed], components: menuComponents });
 
-                return interaction.reply({ content: `> 已發送身分組選擇面板！`, ephemeral: true});
+                return interaction.reply({ content: `> <a:r3_rice:868583679465758820> 已發送身分組選擇面板！`, ephemeral: true});
             } catch (err) {
                 console.log(err);
             }

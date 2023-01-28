@@ -22,7 +22,7 @@ module.exports = {
             .setTitle(`${user.username} 的使用者頭像`)
             .setImage(`${userAvatar}`)
             .setTimestamp()
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 			
             const button = new ButtonBuilder()
             .setLabel(`點此查看頭像網址`)

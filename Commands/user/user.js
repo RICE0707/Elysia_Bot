@@ -30,7 +30,7 @@ module.exports = {
                 { name: `是否為機器人？`, value: `${user.bot? '是':'否'}`, inline: true },
             )
             .setTimestamp()
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
             await interaction.reply({
                 embeds: [embed],

@@ -21,20 +21,20 @@ module.exports = {
             const data = await rrSchema.findOne({ GuildID: guildId });
 
             if (!data)
-                return interaction.reply({ content: `> 這個伺服器沒有任何數據！`, ephemeral: true});
+                return interaction.reply({ content: `> <a:r2_rice:868583626227478591> 這個伺服器沒有任何數據！`, ephemeral: true});
             
             const roles = data.roles;
             const findRole = roles.find((r) => r.roleId === role.id);
 
             if(!findRole)
-                return interaction.reply({ content: `> 這個身份組不存在！`, ephemeral: true});
+                return interaction.reply({ content: `> <a:r2_rice:868583626227478591> 這個身份組不存在！`, ephemeral: true});
 
             const filteredRoles = roles.filter((r) => r.roleId === role.id);
             data.roles = filteredRoles;
 
             await data.save();
 
-            return interaction.reply({ content: `> 已成功移除身份組選擇面板的身份組：${role.name}`, ephemeral: true});
+            return interaction.reply({ content: `> <a:r3_rice:868583679465758820> 已成功移除身份組選擇面板的身份組：${role.name}`, ephemeral: true});
             
         } catch (err) {
             console.log(err);

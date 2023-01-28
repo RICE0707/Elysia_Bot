@@ -30,7 +30,7 @@ module.exports = {
         try {
 
             if (role.position >= member.roles.highest.position)
-                return interaction.reply({ content: "> 你沒有權限執行此操作！", ephemeral: true });
+                return interaction.reply({ content: "> <a:r2_rice:868583626227478591> 你沒有權限執行此操作！", ephemeral: true });
 
             const data = await rrSchema.findOne({ GuildID: guildId });
 
@@ -57,7 +57,7 @@ module.exports = {
                 });
             }
 
-            return interaction.reply({ content: `> 已成功新增身份組選擇面板的身份組：${role.name}`, ephemeral: true});
+            return interaction.reply({ content: `> <a:r3_rice:868583679465758820> 已成功新增身份組選擇面板的身份組：${role.name}`, ephemeral: true});
             
         } catch (err) {
             console.log(err);

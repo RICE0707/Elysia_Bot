@@ -43,7 +43,7 @@ module.exports = {
             .setTitle(`${guild.name} 的伺服器資訊`)
             .setImage(guild.bannerURL({ size: 1024 }))
             .setTimestamp()
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
             .addFields(
                 { name: "伺服器描述", value: `> ${guild.description || "> 這個伺服器沒有提供任何描述"}\n\u200B`},
                 {

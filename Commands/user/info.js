@@ -25,7 +25,7 @@ module.exports = {
                 { name: `每天都可以投一票！`, value: `[點此投票](https://discordservers.tw/bots/1032948551107497994)`,inline: true},
             )
             .setTimestamp()
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
             await interaction.reply({
                 embeds: [embed],

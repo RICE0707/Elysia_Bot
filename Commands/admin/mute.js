@@ -36,7 +36,7 @@ module.exports = {
             .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
             .setTimestamp()
             .setColor(0xff4e4e)
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })    
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })    
 
         const errTimeEmbed = new EmbedBuilder()
             .setTitle(`<a:r2_rice:868583626227478591> 禁言失敗`)
@@ -44,7 +44,7 @@ module.exports = {
             .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
             .setTimestamp()
             .setColor(0xff4e4e)
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
         
         const succesEmbed = new EmbedBuilder()
             .setTitle(`<a:r3_rice:868583679465758820> 禁言成功`)
@@ -56,7 +56,7 @@ module.exports = {
             )
             .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
             .setTimestamp()
-            .setFooter({ text: '來自花瓶星球的科技支援', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+            .setFooter({ text: '來自花瓶星球的科技支援 v2.1', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
         if (member.roles.highest.position >= interaction.member.roles.highest.position)
             return interaction.reply({ embeds: [errEmbed]});
