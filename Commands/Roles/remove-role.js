@@ -34,7 +34,7 @@ module.exports = {
 
             await data.save();
 
-            return interaction.reply({ content: `> <a:r3_rice:868583679465758820> 已成功移除身份組選擇面板的身份組：${role.name}`, ephemeral: true});
+            return interaction.reply({ content: `> <a:r3_rice:868583679465758820> 已成功從身分組選擇面板移除身分組：${role.name}`, ephemeral: true});
             
         } catch (err) {
             console.log(err);

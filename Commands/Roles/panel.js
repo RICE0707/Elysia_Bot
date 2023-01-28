@@ -10,10 +10,10 @@ module.exports = {
             const { options, guildId, guild, channel } = interaction;
 
             try {
-                const data = await rrSchema.findOne({GuildID: guildId});
+                const data = await rrSchema.findOne({ GuildID: guildId });
 
                 if (!data.roles.length > 0)
-                    return interaction.reply({ content: "> 這個伺服器沒有任何數據！", ephemeral: true});
+                    return interaction.reply({ content: "> <a:r2_rice:868583626227478591> 這個伺服器沒有任何數據！", ephemeral: true});
 
                 const panelEmbed = new EmbedBuilder()
                     .setTitle(`<a:r3_rice:868583679465758820> 白嫖身分組的時候到了！`)
