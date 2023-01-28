@@ -33,6 +33,7 @@ module.exports = {
                 { name: `Facebook`, value: `[點此前往](https://www.facebook.com/Brilliant.Server)`,inline: true},
                 { name: `Twitter`, value: `[點此前往](https://twitter.com/BrilliantServer)`,inline: true},
                 { name: `GitHub`, value: `[點此前往](https://github.com/BrilliantServer)`,inline: true},
+                { name: `每天都可以投一票！`, value: `[點此投票](https://discordservers.tw/servers/762627112867725403)`,inline: true},
             )
             .setTimestamp()
             .setFooter({ text: '輝煌伺服器 - 目前休服中', iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png' });
