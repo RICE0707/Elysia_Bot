@@ -9,7 +9,7 @@ module.exports = {
 
             const embed = new EmbedBuilder()
             .setColor(0xd3d7da)
-            .setAuthor({ name: '有關於輝煌 Minecraft 的伺服器相關資訊', iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://www.brilliantw.net/' })
+            .setAuthor({ name: '有關於輝煌 Minecraft 伺服器的相關資訊', iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://www.brilliantw.net/' })
             .setDescription('輝煌是一個Minecraft伺服器，近期開發開源插件、模組來為麥塊社群提供資源，但他現在在休服中，所以進入不了啦！')
             .setThumbnail(`https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png`)
             .setTitle(`HI，我是花瓶中突然冒出來的飯娘`)
