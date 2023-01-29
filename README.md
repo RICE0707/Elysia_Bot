@@ -28,7 +28,7 @@ HI，我是一個易碎的花瓶<br/>
 └ /海草 - 召喚海草(需有管理權限)<br/>
 
 相關連結<br/>
-├ [Discord](https://discord.gg/5MHGpAFGEN)<br/>
-├ [GitHub](https://github.com/RICE0707/Elysia_Js_V2)<br/>
+├ [Discord](https://discord.gg/c4tKJME4hE)<br/>
+├ [GitHub](https://github.com/RICE0707/Elysia_Bot)<br/>
 ├ [邀請我](https://discord.com/api/oauth2/authorize?client_id=1032948551107497994&permissions=8&scope=bot)<br/>
 └ [每天都可以投一票！](https://discordservers.tw/bots/1032948551107497994)<br/>

@@ -19,8 +19,8 @@ module.exports = {
                 { name: `使用者功能`, value: `<:n9_air:898205184746991677>├ </機器人資訊:0> - 取得機器人資訊\n<:n9_air:898205184746991677>├ </輝煌伺服器資訊:0> - 取得輝煌伺服器資訊\n<:n9_air:898205184746991677>├ </輝煌團隊資訊:0> - 取得輝煌團隊資訊\n<:n9_air:898205184746991677>├ </伺服器資訊:0> - 取得伺服器資訊\n<:n9_air:898205184746991677>├ </使用者資訊:0> - 取得使用者的ID、名稱、創帳日期等資訊\n<:n9_air:898205184746991677>└ </使用者頭像:0> - 取得使用者的頭像\n\u200B`},
                 { name: `娛樂類功能`, value: `<:n9_air:898205184746991677>├ </操你媽:0> - 讓機器人問候你媽\n<:n9_air:898205184746991677>└ </海草:0> - 召喚海草(需有管理權限)\n\u200B`},
                 { name: `<:n0_rice:868584523980488715> 相關連結`, value: `\u200B`},
-                { name: `Discord`, value: `[點此前往](https://discord.gg/5MHGpAFGEN)`,inline: true},
-                { name: `GitHub`, value: `[點此前往](https://github.com/RICE0707/Elysia_Js_V2)`,inline: true},
+                { name: `Discord`, value: `[點此前往](https://discord.gg/c4tKJME4hE)`,inline: true},
+                { name: `GitHub`, value: `[點此前往](https://github.com/RICE0707/Elysia_Bot)`,inline: true},
                 { name: `邀請我`, value: `[點此前往](https://discord.com/api/oauth2/authorize?client_id=1032948551107497994&permissions=8&scope=bot)`,inline: true},
                 { name: `每天都可以投一票！`, value: `[點此投票](https://discordservers.tw/bots/1032948551107497994)`,inline: true},
             )
