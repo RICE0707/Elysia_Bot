@@ -5,7 +5,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "管理警告",
+  name: "管理警告處分",
   description: "警告指定使用者",
   category: "MODERATION",
   userPermissions: ["KickMembers"],

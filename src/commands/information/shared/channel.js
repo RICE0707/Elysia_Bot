@@ -21,8 +21,8 @@ module.exports = (channel) => {
     desc += stripIndent`
       ├ 頻道主題：**${channel.topic || "未設置"}**
       ├ 頻道位置：**${position}**
-      ├ 慢速模式：**${rateLimitPerUser}**
-      └ 兒少不宜？**${nsfw ? "✓ 是" : "✕ 否"}**\n
+      ├ 慢速模式：**${rateLimitPerUser}秒**
+      └ 兒少不宜？**${nsfw ? "是" : "否"}**\n
       `;
   }
 
@@ -30,15 +30,15 @@ module.exports = (channel) => {
     const { ownerId, archived, locked } = channel;
     desc += stripIndent`
       ├ 所有者：**<@${ownerId}>**
-      ├ 已存檔？**${archived ? "✓ 是" : "✕ 否"}**
-      └ 已鎖定？**${locked ? "✓ 是" : "✕ 否"}**\n
+      ├ 已存檔？**${archived ? "是" : "否"}**
+      └ 已鎖定？**${locked ? "是" : "否"}**\n
       `;
   }
 
   if (type === ChannelType.GuildNews || type === ChannelType.GuildNewsThread) {
     const { nsfw } = channel;
     desc += stripIndent`
-      └ 兒少不宜？**${nsfw ? "✓ 是" : "✕ 否"}**\n
+      └ 兒少不宜？**${nsfw ? "是" : "否"}**\n
       `;
   }
 
@@ -48,7 +48,7 @@ module.exports = (channel) => {
       ├ 頻道位置：**${position}**
       ├ 此位元率：**${bitrate}**
       ├ 用戶限制：**${userLimit}**
-      └ 是否已滿？**${full ? "✓ 是" : "✕ 否"}**\n
+      └ 是否已滿？**${full ? "是" : "否"}**\n
       `;
   }
 

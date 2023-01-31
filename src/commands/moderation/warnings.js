@@ -6,7 +6,7 @@ const { getMember } = require("@schemas/Member");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "管理撤銷警告與警告列表",
+  name: "管理警告",
   description: "撤銷警告指定使用者與查看警告列表",
   category: "MODERATION",
   userPermissions: ["KickMembers"],
@@ -114,9 +114,9 @@ async function listWarnings(target, { guildId }) {
   const warnings = await getWarningLogs(guildId, target.id);
   if (!warnings.length) return `> <a:r3_rice:868583679465758820> \` ${target.user.tag} \`沒有警告。`;
 
-  const acc = warnings.map((warning, i) => `${i + 1}. ${warning.reason} [來自 ${warning.admin.tag}]`).join("\n");
+  const acc = warnings.map((warning, i) => `#${i + 1} 原因：${warning.reason} [來自 ${warning.admin.tag}]`).join("\n");
   const embed = new EmbedBuilder({
-    author: { name: `${target.user.tag} 的警告` },
+    author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' },
     description: acc,
   });
 

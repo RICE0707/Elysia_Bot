@@ -41,14 +41,14 @@ module.exports = {
     // check user permissions
     if (cmd.userPermissions && cmd.userPermissions?.length > 0) {
       if (!message.channel.permissionsFor(message.member).has(cmd.userPermissions)) {
-        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要你擁有 ${parsePermissions(cmd.userPermissions)} 權限。`);
+        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要你擁有\` ${parsePermissions(cmd.userPermissions)} \`權限。`);
       }
     }
 
     // check bot permissions
     if (cmd.botPermissions && cmd.botPermissions.length > 0) {
       if (!message.channel.permissionsFor(message.guild.members.me).has(cmd.botPermissions)) {
-        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有 ${parsePermissions(cmd.botPermissions)} 權限。`);
+        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有\` ${parsePermissions(cmd.botPermissions)} \`權限。`);
       }
     }
 
@@ -107,7 +107,7 @@ module.exports = {
     if (interaction.member && cmd.userPermissions?.length > 0) {
       if (!interaction.member.permissions.has(cmd.userPermissions)) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有 ${parsePermissions(cmd.userPermissions)} 權限。`,
+          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有\` ${parsePermissions(cmd.userPermissions)} \`權限。`,
           ephemeral: true,
         });
       }
@@ -117,7 +117,7 @@ module.exports = {
     if (cmd.botPermissions && cmd.botPermissions.length > 0) {
       if (!interaction.guild.members.me.permissions.has(cmd.botPermissions)) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有 ${parsePermissions(cmd.botPermissions)} 權限。`,
+          content: `> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有\` ${parsePermissions(cmd.botPermissions)} \`權限。`,
           ephemeral: true,
         });
       }
@@ -157,7 +157,7 @@ module.exports = {
     let desc = "";
     if (cmd.command.subcommands && cmd.command.subcommands.length > 0) {
       cmd.command.subcommands.forEach((sub) => {
-        desc += `\`${prefix}${invoke || cmd.name} ${sub.trigger}\`\n❯ ${sub.description}\n\n`;
+        desc += `\`${prefix}${invoke || cmd.name} ${sub.trigger}\`\n└ ${sub.description}\n\n`;
       });
       if (cmd.cooldown) {
         desc += `**冷卻時間：**${timeformat(cmd.cooldown)}`;
@@ -200,7 +200,7 @@ module.exports = {
  * @param {object} cmd
  */
 function applyCooldown(memberId, cmd) {
-  const key = cmd.name + "|" + memberId;
+  const key = cmd.name + "︱" + memberId;
   cooldownCache.set(key, Date.now());
 }
 
@@ -209,7 +209,7 @@ function applyCooldown(memberId, cmd) {
  * @param {object} cmd
  */
 function getRemainingCooldown(memberId, cmd) {
-  const key = cmd.name + "|" + memberId;
+  const key = cmd.name + "︱" + memberId;
   if (cooldownCache.has(key)) {
     const remaining = (Date.now() - cooldownCache.get(key)) * 0.001;
     if (remaining > cmd.cooldown) {

@@ -9,7 +9,7 @@ module.exports = (client) => {
     .setThumbnail(client.user.displayAvatarURL())
     .setTimestamp()
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
-    .setDescription("感謝邀請，本機器人由 <@502072207502082048> 開發與維護，但本機器人只是他的練手用Bot，可能會有許多奇怪的漏洞，不建議在生產環境中做使用，機器人目前24H運作中，除非託管倒了或節點爆掉。");
+    .setDescription("> 感謝您加入花瓶 (Elysia)，\n> 花瓶將成為您得力的助手，\n> 本瓶目前有` 186 `個指令供您使用。");
 
   // Buttons
   let components = [];

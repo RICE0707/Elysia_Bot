@@ -121,10 +121,10 @@ async function getHelpMenu({ client, guild }) {
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     .setDescription(
       "**關於本花瓶：**\n" +
-        `Hello I am ${guild.members.me.displayName}!\n` +
-        "A cool multipurpose discord bot which can serve all your needs\n\n" +
-        `**邀請花瓶：** [點此邀請](${client.getInvite()})\n` +
-        `**花瓶群組：** [點此加入](${SUPPORT_SERVER})`
+        `> 感謝您加入${guild.members.me.displayName}，花瓶將成為您力的助手。\n` +
+        "> 本機器人目前有\` 186 \`個指令供您使用。\n\n" +
+        `> **邀請花瓶：** [點此邀請](${client.getInvite()})\n` +
+        `> **花瓶群組：** [點此加入](${SUPPORT_SERVER})`
     );
 
   return {
