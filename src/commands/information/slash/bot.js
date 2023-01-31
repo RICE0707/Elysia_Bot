@@ -76,7 +76,7 @@ function botInvite(client) {
     .setTimestamp()
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     .setThumbnail(client.user.displayAvatarURL())
-    .setDescription("感謝邀請，本機器人由 <@502072207502082048> 開發與維護，但本機器人只是他的練手用Bot，可能會有許多奇怪的漏洞，不建議在生產環境中做使用，機器人目前24H運作中，除非託管倒了或節點爆掉。");
+    .setDescription("> 本機器人由 RiceChen_#0707 開發，\n> 使用 GNU General Public License v3.0，\n> 目前擁有 15 大類功能，\n> 包含 86 條斜線指令，與近 300 項的細節選項，\n> 不過目前主機設備沒有很好，花瓶可能會過勞死= =");
 
   // Buttons
   let components = [];

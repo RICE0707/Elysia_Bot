@@ -1,5 +1,7 @@
-**🌸 - 花瓶機器人全功能斜線指令**<br /><br />
-> 本機器人由 RiceChen_#0707 開發
+**🌸 - 花瓶機器人全功能斜線指令**<br />
+> 本機器人由 RiceChen_#0707 開發，使用 GNU General Public License v3.0<br />
+> 目前擁有 15 大類功能，包含 86 條斜線指令，與近 300 項的細節選項<br />
+> 不過目前主機設備沒有很好，花瓶可能會過勞死= =<br />
 
 **🛑、管理類功能**<br />
 > ` 管理自動管理 ` - ` 防幽靈標註 ` ` 防刷屏 ` ` 防一次性標註多人 `<br />
@@ -124,5 +126,6 @@
 
 **▎最後是一些資訊**<br />
 > [支援群組](https://discord.gg/c4tKJME4hE)<br />
+> [開源專案](https://github.com/RICE0707/Elysia_Bot)<br />
 > [邀請機器](https://discord.com/api/oauth2/authorize?client_id=1032948551107497994&permissions=8&scope=bot)<br />
 > [投花瓶票](https://discordservers.tw/bots/1032948551107497994)
