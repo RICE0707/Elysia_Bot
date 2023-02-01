@@ -29,10 +29,10 @@ module.exports = (client) => {
   const overallUsage = `${Math.floor(((os.totalmem() - os.freemem()) / os.totalmem()) * 100)}%`;
 
   let desc = "";
-  desc += `❒ 群組總數：${guilds}\n`;
-  desc += `❒ 使用者總數：${users}\n`;
-  desc += `❒ 頻道總數：${channels}\n`;
-  desc += `❒ 機器人延遲：${client.ws.ping} ms\n`;
+  desc += `├ 群組總數：\` ${guilds} \`\n`;
+  desc += `├ 使用者總數：\` ${users} \`\n`;
+  desc += `├ 頻道總數：\` ${channels} \`\n`;
+  desc += `└ 機器人延遲：\` ${client.ws.ping} ms \`\n`;
   desc += "\n";
 
   const embed = new EmbedBuilder()
@@ -46,27 +46,27 @@ module.exports = (client) => {
       {
         name: "處理器",
         value: stripIndent`
-        ├ **作業系統**：${platform} [${architecture}]
-        ├ **核心數**：${cores}
-        └ **使用量**：${cpuUsage}
+        ├ **作業系統**：\` ${platform}︱${architecture} \`
+        ├ **核心數**：\` ${cores} \`
+        └ **使用量**：\` ${cpuUsage} \`
         `,
         inline: true,
       },
       {
-        name: "記憶體 (Bot)",
+        name: "記憶體（機器人）",
         value: stripIndent`
-        ├ **已使用**：${botUsed}
-        ├ **可使用**：${botAvailable}
-        └ **使用量**：${botUsage}
+        ├ **已使用**：\` ${botUsed} \`
+        ├ **可使用**：\` ${botAvailable} \`
+        └ **使用量**：\` ${botUsage} \`
         `,
         inline: true,
       },
       {
-        name: "記憶體 (總共)",
+        name: "記憶體（總量）",
         value: stripIndent`
-        ├ **已使用**：${overallUsed}
-        ├ **可使用**：${overallAvailable}
-        └ **使用量**：${overallUsage}
+        ├ **已使用**：\` ${overallUsed} \`
+        ├ **可使用**：\` ${overallAvailable} \`
+        └ **使用量**：\` ${overallUsage} \`
         `,
         inline: true,
       },

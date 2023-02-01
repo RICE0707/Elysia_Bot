@@ -8,8 +8,8 @@ module.exports = (member) => {
   let color = member.displayHexColor;
   if (color === "#d3d7da") color = EMBED_COLORS.BOT_EMBED;
 
-  let rolesString = member.roles.cache.map((r) => r.name).join(", ");
-  if (rolesString.length > 1024) rolesString = rolesString.substring(0, 1020) + "...";
+  let rolesString = member.roles.cache.map((r) => r.name).join("︱");
+  if (rolesString.length > 1024) rolesString = rolesString.substring(0, 1020) + "...等";
 
   const embed = new EmbedBuilder()
     .setAuthor({
@@ -38,7 +38,7 @@ module.exports = (member) => {
         value: `<t:${parseInt(member.user.createdAt / 1000)}:f>`,
       },
       {
-        name: `擁有的身份組 [${member.roles.cache.size}個]`,
+        name: `擁有的身份組︱共 ${member.roles.cache.size} 個`,
         value: rolesString,
       },
       {

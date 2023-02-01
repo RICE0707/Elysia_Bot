@@ -30,16 +30,12 @@ module.exports = async (guild) => {
   const onlineAll = onlineUsers + onlineBots;
   const rolesCount = roles.cache.size;
 
-  const getMembersInRole = (members, role) => {
-    return members.filter((m) => m.roles.cache.has(role.id)).size;
-  };
-
   let rolesString = roles.cache
     .filter((r) => !r.name.includes("everyone"))
-    .map((r) => `${r.name}[${getMembersInRole(memberCache, r)}]`)
-    .join(", ");
+    .map((r) => `${r.name}`)
+    .join("︱");
 
-  if (rolesString.length > 1024) rolesString = rolesString.substring(0, 1020) + "...";
+  if (rolesString.length > 1024) rolesString = rolesString.substring(0, 1020) + "...等";
 
   let { verificationLevel } = guild;
   switch (guild.verificationLevel) {
@@ -56,10 +52,10 @@ module.exports = async (guild) => {
   }
 
   let desc = "";
-  desc = `${desc + "├"} **群組代號：** ${id}\n`;
-  desc = `${desc + "├"} **群組名稱：** ${name}\n`;
-  desc = `${desc + "├"} **群所有者：** ${owner.user.tag}\n`;
-  desc = `${desc + "└"} **群組語言：** ${preferredLocale}\n`;
+  desc = `${desc + "├"} **群組代號：** \` ${id} \`\n`;
+  desc = `${desc + "├"} **群組名稱：** \` ${name} \`\n`;
+  desc = `${desc + "├"} **群所有者：** \` ${owner.user.tag} \`\n`;
+  desc = `${desc + "└"} **群組語言：** \` ${preferredLocale} \`\n`;
   desc += "\n";
 
   const embed = new EmbedBuilder()
@@ -72,22 +68,22 @@ module.exports = async (guild) => {
     .setDescription(desc)
     .addFields(
       {
-        name: `群組成員 [共${all}人]`,
-        value: `\`\`\`使用者數：${users}\n機器人數：${bots}\`\`\``,
+        name: `群組成員︱共 ${all} 人`,
+        value: `\`\`\`使用者數： ${users} 人\n機器人數： ${bots} 人\`\`\``,
         inline: true,
       },
       {
-        name: `在線統計 [共${onlineAll}人]`,
-        value: `\`\`\`使用者數：${onlineUsers}\n機器人數：${onlineBots}\`\`\``,
+        name: `在線統計︱共 ${onlineAll} 人`,
+        value: `\`\`\`使用者數： ${onlineUsers} 人\n機器人數： ${onlineBots} 人\`\`\``,
         inline: true,
       },
       {
-        name: `頻道類別 [共${totalChannels}個]`,
-        value: `\`\`\`類別：${categories} | 文字：${textChannels} | 語音：${voiceChannels} | 討論串：${threadChannels}\`\`\``,
+        name: `頻道類別︱共 ${totalChannels} 個`,
+        value: `\`\`\`類別： ${categories} 個︱文字： ${textChannels} 個︱語音： ${voiceChannels} 個︱討論串： ${threadChannels} 個\`\`\``,
         inline: false,
       },
       {
-        name: `群身份組 [共${rolesCount}個]`,
+        name: `群身份組︱共 ${rolesCount} 個`,
         value: `\`\`\`${rolesString}\`\`\``,
         inline: false,
       },
@@ -98,11 +94,11 @@ module.exports = async (guild) => {
       },
       {
         name: "加成數量",
-        value: `\`\`\`${guild.premiumSubscriptionCount}\`\`\``,
+        value: `\`\`\`${guild.premiumSubscriptionCount} 個\`\`\``,
         inline: true,
       },
       {
-        name: `群創建日[${createdAt.fromNow()}]`,
+        name: "群創建日",
         value: `\`\`\`${createdAt.format("YYYY-MM-DD hh:mm:ss")}\`\`\``,
         inline: false,
       }
