@@ -4,8 +4,8 @@ const { ApplicationCommandOptionType } = require("discord.js");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "管理自動管理",
-  description: "管理伺服器的各種自動防屁孩設置",
+  name: "管理自動防止",
+  description: "管理群組的各種自動防止設置",
   category: "AUTOMOD",
   userPermissions: ["ManageGuild"],
   command: {
@@ -21,7 +21,7 @@ module.exports = {
         description: "防刷頻寒暑假特產",
       },
       {
-        trigger: "防一次性標註多人 <開啟|關閉> [最高值]",
+        trigger: "防多標註 <開啟|關閉> [最高值]",
         description: "防那種一次標一堆人的破腦（預設最高值為3）",
       },
     ],
@@ -32,7 +32,7 @@ module.exports = {
     options: [
       {
         name: "防幽靈標註",
-        description: "防那種標了但秒刪的低能",
+        description: "防止使用者標註後快速收回",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         name: "防刷頻",
-        description: "防刷頻寒暑假特產",
+        description: "防止使用者刷頻",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -77,8 +77,8 @@ module.exports = {
         ],
       },
       {
-        name: "防一次性標註多人",
-        description: "防那種一次標一堆人的破腦",
+        name: "防多標註",
+        description: "防止使用者一次標一堆人",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -127,7 +127,7 @@ module.exports = {
     }
 
     //
-    else if (sub === "防一次性標註多人") {
+    else if (sub === "防多標註") {
       const status = args[1].toLowerCase();
       const threshold = args[2] || 3;
       if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
@@ -146,7 +146,7 @@ module.exports = {
     let response;
     if (sub == "防幽靈標註") response = await antiGhostPing(settings, interaction.options.getString("是否啟用"));
     else if (sub == "防刷頻") response = await antiSpam(settings, interaction.options.getString("是否啟用"));
-    else if (sub === "防一次性標註多人") {
+    else if (sub === "防多標註") {
       response = await antiMassMention(
         settings,
         interaction.options.getString("是否啟用"),
@@ -162,14 +162,14 @@ async function antiGhostPing(settings, input) {
   const status = input.toUpperCase() === "是" ? true : false;
   settings.automod.anti_ghostping = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在防幽靈Tag功能已\` ${status ? "啟用" : "停用"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 防幽靈標註功能已\` ${status ? "啟用" : "停用"} \`。`;
 }
 
 async function antiSpam(settings, input) {
   const status = input.toUpperCase() === "是" ? true : false;
   settings.automod.anti_spam = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在防刷頻功能已\` ${status ? "啟用" : "停用"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 防刷頻功能已\` ${status ? "啟用" : "停用"} \`。`;
 }
 
 async function antiMassMention(settings, input, threshold) {
@@ -180,5 +180,5 @@ async function antiMassMention(settings, input, threshold) {
     settings.automod.anti_massmention = threshold;
   }
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在防一次性標註多人功能已\`${status ? "啟用" : "停用"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 防多標註功能已\` ${status ? "啟用" : "停用"} \`。`;
 }

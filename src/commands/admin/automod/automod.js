@@ -7,7 +7,7 @@ const { stripIndent } = require("common-tags");
  */
 module.exports = {
   name: "管理自動處分",
-  description: "管理伺服器的各種自動管理設置",
+  description: "管理群組的各種自動處分設置",
   category: "AUTOMOD",
   userPermissions: ["ManageGuild"],
   command: {
@@ -16,15 +16,15 @@ module.exports = {
     subcommands: [
       {
         trigger: "狀態",
-        description: "查看目前伺服器的自動管理設置",
+        description: "查看目前群組的自動管理設置",
       },
       {
         trigger: "警告 <最大值>",
-        description: "設置伺服器成員能接收的警告最大值",
+        description: "設置使用者能接收的警告最大值",
       },
       {
         trigger: "處分 <禁言|踢出|封禁>",
-        description: "設置伺服器成員達到警告最大值後的處分",
+        description: "設置使用者達到警告最大值後的處分",
       },
       {
         trigger: "調適 <開啟|關閉>",
@@ -36,11 +36,11 @@ module.exports = {
       },
       {
         trigger: "白名單新增 <頻道>",
-        description: "將一個頻道加入白名單，使其不受自動管理偵測",
+        description: "將一個頻道加入白名單，使其不受自動處分偵測",
       },
       {
         trigger: "白名單移除 <頻道>",
-        description: "將一個頻道從白名單中移除，使其受自動管理偵測",
+        description: "將一個頻道從白名單中移除，使其受自動處分偵測",
       },
     ],
   },
@@ -50,17 +50,17 @@ module.exports = {
     options: [
       {
         name: "狀態",
-        description: "查看目前伺服器的自動管理設置",
+        description: "查看目前群組的自動管理設置",
         type: ApplicationCommandOptionType.Subcommand,
       },
       {
         name: "警告",
-        description: "設置伺服器成員能接收的警告最大值",
+        description: "設置使用者能接收的警告最大值",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
             name: "最大值",
-            description: "設置伺服器成員能接收的警告最大值（預設為 10）",
+            description: "設置使用者能接收的警告最大值（預設為 10）",
             required: true,
             type: ApplicationCommandOptionType.Integer,
           },
@@ -68,12 +68,12 @@ module.exports = {
       },
       {
         name: "處分",
-        description: "設置伺服器成員達到警告最大值後處分",
+        description: "設置使用者達到警告最大值後處分",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
             name: "嚴重程度",
-            description: "選擇伺服器成員達到警告最大值後的處分",
+            description: "選擇使用者達到警告最大值後的處分",
             type: ApplicationCommandOptionType.String,
             required: true,
             choices: [
@@ -95,7 +95,7 @@ module.exports = {
       },
       {
         name: "調適",
-        description: "是否讓管理員也會被自動管理偵測",
+        description: "是否讓管理員也會被自動處分偵測",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -118,12 +118,12 @@ module.exports = {
       },
       {
         name: "白名單列表",
-        description: "查看哪些頻道不受自動管理偵測",
+        description: "查看哪些頻道不受自動處分偵測",
         type: ApplicationCommandOptionType.Subcommand,
       },
       {
         name: "白名單新增",
-        description: "將一個頻道加入白名單，使其不受自動管理偵測",
+        description: "將一個頻道加入白名單，使其不受自動處分偵測",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -137,7 +137,7 @@ module.exports = {
       },
       {
         name: "白名單移除",
-        description: "將一個頻道從白名單中移除，使其受自動管理偵測",
+        description: "將一個頻道從白名單中移除，使其受自動處分偵測",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
@@ -168,7 +168,7 @@ module.exports = {
     } else if (input === "嚴重程度") {
       const action = args[1].toUpperCase();
       if (!action || !["禁言", "踢出", "封禁"].includes(action))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：`禁言`/`踢出`/`封禁`其一。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言 `/` 踢出 `/` 封禁 `其一。");
       response = await setAction(settings, message.guild, action);
     } else if (input === "調適") {
       const status = args[1].toLowerCase();
@@ -210,7 +210,7 @@ module.exports = {
     else if (sub === "警告") response = await setStrikes(settings, interaction.options.getInteger("最大值"));
     else if (sub === "處分")
       response = await setAction(settings, interaction.guild, interaction.options.getString("嚴重程度"));
-    else if (sub === "調適") response = await setDebug(settings, interaction.options.getString("狀態"));
+    else if (sub === "調適") response = await setDebug(settings, interaction.options.getString("是否啟用"));
     else if (sub === "白名單列表") {
       response = getWhitelist(interaction.guild, settings);
     } else if (sub === "白名單新增") {
@@ -303,14 +303,14 @@ async function setAction(settings, guild, action) {
 
   settings.automod.action = action;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在滿警告處分為：\` ${action} \`。`;
+  return `> <a:r3_rice:868583679465758820> 滿警告處分為：\` ${action} \`。`;
 }
 
 async function setDebug(settings, input) {
   const status = input.toLowerCase() === "是" ? true : false;
   settings.automod.debug = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在調適模式已\` ${status ? "開啟" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 調適模式已\` ${status ? "開啟" : "關閉"} \`。`;
 }
 
 function getWhitelist(guild, settings) {

@@ -5,7 +5,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
  */
 module.exports = {
   name: "管理自動刪除",
-  description: "管理伺服器的各種自動刪除設置",
+  description: "管理群組的各種自動刪除設置",
   category: "AUTOMOD",
   userPermissions: ["ManageGuild"],
   command: {
@@ -14,19 +14,19 @@ module.exports = {
     subcommands: [
       {
         trigger: "限制檔案 <開啟|關閉>",
-        description: "是否允許成員發送檔案",
+        description: "是否允許使用者發送檔案",
       },
       {
         trigger: "限制邀請 <開啟|關閉>",
-        description: "是否允許成員發送邀請",
+        description: "是否允許使用者發送邀請",
       },
       {
         trigger: "限制連結 <開啟|關閉>",
-        description: "是否允許成員發送連結",
+        description: "是否允許使用者發送連結",
       },
       {
         trigger: "限制行數 <最大值>",
-        description: "是否允許成員發送過多的行數 [0 = 關閉此功能]",
+        description: "是否允許使用者發送過多的行數 [0 = 關閉此功能]",
       },
     ],
   },
