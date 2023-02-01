@@ -64,7 +64,7 @@ const Schema = new mongoose.Schema({
     action: {
       type: String,
       enum: ["禁言", "KICK", "封禁"],
-      default: "踢出成員",
+      default: "KICK",
     },
     limit: { type: Number, default: 5 },
   },
