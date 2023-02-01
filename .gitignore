@@ -3,3 +3,6 @@
 node_modules/
 *.log
 *.tar.gz
+package-lock.json
+pnpm-lock.yml
+yarn.lock
