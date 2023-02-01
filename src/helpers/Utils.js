@@ -133,4 +133,25 @@ module.exports = class Utils {
     readCommands(dir);
     return filePaths;
   }
+
+  /**
+   * Extract emojis from given text
+   * @param {string} text
+   * @returns {{animated: boolean, name: string, id: string, url: string, display: string}[]} 
+   */
+  static extractEmoji(text) {
+    const emojis = [];
+    const extractor = (display, _1, _2, _3, _4, _5, group) =>
+      void emojis.push({
+        ...group,
+        animated: !!group.animated,
+        url: `https://cdn.discordapp.com/emojis/${group.id}.${!!group.animated ? "gif" : "png"}`,
+        display
+      }) || "s"
+    text.replace(
+      /<(?<animated>a)?:(?<name>\w{2,32}):(?<id>\d{17,20})>/g,
+      extractor
+    );
+    return emojis;
+  }
 };
