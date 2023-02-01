@@ -55,9 +55,11 @@ module.exports = class Validator {
       }
     }
 
-    // Warnings
+    // Warnings      
     if (config.OWNER_IDS.length === 0) warn("config.js: OWNER_IDS are empty");
     if (!config.SUPPORT_SERVER) warn("config.js: SUPPORT_SERVER is not provided");
+	  if (!config.VOTEA_SERVER) warn("config.js: VOTEA_SERVER is not provided");
+	  if (!config.VOTEB_SERVER) warn("config.js: VOTEB_SERVER is not provided");
     if (!process.env.WEATHERSTACK_KEY) warn("env: WEATHERSTACK_KEY is missing. Weather command won't work");
     if (!process.env.STRANGE_API_KEY) warn("env: STRANGE_API_KEY is missing. Image commands won't work");
   }

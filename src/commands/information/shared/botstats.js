@@ -1,5 +1,5 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const { EMBED_COLORS, SUPPORT_SERVER, DASHBOARD } = require("@root/config");
+const { EMBED_COLORS, SUPPORT_SERVER, VOTEA_SERVER, VOTEB_SERVER, DASHBOARD } = require("@root/config");
 const { timeformat } = require("@helpers/Utils");
 const os = require("os");
 const { stripIndent } = require("common-tags");
@@ -88,6 +88,14 @@ module.exports = (client) => {
 
   if (SUPPORT_SERVER) {
     components.push(new ButtonBuilder().setLabel("支援群組").setURL(SUPPORT_SERVER).setStyle(ButtonStyle.Link));
+  }
+  
+  if (VOTEA_SERVER) {
+    components.push(new ButtonBuilder().setLabel("給機器人投票").setURL(VOTEA_SERVER).setStyle(ButtonStyle.Link));
+  }
+  
+  if (VOTEB_SERVER) {
+    components.push(new ButtonBuilder().setLabel("給群組投票").setURL(VOTEB_SERVER).setStyle(ButtonStyle.Link));
   }
 
   if (DASHBOARD.enabled) {

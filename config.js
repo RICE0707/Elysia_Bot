@@ -1,6 +1,8 @@
 module.exports = {
   OWNER_IDS: [], // Bot owner ID's
   SUPPORT_SERVER: "", // Your bot support server
+  VOTEA_SERVER: "", 
+  VOTEB_SERVER: "", 
   PREFIX_COMMANDS: {
     ENABLED: true, // Enable/Disable prefix commands
     DEFAULT_PREFIX: "!", // Default prefix for the bot

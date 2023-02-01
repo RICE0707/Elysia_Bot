@@ -1,5 +1,5 @@
 const { CommandCategory, BotClient } = require("@src/structures");
-const { EMBED_COLORS, SUPPORT_SERVER } = require("@root/config.js");
+const { EMBED_COLORS, SUPPORT_SERVER, VOTEA_SERVER, VOTEB_SERVER } = require("@root/config.js");
 const {
   EmbedBuilder,
   ActionRowBuilder,
@@ -123,7 +123,9 @@ async function getHelpMenu({ client, guild }) {
       "**🌸 » 關於本花瓶：**\n" +
         `> 本機器人由\` RiceChen_#0707 \`維護，\n> 使用\` GNU Affero General Public License v3.0 \`，\n> 目前擁有\` 15 \`大類功能，\n> 包含\` 86 \`條斜線指令，與近\` 300 \`項的細節選項，\n> 不過目前主機設備沒有很好，花瓶可能會過勞死= =\n\n` +
         `> **邀請花瓶：** [點此邀請](${client.getInvite()})\n` +
-        `> **花瓶群組：** [點此加入](${SUPPORT_SERVER})`
+        `> **花瓶群組：** [點此加入](${SUPPORT_SERVER})\n` +
+		    `> **花瓶投票：** [點此投票](${VOTEA_SERVER})\n` +
+		    `> **群組投票：** [點此投票](${VOTEB_SERVER})`
     );
 
   return {
