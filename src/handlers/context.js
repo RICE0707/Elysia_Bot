@@ -47,7 +47,7 @@ module.exports = {
  * @param {object} context
  */
 function applyCooldown(memberId, context) {
-  const key = context.name + "|" + memberId;
+  const key = context.name + "︱" + memberId;
   cooldownCache.set(key, Date.now());
 }
 
@@ -56,7 +56,7 @@ function applyCooldown(memberId, context) {
  * @param {object} context
  */
 function getRemainingCooldown(memberId, context) {
-  const key = context.name + "|" + memberId;
+  const key = context.name + "︱" + memberId;
   if (cooldownCache.has(key)) {
     const remaining = (Date.now() - cooldownCache.get(key)) * 0.001;
     if (remaining > context.cooldown) {

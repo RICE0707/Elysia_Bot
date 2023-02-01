@@ -119,7 +119,7 @@ async function performAutomod(message, settings) {
   // Anti Spam
   if (!automod.anti_links && automod.anti_spam) {
     if (containsLink(content)) {
-      const key = author.id + "|" + message.guildId;
+      const key = author.id + "︱" + message.guildId;
       if (antispamCache.has(key)) {
         let antispamInfo = antispamCache.get(key);
         if (
@@ -178,7 +178,7 @@ async function performAutomod(message, settings) {
         .setDescription(`**頻道：** ${channel.toString()}\n**內容：**\n${content}`)
         .setTimestamp()
         .setFooter({
-          text: `來自花瓶星球的科技支援 v3.0 - ${author.tag} | ${author.id}`,
+          text: `來自花瓶星球的科技支援 v3.0 - ${author.tag}︱${author.id}`,
           iconURL: author.avatarURL(),
         });
 
@@ -207,7 +207,7 @@ async function performAutomod(message, settings) {
       memberDb.strikes = 0;
 
       // Add Moderation Action
-      await addModAction(guild.members.me, member, "自動管理系統: 收到的最大警告數", automod.action).catch(() => {});
+      await addModAction(guild.members.me, member, "自動管理系統：收到的最大警告數", automod.action).catch(() => {});
     }
 
     await memberDb.save();
