@@ -49,7 +49,7 @@ module.exports = (client) => {
       .setColor(client.config.EMBED_COLORS.BOT_EMBED)
       .setDescription(`[${song.title}](${song.uri})`)
       .setTimestamp()
-      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${song.requester}` });
+      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${song.requester}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
     if (song.sourceName === "youtube") {
       const identifier = song.identifier;
@@ -65,7 +65,7 @@ module.exports = (client) => {
 
     if (queue.tracks.length > 0) {
       fields.push({
-        name: "隊列中的位置",
+        name: "播放清單位置",
         value: (queue.tracks.length + 1).toString(),
         inline: true,
       });
@@ -75,9 +75,9 @@ module.exports = (client) => {
     queue.data.channel.safeSend({ embeds: [embed] });
   });
 
-  lavaclient.on("節點隊列已完成", async (_node, queue) => {
+  lavaclient.on("nodeQueueFinish", async (_node, queue) => {
     const channel = client.channels.cache.get(queue.player.channelId);
-    channel.safeSend("隊列已結束。");
+    channel.safeSend("> <a:r3_rice:868583679465758820> 播放清單已全部撥放結束。");
     queue.player.disconnect();
     await client.musicManager.destroyPlayer(queue.player.guildId);
   });

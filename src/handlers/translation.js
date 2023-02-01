@@ -32,7 +32,7 @@ async function handleFlagReaction(emoji, message, user) {
   // cooldown check
   const remaining = getTranslationCooldown(user);
   if (remaining > 0) {
-    return message.channel.safeSend(`> <a:r2_rice:868583626227478591> ${user}，你需要等待 ${timeformat(remaining)} 後才能再次讓花瓶翻譯。`, 5);
+    return message.channel.safeSend(`> <a:r2_rice:868583626227478591> ${user}，你需要等待\` ${timeformat(remaining)} \`後才能再次讓花瓶翻譯。`, 5);
   }
 
   if (await isTranslated(message, emoji)) return;

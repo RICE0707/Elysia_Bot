@@ -80,8 +80,8 @@ const buildGreeting = async (member, type, config, inviterData) => {
   if (!config.content && !config.embed.description && !config.embed.footer) {
     content =
       type === "WELCOME"
-        ? `歡迎來到本群組！ ${member.displayName} 🎉`
-        : `${member.user.tag} 離開了。 👋`;
+        ? `> 歡迎 \` ${member.displayName} \`來到本群組！`
+        : `> 喔不... \` ${member.user.tag} \`離開了 :|`;
     return { content };
   }
 

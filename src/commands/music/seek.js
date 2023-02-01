@@ -8,7 +8,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
  */
 module.exports = {
   name: "音樂播放條",
-  description: "將播放條的位置設置為指定位置",
+  description: "將播放條的位置跳轉至指定位置",
   category: "MUSIC",
   validations: musicValidations,
   command: {
@@ -53,5 +53,5 @@ function seekTo({ client, guildId }, time) {
   }
 
   player.seek(seekTo);
-  return `尋找 ${prettyMs(seekTo, { colonNotation: true, secondsDecimalDigits: 0 })}`;
+  return `> <a:r3_rice:868583679465758820> 以跳轉至 ${prettyMs(seekTo, { colonNotation: true, secondsDecimalDigits: 0 })}。`;
 }
