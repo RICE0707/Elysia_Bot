@@ -1,5 +1,5 @@
 **🌸 - 花瓶機器人全功能斜線指令**<br />
-> 本機器人由 RiceChen_#0707 開發，使用 GNU Affero General Public License v3.0<br />
+> 本機器人由 RiceChen_#0707 維護，使用 GNU Affero General Public License v3.0<br />
 > 目前擁有 15 大類功能，包含 86 條斜線指令，與近 300 項的細節選項<br />
 > 不過目前主機設備沒有很好，花瓶可能會過勞死= =<br />
 
