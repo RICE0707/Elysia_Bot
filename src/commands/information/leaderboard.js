@@ -129,7 +129,7 @@ async function getRepLeaderboard(author) {
   if (lb.length === 0) return "> <a:r2_rice:868583626227478591> 排行榜上沒有使用者。";
 
   const collector = lb
-    .map((user, i) => `**第${(i + 1).toString()}名** - \` ${escapeInlineCode(user.tag)} \`（共${user.reputation?.received}個）`)
+    .map((user, i) => `**第${(i + 1).toString()}名** - \` ${escapeInlineCode(user.username)} \`（共${user.reputation?.received}個）`)
     .join("\n");
 
   const embed = new EmbedBuilder()

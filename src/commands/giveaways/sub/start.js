@@ -13,7 +13,7 @@ module.exports = async (member, giveawayChannel, duration, prize, winners, host,
   try {
     if (!host) host = member.user;
     if (!member.permissions.has("ManageMessages")) {
-      return "> > <a:r2_rice:868583626227478591> 你需要有\` 管理訊息的權限 \`才能舉辦抽獎。";
+      return "> <a:r2_rice:868583626227478591> 你需要有\` 管理訊息的權限 \`才能舉辦抽獎。";
     }
 
     if (!giveawayChannel.type === ChannelType.GuildText) {

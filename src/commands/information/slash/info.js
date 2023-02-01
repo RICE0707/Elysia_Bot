@@ -12,7 +12,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊查看資訊",
+  name: "資訊查看",
   description: "查看各種資訊",
   category: "INFORMATION",
   botPermissions: ["EmbedLinks"],
@@ -87,6 +87,11 @@ module.exports = {
       {
         name: "輝煌伺服器",
         description: "取得輝煌伺服器的資訊",
+        type: ApplicationCommandOptionType.Subcommand,
+      },
+      {
+        name: "輝煌團隊",
+        description: "取得輝煌團隊的資訊",
         type: ApplicationCommandOptionType.Subcommand,
       },
     ],
