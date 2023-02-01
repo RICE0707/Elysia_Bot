@@ -4,6 +4,7 @@ const guildInfo = require("../shared/guild");
 const avatar = require("../shared/avatar");
 const emojiInfo = require("../shared/emoji");
 const botInfo = require("../shared/botstats");
+const brilliantInfo = require("../shared/brilliant");
 const { ApplicationCommandOptionType } = require("discord.js");
 
 /**
@@ -82,6 +83,11 @@ module.exports = {
           },
         ],
       },
+      {
+        name: "輝煌伺服器",
+        description: "取得輝煌伺服器的資訊",
+        type: ApplicationCommandOptionType.Subcommand,
+      },
     ],
   },
 
@@ -123,6 +129,11 @@ module.exports = {
     else if (sub === "表情符號") {
       let emoji = interaction.options.getString("名稱");
       response = emojiInfo(emoji);
+    }
+
+    // guild
+    else if (sub === "輝煌伺服器") {
+      response = await brilliantInfo(interaction.guild);
     }
 
     // return
