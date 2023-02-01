@@ -129,4 +129,5 @@
 > [支援群組](https://discord.gg/c4tKJME4hE)<br />
 > [開源專案](https://github.com/RICE0707/Elysia_Bot)<br />
 > [邀請機器](https://discord.com/api/oauth2/authorize?client_id=1032948551107497994&permissions=8&scope=bot)<br />
-> [投花瓶票](https://discordservers.tw/bots/1032948551107497994)
+> [花瓶投票](https://discordservers.tw/bots/1032948551107497994)
+> [群組投票](https://discordservers.tw/servers/1069111247494189116 ()
