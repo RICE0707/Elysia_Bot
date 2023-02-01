@@ -30,7 +30,7 @@ function getAvatar(user) {
     .setTitle(`${user.username} 的頭像`)
     .setAuthor({ name: '你就是個偷窺狂吧！', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
     .setColor(EMBED_COLORS.BOT_EMBED)
-    .setImage(x1024)
+    .setImage(x2048)
     .setDescription(
       `可選大小連結 • [x64](${x64}) ` +
         `• [x128](${x128}) ` +
@@ -38,8 +38,6 @@ function getAvatar(user) {
         `• [x512](${x512}) ` +
         `• [x1024](${x1024}) ` +
         `• [x2048](${x2048}) `
-    .setTimestamp()
-    .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     );
 
   return {

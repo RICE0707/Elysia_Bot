@@ -62,7 +62,7 @@ module.exports = {
     if (type === "經驗值") response = await getXpLeaderboard(interaction, interaction.user, data.settings);
     else if (type === "邀請") response = await getInviteLeaderboard(interaction, interaction.user, data.settings);
     else if (type === "愛心❤️") response = await getRepLeaderboard(interaction.user);
-    else response = ">> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗值 `、` 邀請 `。";
+    else response = "> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗值 `、` 邀請 `。";
 
     await interaction.followUp(response);
   },
