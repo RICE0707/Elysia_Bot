@@ -5,6 +5,7 @@ const avatar = require("../shared/avatar");
 const emojiInfo = require("../shared/emoji");
 const botInfo = require("../shared/botstats");
 const brilliantInfo = require("../shared/brilliant");
+const teamInfo = require("../shared/team");
 const { ApplicationCommandOptionType } = require("discord.js");
 
 /**
@@ -131,9 +132,14 @@ module.exports = {
       response = emojiInfo(emoji);
     }
 
-    // guild
+    // brilliant
     else if (sub === "輝煌伺服器") {
       response = await brilliantInfo(interaction.guild);
+    }
+
+    // team
+    else if (sub === "輝煌團隊") {
+      response = await teamInfo(interaction.guild);
     }
 
     // return

@@ -13,7 +13,7 @@ const botstats = require("../shared/botstats");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊機器人資訊",
+  name: "資訊機器人",
   description: "查看機器人資訊",
   category: "INFORMATION",
   botPermissions: ["EmbedLinks"],
