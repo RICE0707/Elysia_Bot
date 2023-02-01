@@ -19,7 +19,7 @@ module.exports = async (client, message) => {
     if (!logChannel) return;
 
     const embed = new EmbedBuilder()
-      .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！" })
+      .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！", iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://www.brilliantw.net/' })
       .setDescription(
         `**訊息：**\n${message.content}\n\n` +
           `**屁孩：** ${message.author.tag} \`${message.author.id}\`\n` +

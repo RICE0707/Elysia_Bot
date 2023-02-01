@@ -17,7 +17,7 @@ module.exports = {
     ephemeral: true,
     options: [
       {
-        name: "全部",
+        name: "全部的",
         description: "清除全部訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -37,7 +37,7 @@ module.exports = {
         ],
       },
       {
-        name: "檔案",
+        name: "僅檔案",
         description: "清除包含檔案的訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -57,7 +57,7 @@ module.exports = {
         ],
       },
       {
-        name: "機器人",
+        name: "僅機器人",
         description: "清除機器人訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -77,7 +77,7 @@ module.exports = {
         ],
       },
       {
-        name: "連結",
+        name: "僅連結",
         description: "清除包含連結的訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -97,7 +97,7 @@ module.exports = {
         ],
       },
       {
-        name: "金鑰",
+        name: "僅金鑰",
         description: "清除包含指定金鑰的訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -123,7 +123,7 @@ module.exports = {
         ],
       },
       {
-        name: "使用者",
+        name: "僅使用者",
         description: "清除使用者訊息",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -162,31 +162,31 @@ module.exports = {
 
     let response;
     switch (sub) {
-      case "全部":
-        response = await purgeMessages(member, channel, "ALL", amount);
+      case "全部的":
+        response = await purgeMessages(member, channel, "全部", amount);
         break;
 
-      case "檔案":
-        response = await purgeMessages(member, channel, "ATTACHMENT", amount);
+      case "僅檔案":
+        response = await purgeMessages(member, channel, "檔案", amount);
         break;
 
-      case "機器人":
-        response = await purgeMessages(member, channel, "BOT", amount);
+      case "僅機器人":
+        response = await purgeMessages(member, channel, "機器人", amount);
         break;
 
-      case "連結":
-        response = await purgeMessages(member, channel, "LINK", amount);
+      case "僅連結":
+        response = await purgeMessages(member, channel, "連結", amount);
         break;
 
-      case "金鑰": {
+      case "僅金鑰": {
         const token = interaction.options.getString("金鑰");
-        response = await purgeMessages(member, channel, "TOKEN", amount, token);
+        response = await purgeMessages(member, channel, "金鑰", amount, token);
         break;
       }
 
-      case "使用者": {
+      case "僅使用者": {
         const user = interaction.options.getUser("使用者");
-        response = await purgeMessages(member, channel, "USER", amount, user);
+        response = await purgeMessages(member, channel, "使用者", amount, user);
         break;
       }
 
@@ -195,7 +195,7 @@ module.exports = {
     }
 
     // Success
-    if (typeof response === "數量") {
+    if (typeof response === "number") {
       return interaction.followUp(`> <a:r3_rice:868583679465758820> 已刪除 ${channel} 中的\` ${response} \`則訊息。`);
     }
 

@@ -25,7 +25,7 @@ module.exports = {
     }
 
     const { channel } = message;
-    const response = await purgeMessages(message.member, message.channel, "TOKEN", amount, token);
+    const response = await purgeMessages(message.member, message.channel, "金鑰", amount, token);
 
     if (typeof response === "number") {
       return channel.safeSend(`> <a:r3_rice:868583679465758820> 已刪除\` ${response} \`則訊息。`, 5);

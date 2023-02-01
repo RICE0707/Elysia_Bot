@@ -23,7 +23,7 @@ module.exports = {
         description: "設置使用者能接收的警告最大值",
       },
       {
-        trigger: "處分 <禁言|踢出|封禁>",
+        trigger: "處分 <禁言|踢出成員|封禁>",
         description: "設置使用者達到警告最大值後的處分",
       },
       {
@@ -82,8 +82,8 @@ module.exports = {
                 value: "禁言",
               },
               {
-                name: "踢出",
-                value: "踢出",
+                name: "踢出成員",
+                value: "踢出成員",
               },
               {
                 name: "封禁",
@@ -167,8 +167,8 @@ module.exports = {
       response = await setStrikes(settings, strikes);
     } else if (input === "嚴重程度") {
       const action = args[1].toUpperCase();
-      if (!action || !["禁言", "踢出", "封禁"].includes(action))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言 `/` 踢出 `/` 封禁 `其一。");
+      if (!action || !["禁言", "踢出成員", "封禁"].includes(action))
+        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言 `/` 踢出成員 `/` 封禁 `其一。");
       response = await setAction(settings, message.guild, action);
     } else if (input === "調適") {
       const status = args[1].toLowerCase();
@@ -289,7 +289,7 @@ async function setAction(settings, guild, action) {
     }
   }
 
-  if (action === "踢出") {
+  if (action === "踢出成員") {
     if (!guild.members.me.permissions.has("KickMembers")) {
       return "> <a:r2_rice:868583626227478591> 你沒有權限踢出其他成員。";
     }
