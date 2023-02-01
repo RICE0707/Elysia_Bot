@@ -63,12 +63,12 @@ async function stats(member, settings) {
         inline: true,
       },
       {
-        name: "⌚ 入本群時間",
+        name: "入本群時間",
         value: `<t:${parseInt(member.joinedAt / 1000)}:f>`,
         inline: false,
       },
       {
-        name: "💬 已發送訊息",
+        name: "已發送訊息",
         value: stripIndents`
       ├ 傳送的訊息數：${memberStats.messages}
       ├ 用前綴指令數：${memberStats.commands.prefix}
@@ -79,7 +79,7 @@ async function stats(member, settings) {
         inline: false,
       },
       {
-        name: "🎙️ 語音統計數",
+        name: "語音統計數",
         value: stripIndents`
       ├ 連接的次數：${memberStats.voice.connections}
       └ 連結總時長：${Math.floor(memberStats.voice.time / 60)} 分
