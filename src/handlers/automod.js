@@ -110,7 +110,7 @@ async function performAutomod(message, settings) {
   // Anti links
   if (automod.anti_links) {
     if (containsLink(content)) {
-      fields.push({ name: "處分原因", value: "發送連結", inline: true });
+      fields.push({ name: "處分原因", value: "發送鏈接", inline: true });
       shouldDelete = true;
       strikesTotal += 1;
     }
