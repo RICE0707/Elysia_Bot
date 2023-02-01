@@ -98,7 +98,7 @@ module.exports = {
         ],
       },
       {
-        name: "踢出",
+        name: "踢出語音",
         description: "踢出語音使用者",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -158,7 +158,7 @@ module.exports = {
     else if (sub === "解除禁音") response = await vunmute(interaction, target, reason);
     else if (sub === "拒聽") response = await deafen(interaction, target, reason);
     else if (sub === "解除拒聽") response = await undeafen(interaction, target, reason);
-    else if (sub === "踢出") response = await disconnect(interaction, target, reason);
+    else if (sub === "踢出語音") response = await disconnect(interaction, target, reason);
     else if (sub == "移動") {
       const channel = interaction.options.getChannel("頻道");
       response = await move(interaction, target, reason, channel);

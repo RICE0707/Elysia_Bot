@@ -37,7 +37,7 @@ const Schema = new mongoose.Schema({
   automod: {
     debug: Boolean,
     strikes: { type: Number, default: 10 },
-    action: { type: String, default: "TIMEOUT" },
+    action: { type: String, default: "禁言" },
     wh_channels: [String],
     anti_attachments: Boolean,
     anti_invites: Boolean,
@@ -63,8 +63,8 @@ const Schema = new mongoose.Schema({
   max_warn: {
     action: {
       type: String,
-      enum: ["TIMEOUT", "KICK", "BAN"],
-      default: "KICK",
+      enum: ["禁言", "KICK", "封禁"],
+      default: "踢出成員",
     },
     limit: { type: Number, default: 5 },
   },

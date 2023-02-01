@@ -42,7 +42,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
 
   const fields = [];
   switch (type.toUpperCase()) {
-    case "PURGE":
+    case "清除訊息":
       embed.setAuthor({ name: `花瓶的制裁 - ${type}` });
       fields.push(
         { name: "清除類型", value: data.purgeType, inline: true },
@@ -51,74 +51,74 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
       );
       break;
 
-    case "TIMEOUT":
+    case "禁言":
       embed.setColor(MODERATION.EMBED_COLORS.TIMEOUT);
       break;
 
-    case "UNTIMEOUT":
+    case "解除禁言":
       embed.setColor(MODERATION.EMBED_COLORS.UNTIMEOUT);
       break;
 
-    case "KICK":
+    case "踢出":
       embed.setColor(MODERATION.EMBED_COLORS.KICK);
       break;
 
-    case "SOFTBAN":
+    case "軟封禁":
       embed.setColor(MODERATION.EMBED_COLORS.SOFTBAN);
       break;
 
-    case "BAN":
+    case "封禁":
       embed.setColor(MODERATION.EMBED_COLORS.BAN);
       break;
 
-    case "UNBAN":
+    case "解除封禁":
       embed.setColor(MODERATION.EMBED_COLORS.UNBAN);
       break;
 
-    case "VMUTE":
+    case "禁音":
       embed.setColor(MODERATION.EMBED_COLORS.VMUTE);
       break;
 
-    case "VUNMUTE":
+    case "解除禁音":
       embed.setColor(MODERATION.EMBED_COLORS.VUNMUTE);
       break;
 
-    case "DEAFEN":
+    case "拒聽":
       embed.setColor(MODERATION.EMBED_COLORS.DEAFEN);
       break;
 
-    case "UNDEAFEN":
+    case "解除拒聽":
       embed.setColor(MODERATION.EMBED_COLORS.UNDEAFEN);
       break;
 
-    case "DISCONNECT":
+    case "踢出語音":
       embed.setColor(MODERATION.EMBED_COLORS.DISCONNECT);
       break;
 
-    case "MOVE":
+    case "移動":
       embed.setColor(MODERATION.EMBED_COLORS.MOVE);
       break;
   }
 
-  if (type.toUpperCase() !== "PURGE") {
+  if (type.toUpperCase() !== "清除訊息") {
     embed.setAuthor({ name: `花瓶的制裁 - ${type}` }).setThumbnail(target.displayAvatarURL());
 
     if (target instanceof GuildMember) {
-      fields.push({ name: "使用者", value: `${target.displayName} [${target.id}]`, inline: false });
+      fields.push({ name: "被清除者", value: `${target.displayName} [${target.id}]`, inline: false });
     } else {
       fields.push({ name: "使用者", value: `${target.tag} [${target.id}]`, inline: false });
     }
 
     fields.push({ name: "原因", value: reason || "無提供原因", inline: false });
 
-    if (type.toUpperCase() === "TIMEOUT") {
+    if (type.toUpperCase() === "禁言") {
       fields.push({
         name: "還有多久",
         value: `<t:${Math.round(target.communicationDisabledUntilTimestamp / 1000)}:R>`,
         inline: true,
       });
     }
-    if (type.toUpperCase() === "MOVE") {
+    if (type.toUpperCase() === "移動") {
       fields.push({ name: "移動至", value: data.channel.name, inline: true });
     }
   }
@@ -141,20 +141,20 @@ module.exports = class ModUtils {
    * @param {import('discord.js').GuildMember} issuer
    * @param {import('discord.js').GuildMember} target
    * @param {string} reason
-   * @param {"MUTE"|"KICK"|"SOFTBAN"|"BAN"} action
+   * @param {"禁言"|"踢出"|"軟封禁"|"封禁"} action
    */
   static async addModAction(issuer, target, reason, action) {
     switch (action) {
-      case "MUTE":
+      case "禁言":
         return ModUtils.timeoutTarget(issuer, target, DEFAULT_TIMEOUT_DAYS * 24 * 60, reason);
 
-      case "KICK":
+      case "踢出":
         return ModUtils.kickTarget(issuer, target, reason);
 
-      case "SOFTBAN":
+      case "軟封禁":
         return ModUtils.softbanTarget(issuer, target, reason);
 
-      case "BAN":
+      case "封禁":
         return ModUtils.banTarget(issuer, target, reason);
     }
   }
@@ -162,7 +162,7 @@ module.exports = class ModUtils {
    * Delete the specified number of messages matching the type
    * @param {import('discord.js').GuildMember} issuer
    * @param {import('discord.js').BaseGuildTextChannel} channel
-   * @param {"ATTACHMENT"|"BOT"|"LINK"|"TOKEN"|"USER"|"ALL"} type
+   * @param {"檔案"|"機器人"|"連結"|"金鑰"|"使用者"|"全部"} type
    * @param {number} amount
    * @param {any} argument
    */
@@ -185,25 +185,25 @@ module.exports = class ModUtils {
         if (!message.deletable) continue;
         if (message.createdTimestamp < Date.now() - 1209600000) continue; // skip messages older than 14 days
 
-        if (type === "ALL") {
+        if (type === "全部") {
           toDelete.set(message.id, message);
-        } else if (type === "ATTACHMENT") {
+        } else if (type === "檔案") {
           if (message.attachments.size > 0) {
             toDelete.set(message.id, message);
           }
-        } else if (type === "BOT") {
+        } else if (type === "機器人") {
           if (message.author.bot) {
             toDelete.set(message.id, message);
           }
-        } else if (type === "LINK") {
+        } else if (type === "連結") {
           if (containsLink(message.content)) {
             toDelete.set(message.id, message);
           }
-        } else if (type === "TOKEN") {
+        } else if (type === "金鑰") {
           if (message.content.includes(argument)) {
             toDelete.set(message.id, message);
           }
-        } else if (type === "USER") {
+        } else if (type === "使用者") {
           if (message.author.id === argument) {
             toDelete.set(message.id, message);
           }
@@ -217,7 +217,7 @@ module.exports = class ModUtils {
       }
 
       const deletedMessages = await channel.bulkDelete(toDelete, true);
-      await logModeration(issuer, "", "", "Purge", {
+      await logModeration(issuer, "", "", "清除訊息", {
         purgeType: type,
         channel: channel,
         deletedCount: deletedMessages.size,
@@ -241,7 +241,7 @@ module.exports = class ModUtils {
     if (!memberInteract(issuer.guild.members.me, target)) return "BOT_PERM";
 
     try {
-      logModeration(issuer, target, reason, "Warn");
+      logModeration(issuer, target, reason, "警告");
       const memberDb = await getMember(issuer.guild.id, target.id);
       memberDb.warnings += 1;
       const settings = await getSettings(issuer.guild);
@@ -274,7 +274,7 @@ module.exports = class ModUtils {
 
     try {
       await target.timeout(ms, reason);
-      logModeration(issuer, target, reason, "Timeout");
+      logModeration(issuer, target, reason, "禁言");
       return true;
     } catch (ex) {
       error("timeoutTarget", ex);
@@ -295,7 +295,7 @@ module.exports = class ModUtils {
 
     try {
       await target.timeout(null, reason);
-      logModeration(issuer, target, reason, "UnTimeout");
+      logModeration(issuer, target, reason, "解除禁言");
       return true;
     } catch (ex) {
       error("unTimeoutTarget", ex);
@@ -315,7 +315,7 @@ module.exports = class ModUtils {
 
     try {
       await target.kick(reason);
-      logModeration(issuer, target, reason, "Kick");
+      logModeration(issuer, target, reason, "踢出");
       return true;
     } catch (ex) {
       error("kickTarget", ex);
@@ -336,7 +336,7 @@ module.exports = class ModUtils {
     try {
       await target.ban({ deleteMessageDays: 7, reason });
       await issuer.guild.members.unban(target.user);
-      logModeration(issuer, target, reason, "Softban");
+      logModeration(issuer, target, reason, "軟封禁");
       return true;
     } catch (ex) {
       error("softbanTarget", ex);
@@ -358,7 +358,7 @@ module.exports = class ModUtils {
 
     try {
       await issuer.guild.bans.create(target.id, { days: 0, reason });
-      logModeration(issuer, target, reason, "Ban");
+      logModeration(issuer, target, reason, "封禁");
       return true;
     } catch (ex) {
       error(`banTarget`, ex);
@@ -375,7 +375,7 @@ module.exports = class ModUtils {
   static async unBanTarget(issuer, target, reason) {
     try {
       await issuer.guild.bans.remove(target, reason);
-      logModeration(issuer, target, reason, "UnBan");
+      logModeration(issuer, target, reason, "解除封禁");
       return true;
     } catch (ex) {
       error(`unBanTarget`, ex);
@@ -398,7 +398,7 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.setMute(true, reason);
-      logModeration(issuer, target, reason, "Vmute");
+      logModeration(issuer, target, reason, "禁音");
       return true;
     } catch (ex) {
       error(`vMuteTarget`, ex);
@@ -421,7 +421,7 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.setMute(false, reason);
-      logModeration(issuer, target, reason, "Vmute");
+      logModeration(issuer, target, reason, "解除禁音");
       return true;
     } catch (ex) {
       error(`vUnmuteTarget`, ex);
@@ -444,11 +444,11 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.setDeaf(true, reason);
-      logModeration(issuer, target, reason, "Deafen");
+      logModeration(issuer, target, reason, "拒聽");
       return true;
     } catch (ex) {
       error(`deafenTarget`, ex);
-      return `Failed to deafen ${target.user.tag}`;
+      return `> 無法使 ${target.user.tag} 被拒聽。`;
     }
   }
 
@@ -467,7 +467,7 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.setDeaf(false, reason);
-      logModeration(issuer, target, reason, "unDeafen");
+      logModeration(issuer, target, reason, "解除拒聽");
       return true;
     } catch (ex) {
       error(`unDeafenTarget`, ex);
@@ -489,7 +489,7 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.disconnect(reason);
-      logModeration(issuer, target, reason, "Disconnect");
+      logModeration(issuer, target, reason, "踢出語音");
       return true;
     } catch (ex) {
       error(`unDeafenTarget`, ex);
@@ -515,7 +515,7 @@ module.exports = class ModUtils {
 
     try {
       await target.voice.setChannel(channel, reason);
-      logModeration(issuer, target, reason, "Move", { channel });
+      logModeration(issuer, target, reason, "移動", { channel });
       return true;
     } catch (ex) {
       error(`moveTarget`, ex);

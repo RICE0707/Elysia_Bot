@@ -22,7 +22,7 @@ module.exports = {
     if (parseInt(amount) > 99) return message.safeReply("> <a:r2_rice:868583626227478591> 花瓶最多只能刪除` 99 `則訊息。");
 
     const { channel } = message;
-    const response = await purgeMessages(message.member, channel, "ALL", amount);
+    const response = await purgeMessages(message.member, channel, "全部", amount);
 
     if (typeof response === "number") {
       return channel.safeSend(`> <a:r3_rice:868583679465758820> 已刪除\` ${response} \`則訊息。`, 5);

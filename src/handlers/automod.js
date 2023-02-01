@@ -56,14 +56,14 @@ async function performAutomod(message, settings) {
 
   // Max mentions
   if (mentions.members.size > automod.max_mentions) {
-    fields.push({ name: "處分原因", value: ` 標註使用者 ${mentions.members.size}/${automod.max_mentions}`, inline: true });
+    fields.push({ name: "處分原因", value: ` 標註使用者 （共${mentions.members.size}次）（上限${automod.max_mentions}次）`, inline: true });
     // strikesTotal += mentions.members.size - automod.max_mentions;
     strikesTotal += 1;
   }
 
   // Maxrole mentions
   if (mentions.roles.size > automod.max_role_mentions) {
-    fields.push({ name: "處分原因", value: `標註身份組 ${mentions.roles.size}/${automod.max_role_mentions}`, inline: true });
+    fields.push({ name: "處分原因", value: `標註身份組 （共${mentions.roles.size}次）（上限${automod.max_role_mentions}次）`, inline: true });
     // strikesTotal += mentions.roles.size - automod.max_role_mentions;
     strikesTotal += 1;
   }
@@ -79,7 +79,7 @@ async function performAutomod(message, settings) {
     if (mentions.users.size + mentions.roles.size > automod.anti_massmention) {
       fields.push({
         name: "處分原因",
-        value: `標註使用者/身份組 ${mentions.users.size + mentions.roles.size}/${automod.anti_massmention}`,
+        value: `標註次數超過限制（共${mentions.users.size + mentions.roles.size}次）（上限${automod.anti_massmention}次）`,
         inline: true,
       });
       // strikesTotal += mentions.users.size + mentions.roles.size - automod.anti_massmention;
@@ -91,7 +91,7 @@ async function performAutomod(message, settings) {
   if (automod.max_lines > 0) {
     const count = content.split("\n").length;
     if (count > automod.max_lines) {
-      fields.push({ name: "處分原因", value: `行數過多 ${count}/${automod.max_lines}`, inline: true });
+      fields.push({ name: "處分原因", value: `行數過多（共${count}行）（上限${automod.max_lines}行）`, inline: true });
       shouldDelete = true;
       // strikesTotal += Math.ceil((count - automod.max_lines) / automod.max_lines);
       strikesTotal += 1;
@@ -110,7 +110,7 @@ async function performAutomod(message, settings) {
   // Anti links
   if (automod.anti_links) {
     if (containsLink(content)) {
-      fields.push({ name: "處分原因", value: "發送檔案", inline: true });
+      fields.push({ name: "處分原因", value: "發送連結", inline: true });
       shouldDelete = true;
       strikesTotal += 1;
     }
@@ -155,7 +155,7 @@ async function performAutomod(message, settings) {
   if (shouldDelete && message.deletable) {
     message
       .delete()
-      .then(() => channel.safeSend("> 自動管理系統已啟用，此訊息已被刪除。", 5))
+      .then(() => channel.safeSend("> <a:r3_rice:868583679465758820> 你已違規，此訊息已被刪除。", 5))
       .catch(() => {});
   }
 
@@ -165,7 +165,7 @@ async function performAutomod(message, settings) {
     memberDb.strikes += strikesTotal;
 
     // log to db
-    const reason = fields.map((field) => field.name + ": " + field.value).join("\n");
+    const reason = fields.map((field) => field.name + "：" + field.value).join("\n");
     addAutoModLogToDb(member, content, reason, strikesTotal).catch(() => {});
 
     // send automod log
@@ -176,6 +176,7 @@ async function performAutomod(message, settings) {
         .setColor(AUTOMOD.LOG_EMBED)
         .addFields(fields)
         .setDescription(`**頻道：** ${channel.toString()}\n**內容：**\n${content}`)
+        .setTimestamp()
         .setFooter({
           text: `來自花瓶星球的科技支援 v3.0 - ${author.tag} | ${author.id}`,
           iconURL: author.avatarURL(),
@@ -190,10 +191,12 @@ async function performAutomod(message, settings) {
       .setThumbnail(guild.iconURL())
       .setAuthor({ name: "自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
       .addFields(fields)
+      .setTimestamp()
+      .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })    
       .setDescription(
         `你收到了來自 ${strikesTotal} 的群組警告！\n\n` +
           `**群組：** ${guild.name}\n` +
-          `**警告：** ${memberDb.strikes} / ${automod.strikes}`
+          `**警告：** ${memberDb.strikes}次，達到${automod.strikes}次後將被自動處分。`
       );
 
     author.send({ embeds: [strikeEmbed] }).catch((ex) => {});
