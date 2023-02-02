@@ -54,5 +54,5 @@ async function setChannel(targetChannel, settings) {
 
   settings.modlog_channel = targetChannel?.id;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在審核日誌已\` ${targetChannel ? "啟用" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 現在審核日誌已\` ${targetChannel ? "啟用" : "關閉"} \`。`;
 }
