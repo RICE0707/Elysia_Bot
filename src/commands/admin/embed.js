@@ -47,7 +47,7 @@ module.exports = {
     if (!channel.canSendEmbeds()) {
       return message.reply("> <a:r2_rice:868583626227478591> 花瓶沒有權限在指定頻道發送嵌入訊息。");
     }
-    message.reply(`> <a:r3_rice:868583679465758820> 請在\` ${channel} \`中設置嵌入訊息。`);
+    message.reply(`> <a:r3_rice:868583679465758820> 請在 ${channel} 中設置嵌入訊息。`);
     await embedSetup(channel, message.member);
   },
 
@@ -56,7 +56,7 @@ module.exports = {
     if (!channel.canSendEmbeds()) {
       return interaction.followUp("> <a:r2_rice:868583626227478591> 花瓶沒有權限在指定頻道發送嵌入訊息。");
     }
-    interaction.followUp(`> <a:r3_rice:868583679465758820> 請在\` ${channel} \`中設置嵌入訊息。`);
+    interaction.followUp(`> <a:r3_rice:868583679465758820> 請在 ${channel} 中設置嵌入訊息。`);
     await embedSetup(channel, interaction.member);
   },
 };
@@ -139,7 +139,7 @@ async function embedSetup(channel, member) {
 
   if (!modal) return sentMsg.edit({ content: "> <a:r2_rice:868583626227478591> 已超時，故取消生成。", components: [] });
 
-  modal.reply({ content: "> <a:r3_rice:868583679465758820> 嵌入訊息已發送。", ephemeral: true }).catch((ex) => {});
+  modal.reply({ content: "> <a:r3_rice:868583679465758820> 花瓶已發送嵌入訊息。", ephemeral: true }).catch((ex) => {});
 
   const title = modal.fields.getTextInputValue("title");
   const author = modal.fields.getTextInputValue("author");
@@ -201,7 +201,7 @@ async function embedSetup(channel, member) {
             new ActionRowBuilder().addComponents(
               new TextInputBuilder()
                 .setCustomId("inline")
-                .setLabel("是否併排？（是/否）")
+                .setLabel("是否併排？（是︱否）")
                 .setStyle(TextInputStyle.Short)
                 .setValue("是")
                 .setRequired(true)
@@ -220,7 +220,7 @@ async function embedSetup(channel, member) {
 
       if (!modal) return sentMsg.edit({ components: [] });
 
-      modal.reply({ content: "> <a:r3_rice:868583679465758820> 已成功添加字段。", ephemeral: true }).catch((ex) => {});
+      modal.reply({ content: "> <a:r3_rice:868583679465758820> 花瓶已成功添加字段。", ephemeral: true }).catch((ex) => {});
 
       const name = modal.fields.getTextInputValue("name");
       const value = modal.fields.getTextInputValue("value");
@@ -241,7 +241,7 @@ async function embedSetup(channel, member) {
       if (fields) {
         fields.pop();
         embed.setFields(fields);
-        interaction.reply({ content: "> <a:r3_rice:868583679465758820> 已成功刪除字段。", ephemeral: true });
+        interaction.reply({ content: "> <a:r3_rice:868583679465758820> 花瓶已成功刪除字段。", ephemeral: true });
       } else {
         interaction.reply({ content: "> <a:r2_rice:868583626227478591> 沒有需要刪除的字段。", ephemeral: true });
       }
