@@ -13,16 +13,16 @@ module.exports = {
     minArgsCount: 2,
     subcommands: [
       {
-        trigger: "防幽靈標註 <開啟|關閉>",
-        description: "防那種標了但秒刪的低能",
+        trigger: "防幽靈標註 <開啟︱關閉>",
+        description: "防止使用者標註後快速收回",
       },
       {
-        trigger: "防刷頻 <開啟|關閉>",
-        description: "防刷頻寒暑假特產",
+        trigger: "防刷頻 <開啟︱關閉>",
+        description: "防止使用者刷頻",
       },
       {
-        trigger: "防多標註 <開啟|關閉> [最高值]",
-        description: "防那種一次標一堆人的破腦（預設最高值為3）",
+        trigger: "防多標註 <開啟︱關閉> [最高值]",
+        description: "防止使用者一次標一堆人（預設最高值為3）",
       },
     ],
   },
@@ -115,14 +115,14 @@ module.exports = {
     let response;
     if (sub == "防幽靈標註") {
       const status = args[1].toLowerCase();
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await antiGhostPing(settings, status);
     }
 
     //
     else if (sub == "防刷頻") {
       const status = args[1].toLowerCase();
-      if (!["是", "否f"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+      if (!["是", "否f"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await antiSpam(settings, status);
     }
 
@@ -130,7 +130,7 @@ module.exports = {
     else if (sub === "防多標註") {
       const status = args[1].toLowerCase();
       const threshold = args[2] || 3;
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await antiMassMention(settings, status, threshold);
     }
 
