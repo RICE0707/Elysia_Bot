@@ -50,7 +50,7 @@ module.exports = {
   async messageRun(message, args, data) {
     const type = args[0].toUpperCase();
     if (!type || !["總人數", "成員數", "機器數"].includes(type)) {
-      return message.safeReply("> <a:r2_rice:868583626227478591> 無效的資訊總覽頻道類型，資訊總覽頻道類型必須為：` 總人數 `/` 成員數 `/` 機器數 `其一。");
+      return message.safeReply("> <a:r2_rice:868583626227478591> 無效的資訊總覽頻道類型，資訊總覽頻道類型必須為：` 總人數︱成員數︱機器數 `其一。");
     }
     if (args.length < 2) return message.safeReply("> <a:r2_rice:868583626227478591> 你未輸入資訊總覽頻道的名稱。");
     args.shift();
@@ -113,5 +113,5 @@ async function setupCounter(guild, type, name, settings) {
   settings.data.bots = stats[1];
   await settings.save();
 
-  return "> <a:r3_rice:868583679465758820> 你已成功設置資訊總覽頻道。";
+  return "> <a:r3_rice:868583679465758820> 花瓶已成功設置資訊總覽頻道。";
 }
