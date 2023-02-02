@@ -12,7 +12,7 @@ module.exports = {
     enabled: true,
     aliases: ["flagtr"],
     minArgsCount: 1,
-    usage: "<開啟|關閉>",
+    usage: "<開啟︱關閉>",
   },
   slashCommand: {
     enabled: true,
@@ -39,7 +39,7 @@ module.exports = {
 
   async messageRun(message, args, data) {
     const status = args[0].toLowerCase();
-    if (!["是", "否"].includes(status)) return message.safeReply("無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+    if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
 
     const response = await setFlagTranslation(status, data.settings);
     await message.safeReply(response);
@@ -57,5 +57,5 @@ async function setFlagTranslation(input, settings) {
   settings.flag_translation.enabled = status;
   await settings.save();
 
-  return `> <a:r3_rice:868583679465758820> 你已成功設置，國家旗幟表符翻譯已\` ${status ? "啟用" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 國家旗幟表符翻譯已\` ${status ? "啟用" : "關閉"} \`。`;
 }
