@@ -1420,7 +1420,7 @@ test('forceParse: false on mousedown on invalid date', function () {
 test('Enable on readonly options (default)', function(){
     var input = $('<input readonly="readonly" />')
             .appendTo('#qunit-fixture')
-            .datepicker({format: "dd-mm-yyyy"}),
+            .datepicker({format: "YYYY-MM-DD"}),
         dp = input.data('datepicker'),
         picker = dp.picker;
 
@@ -1433,7 +1433,7 @@ test('Enable on readonly options (false)', function(){
     var input = $('<input readonly="readonly" />')
             .appendTo('#qunit-fixture')
             .datepicker({
-                format: "dd-mm-yyyy",
+                format: "YYYY-MM-DD",
                 enableOnReadonly: false
             }),
         dp = input.data('datepicker'),

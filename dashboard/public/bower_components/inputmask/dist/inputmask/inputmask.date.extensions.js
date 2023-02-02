@@ -245,9 +245,9 @@
             separator: ".",
             alias: "dd/mm/yyyy"
         },
-        "dd-mm-yyyy": {
+        "YYYY-MM-DD": {
             mask: "1-2-y",
-            placeholder: "dd-mm-yyyy",
+            placeholder: "YYYY-MM-DD",
             leapday: "29-02-",
             separator: "-",
             alias: "dd/mm/yyyy"
@@ -411,9 +411,9 @@
             alias: "datetime",
             hourFormat: "12"
         },
-        "hh:mm:ss": {
+        "HH:mm:ss": {
             mask: "h:s:s",
-            placeholder: "hh:mm:ss",
+            placeholder: "HH:mm:ss",
             alias: "datetime",
             autoUnmask: !1
         },
@@ -456,9 +456,9 @@
             alias: "mm/dd/yyyy",
             clearIncomplete: !0
         },
-        "yyyy-mm-dd hh:mm:ss": {
+        "yyyy-mm-dd HH:mm:ss": {
             mask: "y-1-2 h:s:s",
-            placeholder: "yyyy-mm-dd hh:mm:ss",
+            placeholder: "yyyy-mm-dd HH:mm:ss",
             alias: "datetime",
             separator: "-",
             leapday: "-02-29",

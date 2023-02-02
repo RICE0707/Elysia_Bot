@@ -33,7 +33,7 @@ export default moment.defineLocale('gom-latn', {
     longDateFormat : {
         LT : 'A h:mm [vazta]',
         LTS : 'A h:mm:ss [vazta]',
-        L : 'DD-MM-YYYY',
+        L : 'YYYY-MM-DD',
         LL : 'D MMMM YYYY',
         LLL : 'D MMMM YYYY A h:mm [vazta]',
         LLLL : 'dddd, MMMM[achea] Do, YYYY, A h:mm [vazta]',

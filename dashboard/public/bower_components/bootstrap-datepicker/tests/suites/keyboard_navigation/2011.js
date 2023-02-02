@@ -8,7 +8,7 @@ module('Keyboard Navigation 2011', {
         */
         this.input = $('<input type="text" value="31-03-2011">')
                         .appendTo('#qunit-fixture')
-                        .datepicker({format: "dd-mm-yyyy"})
+                        .datepicker({format: "YYYY-MM-DD"})
                         .focus(); // Activate for visibility checks
         this.dp = this.input.data('datepicker');
         this.picker = this.dp.picker;
@@ -96,7 +96,7 @@ test('Regression: by month with view mode = 1 (left/right arrow); left from Marc
   this.input = $('<input type="text" value="15-03-2011">')
     .appendTo('#qunit-fixture')
     .datepicker({
-      format: "dd-mm-yyyy",
+      format: "YYYY-MM-DD",
       minViewMode: 1,
       startView: 1
     })
@@ -130,7 +130,7 @@ test('Regression: by month with view mode = 1 (up/down arrow); down from March 1
   this.input = $('<input type="text" value="15-03-2011">')
     .appendTo('#qunit-fixture')
     .datepicker({
-      format: "dd-mm-yyyy",
+      format: "YYYY-MM-DD",
       minViewMode: 1,
       startView: 1
     })
@@ -164,7 +164,7 @@ test('Regression: by year with view mode = 2 (left/right arrow); left from March
   this.input = $('<input type="text" value="15-03-2011">')
     .appendTo('#qunit-fixture')
     .datepicker({
-      format: "dd-mm-yyyy",
+      format: "YYYY-MM-DD",
       minViewMode: 2,
       startView: 2
     })
@@ -198,7 +198,7 @@ test('Regression: by year with view mode = 2 (up/down arrow); dows from March 15
   this.input = $('<input type="text" value="15-03-2011">')
     .appendTo('#qunit-fixture')
     .datepicker({
-      format: "dd-mm-yyyy",
+      format: "YYYY-MM-DD",
       minViewMode: 2,
       startView: 2
     })

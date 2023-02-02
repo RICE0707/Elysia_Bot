@@ -340,7 +340,7 @@ And more
 * [#2648](https://github.com/moment/moment/pull/2648) fix issue [#2640](https://github.com/moment/moment/pull/2640): support instanceof operator
 * [#2709](https://github.com/moment/moment/pull/2709) Add isSameOrAfter and isSameOrBefore comparison methods
 * [#2721](https://github.com/moment/moment/pull/2721) Fix moment creation from object with strings values
-* [#2740](https://github.com/moment/moment/pull/2740) Enable 'd hh:mm:ss.sss' format for durations
+* [#2740](https://github.com/moment/moment/pull/2740) Enable 'd HH:mm:ss.sss' format for durations
 * [#2766](https://github.com/moment/moment/pull/2766) [#2833](https://github.com/moment/moment/pull/2833) Alternate Clock Source Support
 
 ### 2.10.6

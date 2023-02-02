@@ -6203,7 +6203,7 @@
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
-            L : 'DD-MM-YYYY',
+            L : 'YYYY-MM-DD',
             LL : 'YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ]',
             LLL : 'YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ], HH:mm',
             LLLL : 'dddd, YYYY [ҫулхи] MMMM [уйӑхӗн] D[-мӗшӗ], HH:mm'
@@ -7981,7 +7981,7 @@
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
-            L : 'DD-MM-YYYY',
+            L : 'YYYY-MM-DD',
             LL : 'D MMMM YYYY',
             LLL : 'D MMMM YYYY HH:mm',
             LLLL : 'dddd D MMMM YYYY HH:mm'
@@ -8245,7 +8245,7 @@
         longDateFormat : {
             LT : 'A h:mm [vazta]',
             LTS : 'A h:mm:ss [vazta]',
-            L : 'DD-MM-YYYY',
+            L : 'YYYY-MM-DD',
             LL : 'D MMMM YYYY',
             LLL : 'D MMMM YYYY A h:mm [vazta]',
             LLLL : 'dddd, MMMM[achea] Do, YYYY, A h:mm [vazta]',
@@ -11479,7 +11479,7 @@
         longDateFormat : {
             LT : 'HH:mm',
             LTS : 'HH:mm:ss',
-            L : 'DD-MM-YYYY',
+            L : 'YYYY-MM-DD',
             LL : 'D MMMM YYYY',
             LLL : 'D MMMM YYYY HH:mm',
             LLLL : 'dddd D MMMM YYYY HH:mm'

@@ -99,7 +99,7 @@ module.exports = async (guild) => {
       },
       {
         name: "群創建日",
-        value: `\`\`\`${createdAt.format("YYYY-MM-DD hh:mm:ss")}\`\`\``,
+        value: `\`\`\`${createdAt.format("YYYY-MM-DD HH:mm:ss")}\`\`\``,
         inline: false,
       }
     );

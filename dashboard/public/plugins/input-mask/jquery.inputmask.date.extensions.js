@@ -331,9 +331,9 @@ Optional extensions on the jquery.inputmask base
             separator: '.',
             alias: "dd/mm/yyyy"
         },
-        'dd-mm-yyyy': {
+        'YYYY-MM-DD': {
             mask: "1-2-y",
-            placeholder: "dd-mm-yyyy",
+            placeholder: "YYYY-MM-DD",
             leapday: "29-02-",
             separator: '-',
             alias: "dd/mm/yyyy"
@@ -466,7 +466,7 @@ Optional extensions on the jquery.inputmask base
             alias: "datetime",
             hourFormat: "12"
         },
-        'hh:mm:ss': {
+        'HH:mm:ss': {
             mask: "h:s:s",
             autoUnmask: false
         },

@@ -18,7 +18,7 @@ test('When initializing the datepicker, it should trigger no change or changeDat
         }
     });
 
-    this.input.datepicker({format: 'dd-mm-yyyy'});
+    this.input.datepicker({format: 'YYYY-MM-DD'});
 
     equal(triggered_change, 0);
     equal(triggered_changeDate, 0);
@@ -28,7 +28,7 @@ module('Events', {
     setup: function(){
         this.input = $('<input type="text" value="31-03-2011">')
                         .appendTo('#qunit-fixture')
-                        .datepicker({format: "dd-mm-yyyy"})
+                        .datepicker({format: "YYYY-MM-DD"})
                         .focus(); // Activate for visibility checks
         this.dp = this.input.data('datepicker');
         this.picker = this.dp.picker;
@@ -268,7 +268,7 @@ test('Clear button: triggers change and changeDate events', function(){
     this.input = $('<input type="text" value="31-03-2011">')
                     .appendTo('#qunit-fixture')
                     .datepicker({
-                        format: "dd-mm-yyyy",
+                        format: "YYYY-MM-DD",
                         clearBtn: true
                     })
                     .focus(); // Activate for visibility checks
@@ -303,7 +303,7 @@ test('setDate: triggers change and changeDate events', function(){
     this.input = $('<input type="text" value="31-03-2011">')
                     .appendTo('#qunit-fixture')
                     .datepicker({
-                        format: "dd-mm-yyyy"
+                        format: "YYYY-MM-DD"
                     })
                     .focus(); // Activate for visibility checks
     this.dp = this.input.data('datepicker');
@@ -484,7 +484,7 @@ test('Clicking inside content of date with custom beforeShowDay content works', 
     this.input = $('<input type="text" value="31-03-2011">')
                     .appendTo('#qunit-fixture')
                     .datepicker({
-                        format: "dd-mm-yyyy",
+                        format: "YYYY-MM-DD",
                         beforeShowDay: function (date) { return { content: '<div><div>' + date.getDate() + '</div></div>' }; }
                     })
                     .focus(); // Activate for visibility checks

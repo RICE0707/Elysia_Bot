@@ -104,18 +104,18 @@ test('yyyy: Year, four-digit.', function(){
     equal(this.input.val().split('-')[0], '2012');
 });
 
-test('dd-mm-yyyy: Regression: Prevent potential month overflow in small-to-large formats (Mar 31, 2012 -> Mar 01, 2012)', function(){
+test('YYYY-MM-DD: Regression: Prevent potential month overflow in small-to-large formats (Mar 31, 2012 -> Mar 01, 2012)', function(){
     this.input
         .val('31-03-2012')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '31-03-2012');
 });
 
-test('dd-mm-yyyy: Leap day', function(){
+test('YYYY-MM-DD: Leap day', function(){
     this.input
         .val('29-02-2012')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '29-02-2012');
 });
@@ -140,7 +140,7 @@ test('+1d: Tomorrow', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('+1d')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '16-03-2012');
 }));
@@ -149,7 +149,7 @@ test('tomorrow (alias for +1d): Tomorrow', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('tomorrow')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '16-03-2012');
 }));
@@ -158,7 +158,7 @@ test('-1d: Yesterday', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('-1d')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '14-03-2012');
 }));
@@ -167,7 +167,7 @@ test('yesterday (alias for -1d): Yesterday', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('yesterday')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '14-03-2012');
 }));
@@ -176,7 +176,7 @@ test('+1w: Next week', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('+1w')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '22-03-2012');
 }));
@@ -185,7 +185,7 @@ test('-1w: Last week', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('-1w')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '08-03-2012');
 }));
@@ -194,7 +194,7 @@ test('+1m: Next month', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('+1m')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '15-04-2012');
 }));
@@ -203,7 +203,7 @@ test('-1m: Last month', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('-1m')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '15-02-2012');
 }));
@@ -212,7 +212,7 @@ test('+1y: Next year', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('+1y')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '15-03-2013');
 }));
@@ -221,7 +221,7 @@ test('-1y: Last year', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('-1y')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '15-03-2011');
 }));
@@ -230,7 +230,7 @@ test('-1y +2m: Multiformat', patch_date(function(Date){
     Date.now = UTCDate(2012, 2, 15);
     this.input
         .val('-1y +2m')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '15-05-2011');
 }));
@@ -239,7 +239,7 @@ test('Regression: End-of-month bug', patch_date(function(Date){
     Date.now = UTCDate(2012, 4, 31);
     this.input
         .val('29-02-2012')
-        .datepicker({format: 'dd-mm-yyyy'})
+        .datepicker({format: 'YYYY-MM-DD'})
         .datepicker('setValue');
     equal(this.input.val(), '29-02-2012');
 }));

@@ -22,7 +22,7 @@
 # If the leapsecond is Rolling (R) the given time is local time
 # If the leapsecond is Stationary (S) the given time is UTC
 
-# Leap	YEAR	MONTH	DAY	HH:MM:SS	CORR	R/S
+# Leap	YEAR	MONTH	DAY	HH:mm:ss	CORR	R/S
 Leap	1972	Jun	30	23:59:60	+	S
 Leap	1972	Dec	31	23:59:60	+	S
 Leap	1973	Dec	31	23:59:60	+	S
