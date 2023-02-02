@@ -17,9 +17,9 @@ const { isTicketChannel, closeTicket, closeAllTickets } = require("@handlers/tic
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "實用客服單設置",
+  name: "客服單設置",
   description: "管理客服單功能",
-  category: "TICKET",
+  category: "客服單",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

@@ -10,7 +10,7 @@ const BASE_URL = "https://some-random-api.ml/lyrics";
 module.exports = {
     name: "音樂歌詞",
     description: "尋找歌詞",
-    category: "MUSIC",
+    category: "音樂類",
     botPermissions: ["EmbedLinks"],
     command: {
         enabled: true,

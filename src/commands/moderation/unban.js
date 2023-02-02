@@ -12,7 +12,7 @@ const {
 module.exports = {
   name: "管理解除封禁",
   description: "解除封禁指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["BanMembers"],
   userPermissions: ["BanMembers"],
   command: {

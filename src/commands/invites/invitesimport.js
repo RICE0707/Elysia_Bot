@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "邀請紀錄同步",
   description: "將舊邀請紀錄同步到使用者上",
-  category: "INVITE",
+  category: "邀請類",
   botPermissions: ["ManageGuild"],
   userPermissions: ["ManageGuild"],
   command: {

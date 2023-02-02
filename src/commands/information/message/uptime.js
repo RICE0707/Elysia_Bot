@@ -4,9 +4,9 @@ const { timeformat } = require("@helpers/Utils");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊正常運行時間",
+  name: "資訊正常運行",
   description: "查看機器人正常運行時間",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -6,7 +6,7 @@ const deafen = require("../shared/deafen");
 module.exports = {
   name: "管理指定使用者拒聽",
   description: "指定使用者拒聽",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["DeafenMembers"],
   botPermissions: ["DeafenMembers"],
   command: {

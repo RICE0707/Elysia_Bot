@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理解除禁言",
   description: "解除禁言指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["ModerateMembers"],
   userPermissions: ["ModerateMembers"],
   command: {

@@ -8,7 +8,7 @@ const { parse } = require("twemoji-parser");
 module.exports = {
   name: "實用表情符號",
   description: "只有圖片，沒有其他資訊的表情符號",
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

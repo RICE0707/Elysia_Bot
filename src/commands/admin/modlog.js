@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "管理審核日誌頻道",
   description: "設置審核日誌頻道",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

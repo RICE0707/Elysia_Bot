@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理入群身份組",
   description: "設置新成員加入時會自動給予的身份組",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

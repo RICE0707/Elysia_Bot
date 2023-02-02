@@ -27,7 +27,7 @@ const edit = require("./sub/edit");
 module.exports = {
   name: "抽獎",
   description: "抽獎功能設置",
-  category: "GIVEAWAY",
+  category: "抽獎類",
   command: {
     enabled: true,
     minArgsCount: 1,

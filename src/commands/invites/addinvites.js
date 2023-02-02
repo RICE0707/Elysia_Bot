@@ -9,7 +9,7 @@ const { getMember } = require("@schemas/Member");
 module.exports = {
   name: "邀請次數增加",
   description: "增加成員的邀請次數",
-  category: "INVITE",
+  category: "邀請類",
   userPermissions: ["ManageGuild"],
   botPermissions: ["EmbedLinks"],
   command: {

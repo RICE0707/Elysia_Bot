@@ -11,7 +11,7 @@ module.exports = {
   name: "實用天氣",
   description: "查看天氣資訊",
   cooldown: 5,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理機器人前綴",
   description: "設置機器人前綴",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

@@ -3,7 +3,7 @@ const vmute = require("../shared/vmute");
 module.exports = {
   name: "管理禁音指定使用者",
   description: "禁音指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["MuteMembers"],
   botPermissions: ["MuteMembers"],
   command: {

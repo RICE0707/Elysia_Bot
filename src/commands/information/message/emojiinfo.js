@@ -4,9 +4,9 @@ const emojiInfo = require("../shared/emoji");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊表情符號資訊",
+  name: "資訊表情符號",
   description: "查看表情符號資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

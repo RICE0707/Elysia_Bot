@@ -12,7 +12,7 @@ module.exports = {
   name: "趣味動物圖片",
   description: "生成動物圖片",
   cooldown: 5,
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

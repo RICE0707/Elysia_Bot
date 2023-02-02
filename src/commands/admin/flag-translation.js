@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理國家旗幟表符翻譯",
   description: "開啟後，當一個訊息的有國家旗幟表符時，將自動翻譯成對應語言",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

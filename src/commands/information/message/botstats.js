@@ -6,7 +6,7 @@ const botstats = require("../shared/botstats");
 module.exports = {
   name: "資訊機器人狀態",
   description: "查看機器人狀態",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   cooldown: 5,
   command: {

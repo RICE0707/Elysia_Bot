@@ -9,7 +9,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "音樂播放條",
   description: "將播放條的位置跳轉至指定位置",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

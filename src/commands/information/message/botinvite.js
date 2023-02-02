@@ -6,7 +6,7 @@ const botinvite = require("../shared/botinvite");
 module.exports = {
   name: "資訊邀請機器人",
   description: "給你機器人邀請連結",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

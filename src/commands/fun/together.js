@@ -31,7 +31,7 @@ const discordTogether = [
 module.exports = {
   name: "趣味語音活動",
   description: "discord 語音活動",
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

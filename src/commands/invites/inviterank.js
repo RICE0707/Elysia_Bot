@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "邀請獎勵身份組設置",
   description: "設置邀請獎勵身份組",
-  category: "INVITE",
+  category: "邀請類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

@@ -6,7 +6,7 @@ const avatarInfo = require("../shared/avatar");
 module.exports = {
   name: "資訊使用者頭像",
   description: "取得使用者頭像",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

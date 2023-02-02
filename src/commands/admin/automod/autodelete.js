@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理自動刪除",
   description: "管理群組的各種自動刪除設置",
-  category: "AUTOMOD",
+  category: "自動管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

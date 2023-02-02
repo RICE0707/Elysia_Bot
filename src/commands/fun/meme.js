@@ -15,7 +15,7 @@ const { getRandomInt } = require("@helpers/Utils");
 module.exports = {
   name: "趣味迷因",
   description: "每個人都應該用一次這個指令，加入我大meme世界！！！",
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["EmbedLinks"],
   cooldown: 20,
   command: {

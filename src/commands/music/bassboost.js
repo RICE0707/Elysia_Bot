@@ -14,7 +14,7 @@ const levels = {
 module.exports = {
   name: "音樂低頻增強",
   description: "設置低頻增強級別",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

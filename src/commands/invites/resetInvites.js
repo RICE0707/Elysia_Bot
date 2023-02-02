@@ -8,7 +8,7 @@ const { checkInviteRewards } = require("@handlers/invite");
 module.exports = {
   name: "邀請次數清除",
   description: "清除向使用者的邀請次數",
-  category: "INVITE",
+  category: "邀請類",
   userPermissions: ["ManageGuild"],
   botPermissions: ["EmbedLinks"],
   command: {

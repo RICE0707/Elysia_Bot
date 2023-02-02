@@ -14,7 +14,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "資訊查看",
   description: "查看各種資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: false,

@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理踢出",
   description: "踢出指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["KickMembers"],
   userPermissions: ["KickMembers"],
   command: {

@@ -8,9 +8,9 @@ const CHANNEL_PERMS = ["ViewChannel", "SendMessages", "EmbedLinks", "ManageMessa
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "實用建議設置",
+  name: "建議設置",
   description: "管理建議系統",
-  category: "SUGGESTION",
+  category: "建議類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

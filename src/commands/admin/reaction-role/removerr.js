@@ -10,7 +10,7 @@ const channelPerms = ["EmbedLinks", "ReadMessageHistory", "AddReactions", "UseEx
 module.exports = {
   name: "管理刪除表符身份組",
   description: "刪除指定訊息的表符身份組",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

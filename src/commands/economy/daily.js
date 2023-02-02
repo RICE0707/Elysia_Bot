@@ -9,7 +9,7 @@ const { diffHours, getRemainingTime } = require("@helpers/Utils");
 module.exports = {
   name: "經濟金錢禮包",
   description: "領取每日金錢禮包（非現實貨幣）",
-  category: "ECONOMY",
+  category: "經濟類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

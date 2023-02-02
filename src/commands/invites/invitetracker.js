@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "邀請統計設置",
   description: "是否開啟本群的邀請統計",
-  category: "INVITE",
+  category: "邀請類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

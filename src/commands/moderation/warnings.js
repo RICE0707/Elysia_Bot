@@ -8,7 +8,7 @@ const { getMember } = require("@schemas/Member");
 module.exports = {
   name: "管理警告",
   description: "撤銷警告指定使用者與查看警告列表",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["KickMembers"],
   command: {
     enabled: true,

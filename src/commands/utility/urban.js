@@ -10,7 +10,7 @@ module.exports = {
   name: "實用字典",
   description: "你看不懂的詞，花瓶能看懂uwu",
   cooldown: 5,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

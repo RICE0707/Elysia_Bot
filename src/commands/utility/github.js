@@ -10,7 +10,7 @@ module.exports = {
   name: "實用github",
   description: "查看使用者的GitHub統計資訊",
   cooldown: 10,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

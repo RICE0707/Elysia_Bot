@@ -10,7 +10,7 @@ module.exports = {
   name: "統計階級",
   description: "顯示你在本群組的階級",
   cooldown: 5,
-  category: "STATS",
+  category: "統計類",
   botPermissions: ["AttachFiles"],
   command: {
     enabled: true,

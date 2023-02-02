@@ -6,7 +6,7 @@ const { purgeMessages } = require("@helpers/ModUtils");
 module.exports = {
   name: "清除指定機器人訊息",
   description: "清除指定機器人訊息",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["ManageMessages"],
   botPermissions: ["ManageMessages", "ReadMessageHistory"],
   command: {

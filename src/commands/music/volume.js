@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "音樂聲量",
   description: "設置聲量",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

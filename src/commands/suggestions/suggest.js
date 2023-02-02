@@ -13,9 +13,9 @@ const { stripIndent } = require("common-tags");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "實用建議提供",
+  name: "建議提供",
   description: "給予建議",
-  category: "SUGGESTION",
+  category: "建議類",
   cooldown: 5,
   command: {
     enabled: true,

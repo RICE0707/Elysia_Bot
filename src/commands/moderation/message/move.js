@@ -7,7 +7,7 @@ const move = require("../shared/move");
 module.exports = {
   name: "管理移動語音使用者",
   description: "移動語音使用者",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["DeafenMembers"],
   botPermissions: ["DeafenMembers"],
   command: {

@@ -8,7 +8,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "管理入群訊息",
   description: "設置成員入群訊息",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

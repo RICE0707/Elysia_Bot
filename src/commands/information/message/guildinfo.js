@@ -4,9 +4,9 @@ const guildInfo = require("../shared/guild");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊群組資訊",
+  name: "資訊群組",
   description: "查看群組資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   cooldown: 5,
   command: {

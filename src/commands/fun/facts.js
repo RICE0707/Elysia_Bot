@@ -12,7 +12,7 @@ module.exports = {
   name: "趣味動物冷知識",
   description: "隨機生成動物冷知識",
   cooldown: 5,
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

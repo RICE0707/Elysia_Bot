@@ -9,7 +9,7 @@ const { EMBED_COLORS } = require("@root/config");
 module.exports = {
   name: "社交愛心",
   description: "贈與或查看使用者愛心❤️",
-  category: "SOCIAL",
+  category: "社交類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

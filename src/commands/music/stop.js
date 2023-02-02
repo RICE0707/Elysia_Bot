@@ -6,7 +6,7 @@ const { musicValidations } = require("@helpers/BotUtils");
 module.exports = {
   name: "音樂停止",
   description: "停止播放音樂",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

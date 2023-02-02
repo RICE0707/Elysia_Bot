@@ -38,7 +38,7 @@ module.exports = {
   name: "圖片迷因特效",
   description: "將圖片結合入迷因",
   cooldown: 1,
-  category: "IMAGE",
+  category: "圖片類",
   botPermissions: ["EmbedLinks", "AttachFiles"],
   command: {
     enabled: true,

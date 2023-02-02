@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "清除訊息",
   description: "清除訊息",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["ManageMessages"],
   command: {
     enabled: false,

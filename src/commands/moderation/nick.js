@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理暱稱",
   description: "管理暱稱",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["ManageNicknames"],
   userPermissions: ["ManageNicknames"],
   command: {

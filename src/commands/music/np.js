@@ -9,7 +9,7 @@ const { splitBar } = require("string-progressbar");
 module.exports = {
   name: "音樂曲目",
   description: "顯示當前正在播放的曲目",
-  category: "MUSIC",
+  category: "音樂類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

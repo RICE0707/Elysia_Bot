@@ -45,7 +45,7 @@ module.exports = {
   name: "圖片濾鏡",
   description: "向圖片增加濾鏡",
   cooldown: 5,
-  category: "IMAGE",
+  category: "圖片類",
   botPermissions: ["EmbedLinks", "AttachFiles"],
   command: {
     enabled: true,

@@ -8,7 +8,7 @@ const { EMBED_COLORS, ECONOMY } = require("@root/config.js");
 module.exports = {
   name: "經濟乞討",
   description: "向某人乞討",
-  category: "ECONOMY",
+  category: "經濟類",
   cooldown: 21600,
   botPermissions: ["EmbedLinks"],
   command: {

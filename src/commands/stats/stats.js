@@ -10,7 +10,7 @@ module.exports = {
   name: "統計資訊",
   description: "查看使用者在本群的統計資訊",
   cooldown: 5,
-  category: "STATS",
+  category: "統計類",
   command: {
     enabled: true,
     usage: "[@使用者|使用者代碼]",

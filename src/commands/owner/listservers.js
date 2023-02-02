@@ -9,7 +9,7 @@ const MAX_PER_PAGE = 10; // max number of embed fields per page
 module.exports = {
   name: "擁有者群組列表",
   description: "砸看機器人所在的群組列表",
-  category: "OWNER",
+  category: "擁有者",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

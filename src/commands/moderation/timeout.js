@@ -8,7 +8,7 @@ const ems = require("enhanced-ms");
 module.exports = {
   name: "管理禁言",
   description: "禁言指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["ModerateMembers"],
   userPermissions: ["ModerateMembers"],
   command: {

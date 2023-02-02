@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理軟封禁",
   description: "軟封鎖指定使用者（踢出+刪除訊息一次）",
-  category: "MODERATION",
+  category: "實用類",
   botPermissions: ["BanMembers"],
   userPermissions: ["KickMembers"],
   command: {

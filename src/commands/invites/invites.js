@@ -9,7 +9,7 @@ const { getMember } = require("@schemas/Member");
 module.exports = {
   name: "邀請次數",
   description: "顯示本群組的邀請次數",
-  category: "INVITE",
+  category: "邀請類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

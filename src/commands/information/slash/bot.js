@@ -15,7 +15,7 @@ const botstats = require("../shared/botstats");
 module.exports = {
   name: "資訊機器人",
   description: "查看機器人資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: false,

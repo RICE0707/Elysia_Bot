@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "統計是否啟用",
   description: "是否啟用統計資訊",
-  category: "STATS",
+  category: "統計類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

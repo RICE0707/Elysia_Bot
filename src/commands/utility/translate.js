@@ -15,7 +15,7 @@ module.exports = {
   name: "實用翻譯",
   description: "輸入你要的文字，花瓶會幫你翻譯",
   cooldown: 20,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

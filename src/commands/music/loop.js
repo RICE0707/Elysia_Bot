@@ -8,7 +8,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "音樂循環",
   description: "循環播放歌曲或播放清單",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

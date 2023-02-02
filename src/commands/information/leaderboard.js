@@ -10,7 +10,7 @@ const { getReputationLb } = require("@schemas/User");
 module.exports = {
   name: "資訊排行榜",
   description: "顯示排行榜",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

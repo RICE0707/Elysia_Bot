@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "統計設置等級系統",
   description: "設置等級系統",
-  category: "STATS",
+  category: "統計類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

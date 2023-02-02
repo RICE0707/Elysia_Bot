@@ -8,7 +8,7 @@ module.exports = {
   name: "實用貼上",
   description: "在 sourceb.in 中貼上文字內容。",
   cooldown: 5,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

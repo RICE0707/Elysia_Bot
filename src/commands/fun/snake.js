@@ -7,7 +7,7 @@ module.exports = {
   name: "趣味貪吃蛇",
   description: "在 Discord 上玩貪吃蛇",
   cooldown: 300,
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["SendMessages", "EmbedLinks", "AddReactions", "ReadMessageHistory", "ManageMessages"],
   command: {
     enabled: true,

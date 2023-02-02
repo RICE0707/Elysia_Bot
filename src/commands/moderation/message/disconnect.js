@@ -6,7 +6,7 @@ const disconnect = require("../shared/disconnect");
 module.exports = {
   name: "管理斷開使用者語音連線",
   description: "斷開使用者語音連線",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["MuteMembers"],
   command: {
     enabled: true,

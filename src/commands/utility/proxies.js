@@ -10,7 +10,7 @@ module.exports = {
   name: "實用代理",
   description: "取得代理，可用類型：http, socks4, socks5",
   cooldown: 5,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks", "AttachFiles"],
   command: {
     enabled: true,

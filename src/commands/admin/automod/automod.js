@@ -8,7 +8,7 @@ const { stripIndent } = require("common-tags");
 module.exports = {
   name: "管理自動處分",
   description: "管理群組的各種自動處分設置",
-  category: "AUTOMOD",
+  category: "自動管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

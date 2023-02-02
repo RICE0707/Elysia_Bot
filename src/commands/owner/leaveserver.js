@@ -4,7 +4,7 @@
 module.exports = {
   name: "擁有者離開群組",
   description: "讓機器人離開指定群組",
-  category: "OWNER",
+  category: "擁有者",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -7,7 +7,7 @@ const { EMBED_COLORS } = require("@root/config");
 module.exports = {
   name: "邀請獎勵身份組資訊",
   description: "顯示此群組的邀請獎勵身份組",
-  category: "INVITE",
+  category: "邀請類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

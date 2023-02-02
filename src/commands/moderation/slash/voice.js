@@ -12,7 +12,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "管理語音",
   description: "語音管理",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["MuteMembers", "MoveMembers", "DeafenMembers"],
   botPermissions: ["MuteMembers", "MoveMembers", "DeafenMembers"],
   command: {

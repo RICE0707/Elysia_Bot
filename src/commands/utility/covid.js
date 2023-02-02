@@ -10,7 +10,7 @@ module.exports = {
   name: "實用新冠疫情",
   description: "取得一個國家的新冠統計數據",
   cooldown: 5,
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

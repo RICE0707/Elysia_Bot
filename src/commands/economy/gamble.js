@@ -9,7 +9,7 @@ const { getRandomInt } = require("@helpers/Utils");
 module.exports = {
   name: "經濟賭博",
   description: "青少年勿陷網路賭博陷阱花瓶提醒家長慎防",
-  category: "ECONOMY",
+  category: "經濟類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -6,7 +6,7 @@ const vunmute = require("../shared/vunmute");
 module.exports = {
   name: "管理解除禁音指定使用者",
   description: "解除禁音指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["MuteMembers"],
   botPermissions: ["MuteMembers"],
   command: {

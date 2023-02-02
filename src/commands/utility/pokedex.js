@@ -9,7 +9,7 @@ const { stripIndent } = require("common-tags");
 module.exports = {
   name: "實用寶可夢",
   description: "查看寶可夢資訊",
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   cooldown: 5,
   command: {

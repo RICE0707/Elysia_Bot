@@ -4,9 +4,9 @@ const channelInfo = require("../shared/channel");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊頻道資訊",
+  name: "資訊頻道",
   description: "查看頻道資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

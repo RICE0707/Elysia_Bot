@@ -6,7 +6,7 @@ const { ApplicationCommandOptionType, ChannelType } = require("discord.js");
 module.exports = {
   name: "管理資訊總覽頻道",
   description: "在群組中創建資訊總覽頻道",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   botPermissions: ["ManageChannels"],
   command: {

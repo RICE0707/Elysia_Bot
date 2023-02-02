@@ -10,7 +10,7 @@ const FLIPPED = "∀qϽᗡƎℲƃHIſʞ˥WNOԀὉᴚS⊥∩ΛMXʎZɐqɔpǝɟbɥ�
 module.exports = {
   name: "趣味拋出與翻轉",
   description: "拋出神奇貨幣跟翻轉神奇文字",
-  category: "FUN",
+  category: "趣味類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -21,7 +21,7 @@ const IDLE_TIMEOUT = 30;
 module.exports = {
   name: "實用花瓶會幫你",
   description: "花瓶會給你指令面板，自己看啦！",
-  category: "UTILITY",
+  category: "其他實用類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

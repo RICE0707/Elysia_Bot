@@ -10,7 +10,7 @@ const withdraw = require("./sub/withdraw");
 module.exports = {
   name: "經濟銀行",
   description: "銀行相關功能（非現實貨幣）",
-  category: "ECONOMY",
+  category: "經濟類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

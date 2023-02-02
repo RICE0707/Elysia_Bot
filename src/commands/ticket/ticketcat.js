@@ -4,9 +4,9 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "實用客服單類別",
+  name: "客服單類別",
   description: "管理客服單類別功能",
-  category: "TICKET",
+  category: "客服單",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

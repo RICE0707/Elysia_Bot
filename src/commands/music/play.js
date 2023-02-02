@@ -15,7 +15,7 @@ const search_prefix = {
 module.exports = {
   name: "音樂播放",
   description: "播放 youtube 上的歌曲或播放清單",
-  category: "MUSIC",
+  category: "音樂類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

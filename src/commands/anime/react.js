@@ -13,7 +13,7 @@ module.exports = {
   name: "宅宅的專屬指令",
   description: "宅宅的專屬指令",
   enabled: true,
-  category: "ANIME",
+  category: "阿宅類",
   cooldown: 5,
   command: {
     enabled: true,

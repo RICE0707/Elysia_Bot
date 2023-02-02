@@ -10,7 +10,7 @@ const DUMMY_TOKEN = "MY_TOKEN_IS_SECRET";
 module.exports = {
   name: "擁有者評估",
   description: "評估某事",
-  category: "OWNER",
+  category: "擁有者",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

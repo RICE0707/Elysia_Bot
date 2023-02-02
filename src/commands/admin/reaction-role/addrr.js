@@ -10,7 +10,7 @@ const channelPerms = ["EmbedLinks", "ReadMessageHistory", "AddReactions", "UseEx
 module.exports = {
   name: "管理表符身份組",
   description: "設置指定訊息的自動身份組",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,

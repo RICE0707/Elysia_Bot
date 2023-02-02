@@ -4,9 +4,9 @@ const userInfo = require("../shared/user");
  * @type {import("@structures/Command")}
  */
 module.exports = {
-  name: "資訊使用者資訊",
+  name: "資訊使用者",
   description: "查看使用者資訊",
-  category: "INFORMATION",
+  category: "資訊類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

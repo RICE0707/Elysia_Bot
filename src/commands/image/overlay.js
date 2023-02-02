@@ -21,7 +21,7 @@ module.exports = {
   name: "圖片一般特效",
   description: "將特效結合入圖片",
   cooldown: 5,
-  category: "IMAGE",
+  category: "圖片類",
   botPermissions: ["EmbedLinks", "AttachFiles"],
   command: {
     enabled: true,

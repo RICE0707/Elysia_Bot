@@ -18,7 +18,7 @@ const { isValidColor, isHex } = require("@helpers/Utils");
 module.exports = {
   name: "管理創建嵌入消息",
   description: "發送嵌入消息",
-  category: "ADMIN",
+  category: "管理類",
   userPermissions: ["ManageMessages"],
   command: {
     enabled: true,

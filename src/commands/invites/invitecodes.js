@@ -7,7 +7,7 @@ const { EMBED_COLORS } = require("@root/config.js");
 module.exports = {
   name: "邀請連結查看",
   description: "查看本群的邀請連結",
-  category: "INVITE",
+  category: "邀請類",
   botPermissions: ["EmbedLinks", "ManageGuild"],
   command: {
     enabled: true,

@@ -7,7 +7,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "管理警告處分",
   description: "警告指定使用者",
-  category: "MODERATION",
+  category: "實用類",
   userPermissions: ["KickMembers"],
   command: {
     enabled: true,

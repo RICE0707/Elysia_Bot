@@ -7,7 +7,7 @@ const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
   name: "音樂播放清單",
   description: "顯示當前音樂播放清單",
-  category: "MUSIC",
+  category: "音樂類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,

@@ -4,7 +4,7 @@
 module.exports = {
   name: "資訊延遲",
   description: "查看機器人延遲",
-  category: "INFORMATION",
+  category: "資訊類",
   command: {
     enabled: true,
   },

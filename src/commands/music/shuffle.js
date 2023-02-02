@@ -6,7 +6,7 @@ const { musicValidations } = require("@helpers/BotUtils");
 module.exports = {
   name: "音樂播放清單隨機化",
   description: "隨機化播放清單順序",
-  category: "MUSIC",
+  category: "音樂類",
   validations: musicValidations,
   command: {
     enabled: true,

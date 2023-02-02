@@ -20,7 +20,7 @@ const search_prefix = {
 module.exports = {
   name: "音樂搜尋",
   description: "在 youtube 上搜索匹配的歌曲",
-  category: "MUSIC",
+  category: "音樂類",
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,
