@@ -5,7 +5,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
  */
 module.exports = {
   name: "管理滿警告處分",
-  description: "設置伺服器成員能接收的警告最大值與達到警告最大值後的處分",
+  description: "設置群組使用者能接收的警告最大值與達到警告最大值後的處分",
   category: "管理類",
   userPermissions: ["ManageGuild"],
   command: {
@@ -13,12 +13,12 @@ module.exports = {
     minArgsCount: 1,
     subcommands: [
       {
-        trigger: "警告 <最大值>",
-        description: "設置伺服器成員能接收的警告最大值",
+        trigger: "警告數 <最大值>",
+        description: "設置群組使用者能接收的警告最大值",
       },
       {
-        trigger: "處分 <禁言|踢出|封禁>",
-        description: "設置伺服器成員達到警告最大值後的處分",
+        trigger: "處分 <禁言︱踢出成員︱封禁>",
+        description: "選擇群組使用者達到警告最大值後的處分",
       },
     ],
   },
@@ -27,13 +27,13 @@ module.exports = {
     ephemeral: true,
     options: [
       {
-        name: "警告最大值",
-        description: "設置伺服器成員能接收的警告最大值（預設為 10）",
+        name: "警告數",
+        description: "設置群組使用者能接收的警告最大值",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
             name: "最大值",
-            description: "設置伺服器成員能接收的警告最大值（預設為 10）",
+            description: "設置群組使用者能接收的警告最大值（預設為 10）",
             type: ApplicationCommandOptionType.Integer,
             required: true,
           },
@@ -41,12 +41,12 @@ module.exports = {
       },
       {
         name: "處分",
-        description: "設置伺服器成員能接收的警告最大值（預設為 10）",
+        description: "選擇群組使用者達到警告最大值後的處分",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
             name: "嚴重程度",
-            description: "選擇伺服器成員達到警告最大值後的處分",
+            description: "選擇群組使用者達到警告最大值後的處分（預設為 踢出成員）",
             type: ApplicationCommandOptionType.String,
             required: true,
             choices: [
@@ -55,8 +55,8 @@ module.exports = {
                 value: "禁言",
               },
               {
-                name: "踢出",
-                value: "踢出",
+                name: "踢出成員",
+                value: "踢出成員",
               },
               {
                 name: "封禁",
@@ -71,19 +71,19 @@ module.exports = {
 
   async messageRun(message, args, data) {
     const input = args[0].toLowerCase();
-    if (!["警告最大值", "最大值"].includes(input)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的指令用法，你真的會用指令嗎？");
+    if (!["警告數", "處分"].includes(input)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的指令用法，你真的會用指令嗎？");
 
     let response;
-    if (input === "警告最大值") {
+    if (input === "警告數") {
       const max = parseInt(args[1]);
-      if (isNaN(max) || max < 1) return message.safeReply("> <a:r2_rice:868583626227478591> 此數值必須大於0，並且必須為數字。");
+      if (isNaN(max) || max < 1) return message.safeReply("> <a:r2_rice:868583626227478591> 此數值必須大於\` 0 \`，並且必須為數字。");
       response = await setLimit(max, data.settings);
     }
 
-    if (input === "最大值") {
+    if (input === "處分") {
       const action = args[1]?.toUpperCase();
-      if (!action || !["禁言", "踢出", "封禁"].includes(action))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言 `/ `踢出 `/` 封禁 `其一。");
+      if (!action || !["禁言", "踢出成員", "封禁"].includes(action))
+        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言︱踢出成員︱封禁 `其一。");
       response = await setAction(message.guild, action, data.settings);
     }
 
@@ -94,12 +94,12 @@ module.exports = {
     const sub = interaction.options.getSubcommand();
 
     let response;
-    if (sub === "警告最大值") {
-      response = await setLimit(interaction.options.getInteger("amount"), data.settings);
+    if (sub === "警告數") {
+      response = await setLimit(interaction.options.getInteger("最大值"), data.settings);
     }
 
-    if (sub === "最大值") {
-      response = await setAction(interaction.guild, interaction.options.getString("最大值"), data.settings);
+    if (sub === "處分") {
+      response = await setAction(interaction.guild, interaction.options.getString("嚴重程度"), data.settings);
     }
 
     await interaction.followUp(response);
@@ -109,17 +109,17 @@ module.exports = {
 async function setLimit(limit, settings) {
   settings.max_warn.limit = limit;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在最高警告數為：\` ${strikes} \`。`;
+  return `> <a:r3_rice:868583679465758820> 現在最高可被警告數為：\` ${limit} \`。`;
 }
 
-async function setAction(settings, guild, action) {
+async function setAction(guild, action, settings) {
   if (action === "禁言") {
     if (!guild.members.me.permissions.has("ModerateMembers")) {
       return "> <a:r2_rice:868583626227478591> 你沒有權限禁言其他成員。";
     }
   }
 
-  if (action === "踢出") {
+  if (action === "踢出成員") {
     if (!guild.members.me.permissions.has("KickMembers")) {
       return "> <a:r2_rice:868583626227478591> 你沒有權限踢出其他成員。";
     }
@@ -133,5 +133,5 @@ async function setAction(settings, guild, action) {
 
   settings.max_warn.action = action;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在滿警告處分為：\` ${action} \`。`;
+  return `> <a:r3_rice:868583679465758820> 現在滿警告處分為：\` ${action} \`。`;
 }
