@@ -27,7 +27,7 @@ function isTicketChannel(channel) {
     channel.type === ChannelType.GuildText &&
     channel.name.startsWith("💼︱客服支援︱") &&
     channel.topic &&
-    channel.topic.startsWith("💼︱客服支援︱")
+    channel.topic.startsWith("💼|客服支援|")
   );
 }
 
@@ -44,7 +44,7 @@ function getTicketChannels(guild) {
  */
 function getExistingTicketChannel(guild, userId) {
   const tktChannels = getTicketChannels(guild);
-  return tktChannels.filter((ch) => ch.topic.split("︱")[1] === userId).first();
+  return tktChannels.filter((ch) => ch.topic.split("|")[1] === userId).first();
 }
 
 /**
@@ -52,7 +52,7 @@ function getExistingTicketChannel(guild, userId) {
  */
 async function parseTicketDetails(channel) {
   if (!channel.topic) return;
-  const split = channel.topic?.split("︱");
+  const split = channel.topic?.split("|");
   const userId = split[1];
   const catName = split[2] || "預設";
   const user = await channel.client.users.fetch(userId, { cache: false }).catch(() => {});
@@ -78,7 +78,7 @@ async function closeTicket(channel, closedBy, reason) {
     reversed.forEach((m) => {
       content += `[${new Date(m.createdAt).toLocaleString("en-US")}] - ${m.author.tag}\n`;
       if (m.cleanContent !== "") content += `${m.cleanContent}\n`;
-      if (m.attachments.size > 0) content += `${m.attachments.map((att) => att.proxyURL).join("︱")}\n`;
+      if (m.attachments.size > 0) content += `${m.attachments.map((att) => att.proxyURL).join(", ")}\n`;
       content += "\n";
     });
 
@@ -102,6 +102,11 @@ async function closeTicket(channel, closedBy, reason) {
     if (reason) fields.push({ name: "Reason", value: reason, inline: false });
     fields.push(
       {
+        name: "開單人",
+        value: ticketDetails.user ? ticketDetails.user.tag : "未知使用者",
+        inline: true,
+      },
+      {
         name: "關單人",
         value: closedBy ? closedBy.tag : "未知使用者",
         inline: true,
@@ -119,7 +124,7 @@ async function closeTicket(channel, closedBy, reason) {
     // send embed to user
     if (ticketDetails.user) {
       const dmEmbed = embed
-        .setDescription(`*群組：** ${channel.guild.name}\n**類別：** ${ticketDetails.catName}`)
+        .setDescription(`**群組：** ${channel.guild.name}\n**類別：** ${ticketDetails.catName}`)
         .setThumbnail(channel.guild.iconURL());
       ticketDetails.user.send({ embeds: [dmEmbed], components }).catch((ex) => {});
     }
@@ -168,7 +173,7 @@ async function handleTicketOpen(interaction) {
 
   // limit check
   const existing = getTicketChannels(guild).size;
-  if (existing > settings.ticket.limit) return interaction.followUp("> <a:r2_rice:868583626227478591> 你一次只能開啟太多客服單了。");
+  if (existing > settings.ticket.limit) return interaction.followUp("> <a:r2_rice:868583626227478591> 你一次只能開啟太多客服單了");
 
   // check categories
   let catName = null;
@@ -184,7 +189,7 @@ async function handleTicketOpen(interaction) {
         .addOptions(options)
     );
 
-    await interaction.followUp({ content: "> <a:r2_rice:868583626227478591> 請選擇客服單類別", components: [menuRow] });
+    await interaction.followUp({ content: "> <a:r2_rice:868583626227478591> 請選擇客服單類別。", components: [menuRow] });
     const res = await interaction.channel
       .awaitMessageComponent({
         componentType: ComponentType.StringSelect,
@@ -231,7 +236,7 @@ async function handleTicketOpen(interaction) {
     const tktChannel = await guild.channels.create({
       name: `💼︱客服支援︱${user.username}`,
       type: ChannelType.GuildText,
-      topic: `💼︱客服支援︱${user.tag}︱${catName || "預設"}`,
+      topic: `客服支援|${user.id}|${catName || "預設"}`,
       permissionOverwrites,
     });
 

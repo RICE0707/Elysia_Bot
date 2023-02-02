@@ -128,8 +128,8 @@ module.exports = {
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
-            name: "使用者代號或身份組代號",
-            description: "輸入使用者代號或身份組代號",
+            name: "使用者",
+            description: "選擇使用者",
             type: ApplicationCommandOptionType.User,
             required: true,
           },
@@ -178,14 +178,14 @@ module.exports = {
 
     // Close all tickets
     else if (input === "關閉全部") {
-      let sent = await message.safeReply("<a:r3_rice:868583679465758820> 花瓶正在關閉中..");
+      let sent = await message.safeReply("> <a:r3_rice:868583679465758820> 花瓶正在關閉中...");
       response = await closeAll(message, message.author);
       return sent.editable ? sent.edit(response) : message.channel.send(response);
     }
 
     // Add user to ticket
     else if (input === "新增") {
-      if (args.length < 2) return message.safeReply("> <a:r2_rice:868583626227478591> 請輸入使用者代號或身份組代號給花瓶。");
+      if (args.length < 2) return message.safeReply("> <a:r2_rice:868583626227478591> 請提供使用者代號或身份組代號給花瓶。");
       let inputId;
       if (message.mentions.users.size > 0) inputId = message.mentions.users.first().id;
       else if (message.mentions.roles.size > 0) inputId = message.mentions.roles.first().id;
@@ -195,7 +195,7 @@ module.exports = {
 
     // Remove user from ticket
     else if (input === "移除") {
-      if (args.length < 2) return message.safeReply("> <a:r2_rice:868583626227478591> 請輸入使用者代號或身份組代號給花瓶。");
+      if (args.length < 2) return message.safeReply("> <a:r2_rice:868583626227478591> 請提供使用者給花瓶。");
       let inputId;
       if (message.mentions.users.size > 0) inputId = message.mentions.users.first().id;
       else if (message.mentions.roles.size > 0) inputId = message.mentions.roles.first().id;
@@ -257,7 +257,7 @@ module.exports = {
 
     // Remove from ticket
     else if (sub === "移除") {
-      const user = interaction.options.getUser("使用者代號或身份組代號");
+      const user = interaction.options.getUser("使用者");
       response = await removeFromTicket(interaction, user.id);
     }
 
@@ -290,7 +290,7 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
     })
     .catch((ex) => {});
 
-  if (!btnInteraction) return sentMsg.edit({ content: "> <a:r2_rice:868583626227478591> 沒有收到回覆，花瓶已取消設置客服單。", components: [] });
+  if (!btnInteraction) return sentMsg.edit({ content: "N> <a:r2_rice:868583626227478591> 沒有收到回覆，花瓶已取消設置客服單。", components: [] });
 
   // display modal
   await btnInteraction.showModal(
@@ -315,14 +315,14 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("footer")
-            .setLabel("客服單嵌入頁腳")
+            .setLabel("客服單頁腳")
             .setStyle(TextInputStyle.Short)
             .setRequired(false)
         ),
         new ActionRowBuilder().addComponents(
           new TextInputBuilder()
             .setCustomId("staff")
-            .setLabel("客服單管理")
+            .setLabel("客服單管理（身份組代號）")
             .setStyle(TextInputStyle.Short)
             .setRequired(false)
         ),
@@ -346,15 +346,15 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
   const footer = modal.fields.getTextInputValue("footer");
   const staffRoles = modal.fields
     .getTextInputValue("staff")
-    .split(",")
+    .split("︱")
     .filter((s) => guild.roles.cache.has(s.trim()));
 
   // send ticket message
   const embed = new EmbedBuilder()
     .setColor(EMBED_COLORS.BOT_EMBED)
-    .setAuthor({ name: title || "客服單支援", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: title || "這是一個預設客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
     .setDescription(description || "> <a:r3_rice:868583679465758820> 點擊下方的按鈕以開啟一個客服單。")
-    .setFooter({ text: footer || "你一次只能創建一個客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+    .setFooter({ text: footer || "來自神奇花瓶的技術支援 v3.0", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
   const tktBtnRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setLabel("點擊此按鈕開啟客服單").setCustomId("TICKET_CREATE").setStyle(ButtonStyle.Success)
@@ -379,7 +379,7 @@ async function setupLogChannel(target, settings) {
 }
 
 async function setupLimit(limit, settings) {
-  if (Number.parseInt(limit, 10) < 5) return "> <a:r2_rice:868583626227478591> 客服單限制不能少於\` 5 \`。";
+  if (Number.parseInt(limit, 10) < 5) return "> <a:r2_rice:868583626227478591> 客服單限制不能少於\` 5 \`個。";
 
   settings.ticket.limit = limit;
   await settings.save();
@@ -391,13 +391,13 @@ async function close({ channel }, author) {
   if (!isTicketChannel(channel)) return "> <a:r2_rice:868583626227478591> 這個指令只能在客服單頻道使用。";
   const status = await closeTicket(channel, author, "> <a:r3_rice:868583679465758820> 管理員已關閉此客服單。");
   if (status === "MISSING_PERMISSIONS") return "> <a:r2_rice:868583626227478591> 花瓶沒有刪除這個客服單的權限。";
-  if (status === "ERROR") return "> <a:r2_rice:868583626227478591> 關閉客服單讓花瓶碎了";
+  if (status === "ERROR") return "> <a:r2_rice:868583626227478591> 關閉客服單讓花瓶碎了。";
   return null;
 }
 
 async function closeAll({ guild }, user) {
   const stats = await closeAllTickets(guild, user);
-  return `> <a:r2_rice:868583626227478591> 成功：\` ${stats[0]} \`。\n> <a:r2_rice:868583626227478591> 失敗：\` ${stats[1]} \`。`;
+  return  `> <a:r2_rice:868583626227478591> 成功：\` ${stats[0]} \`。\n> <a:r2_rice:868583626227478591> 失敗：\` ${stats[1]} \`。`;
 }
 
 async function addToTicket({ channel }, inputId) {
@@ -427,6 +427,6 @@ async function removeFromTicket({ channel }, inputId) {
     });
     return "> <a:r3_rice:868583679465758820> 花瓶已幫你已新增使用者或身分組。";
   } catch (ex) {
-    return "> <a:r2_rice:868583626227478591> 你需要輸入正確的使用者代號或身份組代號給花瓶。";
+    return "> <a:r2_rice:868583626227478591> 你需要輸入正確的使用者代號或身份組代號給花瓶";
   }
 }
