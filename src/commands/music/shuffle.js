@@ -5,7 +5,7 @@ const { musicValidations } = require("@helpers/BotUtils");
  */
 module.exports = {
   name: "音樂播放清單隨機化",
-  description: "隨機化播放清單順序",
+  description: "隨機化播放清單內音樂的順序",
   category: "音樂類",
   validations: musicValidations,
   command: {
@@ -32,5 +32,5 @@ module.exports = {
 function shuffle({ client, guildId }) {
   const player = client.musicManager.getPlayer(guildId);
   player.queue.shuffle();
-  return "> <a:r3_rice:868583679465758820> 播放清單已隨機化。";
+  return "> <a:r3_rice:868583679465758820> 花瓶已讓播放清單內的歌曲隨機排序。";
 }

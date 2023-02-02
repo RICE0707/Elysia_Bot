@@ -11,7 +11,7 @@ module.exports = {
   botPermissions: ["DeafenMembers"],
   command: {
     enabled: true,
-    usage: "<使用者代號|使用者> [原因]",
+    usage: "<使用者代號︱使用者> [原因]",
     minArgsCount: 1,
   },
   slashCommand: {

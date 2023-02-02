@@ -104,8 +104,8 @@ async function nickname({ member, guild }, target, name) {
 
   try {
     await target.setNickname(name);
-    return `> <a:r3_rice:868583679465758820>已\` ${name ? "更改" : "重置"} \` \` ${target.user.tag} \`的暱稱。`;
+    return `> <a:r3_rice:868583679465758820> 花瓶已\` ${name ? "更改" : "重置"} \` \` ${target.user.tag} \`的暱稱。`;
   } catch (ex) {
-    return `> <a:r3_rice:868583679465758820>無法\` ${name ? "更改" : "重置"} \` \` ${target.displayName} \`的暱稱，你確定你輸入的暱稱正常？`;
+    return `> <a:r3_rice:868583679465758820> 花瓶無法\` ${name ? "更改" : "重置"} \` \` ${target.displayName} \`的暱稱，你確定你輸入的暱稱正常？`;
   }
 }

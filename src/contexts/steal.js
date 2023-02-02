@@ -36,7 +36,7 @@ async function stealEmoji(interaction){
   await interaction.followUp("> <:p7_rice:868583653523984405> 花瓶正在搶奪表情符號中...");
   const emojis = Utils.extractEmoji(interaction.targetMessage.content);
   if(emojis.length > 5) {
-    return await interaction.editReply("> <a:r2_rice:868583626227478591> 這個訊息的表情太多了啦")
+    return await interaction.editReply("> <a:r2_rice:868583626227478591> 這個訊息的表情太多了啦！")
   }
   const newEmojis = []
   try {

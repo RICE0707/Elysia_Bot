@@ -77,8 +77,8 @@ function calculateReward(amount, var1, var2, var3) {
 
 async function gamble(user, betAmount) {
   if (isNaN(betAmount)) return "> <a:r2_rice:868583626227478591> 請輸入有效的數字才能下賭喔（非現實貨幣）。";
-  if (betAmount < 0) return "> <a:r2_rice:868583626227478591> 請輸入大於0的數字才能下賭喔（非現實貨幣）。";
-  if (betAmount < 10) return "> <a:r2_rice:868583626227478591> 請輸入大於10的數字才能下賭喔（非現實貨幣），";
+  if (betAmount < 0) return "> <a:r2_rice:868583626227478591> 請輸入大於\` 10 \`的數字才能下賭喔（非現實貨幣）。";
+  if (betAmount < 10) return "> <a:r2_rice:868583626227478591> 請輸入大於\` 10 \`的數字才能下賭喔（非現實貨幣），";
 
   const userDb = await getUser(user);
   if (userDb.coins < betAmount)

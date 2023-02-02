@@ -17,5 +17,5 @@ module.exports = async ({ member }, target, reason) => {
   if (response === "NOT_DEAFENED") {
     return `> <a:r2_rice:868583626227478591> \` ${target.user.tag} \`沒有被拒聽。`;
   }
-  return `> <a:r2_rice:868583626227478591> 無法解除拒聽\`  ${target.user.tag} \`。`;
+  return `> <a:r2_rice:868583626227478591> 花瓶無法解除\` ${target.user.tag} \`的拒聽。`;
 };

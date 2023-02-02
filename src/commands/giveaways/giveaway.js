@@ -299,7 +299,7 @@ async function runModalSetup({ member, channel, guild }, targetCh) {
           new TextInputBuilder()
             .setCustomId("duration")
             .setLabel("抽獎時長")
-            .setPlaceholder("1s / 1m / 1h / 1d / 1w")
+            .setPlaceholder("1s︱1m︱1h︱1d︱1w")
             .setStyle(TextInputStyle.Short)
             .setRequired(true)
         ),
@@ -418,7 +418,7 @@ async function runModalEdit(message, messageId) {
           new TextInputBuilder()
             .setCustomId("duration")
             .setLabel("增加時長")
-            .setPlaceholder("1s / 1m / 1h / 1d / 1w")
+            .setPlaceholder("1s︱1m︱1h︱1d︱1w")
             .setStyle(TextInputStyle.Short)
             .setRequired(false)
         ),

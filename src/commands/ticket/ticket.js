@@ -46,11 +46,11 @@ module.exports = {
         description: "關閉全部的客服單",
       },
       {
-        trigger: "新增 <使用者代號|身份組代號>",
+        trigger: "新增 <使用者代號︱身份組代號>",
         description: "從客服單中新增指定使用者或身份組",
       },
       {
-        trigger: "移除 <使用者代號|身份組代號>",
+        trigger: "移除 <使用者代號︱身份組代號>",
         description: "從客服單中移除指定使用者或身份組",
       },
     ],
@@ -178,7 +178,7 @@ module.exports = {
 
     // Close all tickets
     else if (input === "關閉全部") {
-      let sent = await message.safeReply("<a:r3_rice:868583679465758820> 正在關閉中..");
+      let sent = await message.safeReply("<a:r3_rice:868583679465758820> 花瓶正在關閉中..");
       response = await closeAll(message, message.author);
       return sent.editable ? sent.edit(response) : message.channel.send(response);
     }
@@ -375,7 +375,7 @@ async function setupLogChannel(target, settings) {
   settings.ticket.log_channel = target.id;
   await settings.save();
 
-  return `> <a:r3_rice:868583679465758820> 設置已保存，客服單紀錄將傳送至 ${target.toString()} 中。`;
+  return `> <a:r3_rice:868583679465758820> 客服單紀錄將由花瓶傳送至 ${target.toString()} 中。`;
 }
 
 async function setupLimit(limit, settings) {
@@ -384,7 +384,7 @@ async function setupLimit(limit, settings) {
   settings.ticket.limit = limit;
   await settings.save();
 
-  return `> <a:r3_rice:868583679465758820> 設置已保存，現在使用者一次可同時開啟\` ${limit} \`個客服單。`;
+  return `> <a:r3_rice:868583679465758820> 現在使用者一次可同時開啟\` ${limit} \`個客服單。`;
 }
 
 async function close({ channel }, author) {
@@ -410,7 +410,7 @@ async function addToTicket({ channel }, inputId) {
       SendMessages: true,
     });
 
-    return "> <a:r3_rice:868583679465758820> 已新增。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已幫你已新增使用者或身分組。";
   } catch (ex) {
     return "> <a:r2_rice:868583626227478591> 你需要輸入正確的使用者代號或身份組代號給花瓶。";
   }
@@ -425,7 +425,7 @@ async function removeFromTicket({ channel }, inputId) {
       ViewChannel: false,
       SendMessages: false,
     });
-    return "> <a:r3_rice:868583679465758820> 已新增。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已幫你已新增使用者或身分組。";
   } catch (ex) {
     return "> <a:r2_rice:868583626227478591> 你需要輸入正確的使用者代號或身份組代號給花瓶。";
   }

@@ -72,7 +72,7 @@ async function getTogetherInvite(member, choice) {
   if (!vc) return "> <a:r2_rice:868583626227478591> 你需要在一個允許活動的語音房中才能使用此指令。";
 
   if (!discordTogether.includes(choice)) {
-    return `> <a:r2_rice:868583626227478591> 無效的活動類別，\n> <a:r2_rice:868583626227478591> 目前只允許這些活動類別：\` ${discordTogether.join(" | ")} \`。`;
+    return `> <a:r2_rice:868583626227478591> 無效的活動類別，\n> <a:r2_rice:868583626227478591> 目前只允許這些活動類別：\` ${discordTogether.join("︱")} \`。`;
   }
 
   const invite = await member.client.discordTogether.createTogetherCode(vc, choice);

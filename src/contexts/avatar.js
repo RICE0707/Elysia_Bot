@@ -32,7 +32,7 @@ function getAvatar(user) {
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setImage(x2048)
     .setDescription(
-      `└ 可選大小連結 ︱[x64](${x64})` +
+      `└ 可選大小連結︱[x64](${x64})` +
         ` ︱[x128](${x128})` +
         ` ︱[x256](${x256})` +
         ` ︱[x512](${x512})` +

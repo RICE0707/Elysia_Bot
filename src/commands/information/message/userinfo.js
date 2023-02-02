@@ -10,7 +10,7 @@ module.exports = {
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,
-    usage: "[@成員|代碼]",
+    usage: "[使用者|使用者代碼]",
     aliases: ["uinfo", "memberinfo"],
   },
 

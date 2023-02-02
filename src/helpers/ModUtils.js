@@ -104,7 +104,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
     embed.setAuthor({ name: `花瓶的制裁 - ${type}` }).setThumbnail(target.displayAvatarURL());
 
     if (target instanceof GuildMember) {
-      fields.push({ name: "被清除者", value: `${target.displayName} [${target.id}]`, inline: false });
+      fields.push({ name: "被處分者", value: `${target.displayName} [${target.id}]`, inline: false });
     } else {
       fields.push({ name: "使用者", value: `${target.tag} [${target.id}]`, inline: false });
     }
@@ -113,7 +113,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
 
     if (type.toUpperCase() === "禁言") {
       fields.push({
-        name: "還有多久",
+        name: "禁言時長",
         value: `<t:${Math.round(target.communicationDisabledUntilTimestamp / 1000)}:R>`,
         inline: true,
       });
@@ -248,7 +248,7 @@ module.exports = class ModUtils {
 
       // check if max warnings are reached
       if (memberDb.warnings >= settings.max_warn.limit) {
-        await ModUtils.addModAction(issuer.guild.members.me, target, "達到最大警告數", settings.max_warn.action); // moderate
+        await ModUtils.addModAction(issuer.guild.members.me, target, "已達到最大警告數", settings.max_warn.action); // moderate
         memberDb.warnings = 0; // reset warnings
       }
 
@@ -448,7 +448,7 @@ module.exports = class ModUtils {
       return true;
     } catch (ex) {
       error(`deafenTarget`, ex);
-      return `> 無法使 ${target.user.tag} 被拒聽。`;
+      return `> <a:r2_rice:868583626227478591> 花瓶無法使\` ${target.user.tag} \`被拒聽。`;
     }
   }
 

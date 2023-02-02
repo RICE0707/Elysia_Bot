@@ -63,8 +63,8 @@ const Schema = new mongoose.Schema({
   max_warn: {
     action: {
       type: String,
-      enum: ["禁言", "KICK", "封禁"],
-      default: "KICK",
+      enum: ["禁言", "踢出成員", "封禁"],
+      default: "踢出成員",
     },
     limit: { type: Number, default: 5 },
   },

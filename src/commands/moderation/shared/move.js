@@ -20,5 +20,5 @@ module.exports = async ({ member }, target, reason, channel) => {
   if (response === "ALREADY_IN_CHANNEL") {
     return `> <a:r2_rice:868583626227478591> \` ${target.user.tag} \`已在 ${channel} 中。`;
   }
-  return `> <a:r2_rice:868583626227478591> 無法將\` ${target.user.tag} \`移動到 ${channel} 中。`;
+  return `> <a:r2_rice:868583626227478591> 花瓶無法將\` ${target.user.tag} \`移動到 ${channel} 中。`;
 };

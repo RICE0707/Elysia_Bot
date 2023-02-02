@@ -17,19 +17,19 @@ module.exports = {
     minArgsCount: 2,
     subcommands: [
       {
-        trigger: "狀態 <開啟|關閉>",
+        trigger: "狀態 <開啟︱關閉>",
         description: "是否啟用建議系統",
       },
       {
-        trigger: "頻道 <頻道|關閉>",
+        trigger: "頻道 <頻道︱關閉>",
         description: "設置建議頻道",
       },
       {
-        trigger: "批准設置 <頻道|關閉>",
+        trigger: "批准設置 <頻道︱關閉>",
         description: "設置批准建議頻道",
       },
       {
-        trigger: "否決設置 <頻道|關閉>",
+        trigger: "否決設置 <頻道︱關閉>",
         description: "設置否決建議頻道",
       },
       {
@@ -208,7 +208,7 @@ module.exports = {
     if (sub == "狀態") {
       const status = args[1]?.toUpperCase();
       if (!status || !["是", "否"].includes(status))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await setStatus(data.settings, status);
     }
 
@@ -352,50 +352,50 @@ async function setStatus(settings, status) {
   const enabled = status.toUpperCase() === "是" ? true : false;
   settings.suggestions.enabled = enabled;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 建議功能已\` ${enabled ? "啟用" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 花瓶已\` ${enabled ? "啟用" : "關閉"} \`建議功能。`;
 }
 
 async function setChannel(settings, channel) {
   if (!channel) {
     settings.suggestions.channel_id = null;
     await settings.save();
-    return "> <a:r3_rice:868583679465758820> 建議功能已關閉。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已關閉建議功能。";
   }
 
   if (!channel.permissionsFor(channel.guild.members.me).has(CHANNEL_PERMS)) {
-    return `> <a:r2_rice:868583626227478591> 花瓶需要在\` ${channel} \`中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限。`;
+    return `> <a:r2_rice:868583626227478591> 花瓶需要在 ${channel} 中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限。`;
   }
 
   settings.suggestions.channel_id = channel.id;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 現在建議將被發送至 ${channel}。`;
+  return `> <a:r3_rice:868583679465758820> 現在建議將被花瓶發送至 ${channel}。`;
 }
 
 async function setApprovedChannel(settings, channel) {
   if (!channel) {
     settings.suggestions.approved_channel = null;
     await settings.save();
-    return "> <a:r3_rice:868583679465758820> 建議批准功能已關閉。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已關閉建議批准功能。";
   }
 
   if (!channel.permissionsFor(channel.guild.members.me).has(CHANNEL_PERMS)) {
-    return `> <a:r2_rice:868583626227478591> 花瓶需要在\` ${channel} \`中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限`;
+    return `> <a:r2_rice:868583626227478591> 花瓶需要在 ${channel} 中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限`;
   }
 
   settings.suggestions.approved_channel = channel.id;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 現在批准建議將被發送至 ${channel}。`;
+  return `> <a:r3_rice:868583679465758820> 現在批准建議將被花瓶發送至 ${channel}。`;
 }
 
 async function setRejectedChannel(settings, channel) {
   if (!channel) {
     settings.suggestions.rejected_channel = null;
     await settings.save();
-    return "> <a:r3_rice:868583679465758820> 建議否決功能已關閉。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已關閉建議否決功能。";
   }
 
   if (!channel.permissionsFor(channel.guild.members.me).has(CHANNEL_PERMS)) {
-    return `> <a:r2_rice:868583626227478591> 花瓶需要在\` ${channel} \`中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限`;
+    return `> <a:r2_rice:868583626227478591> 花瓶需要在 ${channel} 中擁有\` ${parsePermissions(CHANNEL_PERMS)} \`權限`;
   }
 
   settings.suggestions.rejected_channel = channel.id;
@@ -409,7 +409,7 @@ async function addStaffRole(settings, role) {
   }
   settings.suggestions.staff_roles.push(role.id);
   await settings.save();
-  return `\`> <a:r2_rice:868583626227478591> \` ${role.name} \`現在是建議管理員。`;
+  return `\`> <a:r2_rice:868583626227478591> 現在\` ${role.name} \`是建議管理員了。`;
 } 
 
 async function removeStaffRole(settings, role) {
@@ -418,5 +418,5 @@ async function removeStaffRole(settings, role) {
   }
   settings.suggestions.staff_roles.splice(settings.suggestions.staff_roles.indexOf(role.id), 1);
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> \` ${role.name} \`現在已不是建議管理員。`;
+  return `> <a:r3_rice:868583679465758820> 現在\` ${role.name} \`已不是建議管理員。`;
 }

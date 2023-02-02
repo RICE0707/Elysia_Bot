@@ -31,8 +31,8 @@ module.exports = {
  */
 function pause({ client, guildId }) {
   const player = client.musicManager.getPlayer(guildId);
-  if (player.paused) return "> <a:r2_rice:868583626227478591> 音樂已暫停撥放。";
+  if (player.paused) return "> <a:r2_rice:868583626227478591> 花瓶已已暫停音樂撥放。";
 
   player.pause(true);
-  return "> <a:r2_rice:868583626227478591> 暫停已音樂播放。";
+  return "> <a:r2_rice:868583626227478591> 花瓶已暫停音樂播放。";
 }

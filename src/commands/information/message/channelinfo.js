@@ -10,7 +10,7 @@ module.exports = {
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,
-    usage: "[#頻道|代碼]",
+    usage: "[頻道︱頻道代碼]",
     aliases: ["chinfo"],
   },
 

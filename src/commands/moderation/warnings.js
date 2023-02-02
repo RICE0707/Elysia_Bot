@@ -112,7 +112,7 @@ async function listWarnings(target, { guildId }) {
   if (target.user.bot) return "> <a:r2_rice:868583626227478591> 花瓶不會有警告。";
 
   const warnings = await getWarningLogs(guildId, target.id);
-  if (!warnings.length) return `> <a:r3_rice:868583679465758820> \` ${target.user.tag} \`沒有警告。`;
+  if (!warnings.length) return `> <a:r3_rice:868583679465758820> \` ${target.user.tag} \`沒有被警告。`;
 
   const acc = warnings.map((warning, i) => `#${i + 1} 原因：${warning.reason} [來自 ${warning.admin.tag}]`).join("\n");
   const embed = new EmbedBuilder({

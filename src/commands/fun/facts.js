@@ -36,7 +36,7 @@ module.exports = {
   async messageRun(message, args) {
     const choice = args[0];
     if (!animals.includes(choice)) {
-      return message.safeReply(`> <a:r2_rice:868583626227478591> 無效的動物種類，目前只支援這些種類：\n\` ${animals.join(" | ")} \`。`);
+      return message.safeReply(`> <a:r2_rice:868583626227478591> 無效的動物種類，目前只支援這些種類：\n\` ${animals.join("︱")} \`。`);
     }
     const response = await getFact(message.author, choice);
     return message.safeReply(response);

@@ -63,7 +63,7 @@ module.exports = class BotUtils {
     return [
       {
         callback: ({ client, guildId }) => client.musicManager.getPlayer(guildId),
-        message: "> <a:r2_rice:868583626227478591> 目前沒有播放音樂！",
+        message: "> <a:r2_rice:868583626227478591> 花瓶目前沒有播放音樂！",
       },
       {
         callback: ({ member }) => member.voice?.channelId,

@@ -5,7 +5,7 @@ const { purgeMessages } = require("@helpers/ModUtils");
  */
 module.exports = {
   name: "清除指定檔案訊息",
-  description: "清除指定檔案訊",
+  description: "清除指定檔案訊息",
   category: "實用類",
   userPermissions: ["ManageMessages"],
   botPermissions: ["ManageMessages", "ReadMessageHistory"],

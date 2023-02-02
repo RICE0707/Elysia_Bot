@@ -13,7 +13,7 @@ module.exports = {
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,
-    usage: "[使用者|使用者代號]",
+    usage: "[使用者︱使用者代號]",
   },
   slashCommand: {
     enabled: true,

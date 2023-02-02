@@ -15,7 +15,7 @@ module.exports = {
     minArgsCount: 1,
     subcommands: [
       {
-        trigger: "狀態 <開啟|關閉>",
+        trigger: "狀態 <開啟︱關閉>",
         description: "是否發送成員入群群訊息",
       },
       {
@@ -31,7 +31,7 @@ module.exports = {
         description: "設置成員入群群訊息",
       },
       {
-        trigger: "縮略圖 <開啟|關閉>",
+        trigger: "縮略圖 <開啟︱關閉>",
         description: "是否在成員入群群訊息放上縮略圖",
       },
       {
@@ -137,7 +137,7 @@ module.exports = {
         options: [
           {
             name: "二進制色碼",
-            description: "輸入二進制色碼 (例如：#d3d7da)",
+            description: "輸入二進制色碼（例如：#d3d7da）",
             type: ApplicationCommandOptionType.String,
             required: true,
           },
@@ -186,7 +186,7 @@ module.exports = {
     else if (type === "狀態") {
       const status = args[1]?.toUpperCase();
       if (!status || !["是", "否"].includes(status))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await setStatus(settings, status);
     }
 
@@ -207,7 +207,7 @@ module.exports = {
     else if (type === "縮略圖") {
       const status = args[1]?.toUpperCase();
       if (!status || !["是", "否"].includes(status))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await setThumbnail(settings, status);
     }
 
@@ -299,7 +299,7 @@ async function setStatus(settings, status) {
   const enabled = status.toUpperCase() === "是" ? true : false;
   settings.welcome.enabled = enabled;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，加入訊息功能已\` ${enabled ? "開啟" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 加入訊息功能已\` ${enabled ? "開啟" : "關閉"} \`。`;
 }
 
 async function setChannel(settings, channel) {
@@ -311,35 +311,35 @@ async function setChannel(settings, channel) {
   }
   settings.welcome.channel = channel.id;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，加入訊息將發送至 ${channel ? channel.toString() : "此頻道不存在"} 頻道。`;
+  return `> <a:r3_rice:868583679465758820> 加入訊息將發送至 ${channel ? channel.toString() : "此頻道不存在"} 頻道。`;
 }
 
 async function setDescription(settings, desc) {
   settings.welcome.embed.description = desc;
   await settings.save();
-  return "> <a:r3_rice:868583679465758820> 已保存設置，加入訊息已更新。";
+  return "> <a:r3_rice:868583679465758820> 加入訊息已更新。";
 }
 
 async function setThumbnail(settings, status) {
   settings.welcome.embed.thumbnail = status.toUpperCase() === "是" ? true : false;
   await settings.save();
-  return "> <a:r3_rice:868583679465758820> 已保存設置，加入訊息已更新。";
+  return "> <a:r3_rice:868583679465758820> 加入訊息已更新。";
 }
 
 async function setColor(settings, color) {
   settings.welcome.embed.color = color;
   await settings.save();
-  return "> <a:r3_rice:868583679465758820> 已保存設置，加入訊息已更新。";
+  return "> <a:r3_rice:868583679465758820> 加入訊息已更新。";
 }
 
 async function setFooter(settings, content) {
   settings.welcome.embed.footer = content;
   await settings.save();
-  return "> <a:r3_rice:868583679465758820> 已保存設置，加入訊息已更新。";
+  return "> <a:r3_rice:868583679465758820> 加入訊息已更新。";
 }
 
 async function setImage(settings, url) {
   settings.welcome.embed.image = url;
   await settings.save();
-  return "> <a:r3_rice:868583679465758820> 已保存設置，加入訊息已更新。";
+  return "> <a:r3_rice:868583679465758820> 加入訊息已更新。";
 }

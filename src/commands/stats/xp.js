@@ -17,7 +17,7 @@ module.exports = {
         description: "設置升級訊息",
       },
       {
-        trigger: "頻道 <#頻道|關閉>",
+        trigger: "頻道 <頻道︱關閉>",
         description: "設置發布升級訊息的頻道",
       },
     ],
@@ -101,7 +101,7 @@ async function setMessage(message, settings) {
   if (!message) return "> <a:r2_rice:868583626227478591> 無效的訊息，請提供正確的訊息。";
   settings.stats.xp.message = message;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已更新升級訊息。`;
+  return `> <a:r3_rice:868583679465758820> 花瓶已更新升級訊息。`;
 }
 
 async function setChannel(channel, settings) {

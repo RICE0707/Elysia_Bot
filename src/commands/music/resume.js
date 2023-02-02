@@ -31,7 +31,7 @@ module.exports = {
  */
 function resumePlayer({ client, guildId }) {
   const player = client.musicManager.getPlayer(guildId);
-  if (!player.paused) return "> <a:r3_rice:868583679465758820> 音樂已開始撥放，";
+  if (!player.paused) return "> <a:r3_rice:868583679465758820> 花瓶已讓音樂開始撥放，";
   player.resume();
-  return "> <a:r3_rice:868583679465758820> 音樂已開始撥放。";
+  return "> <a:r3_rice:868583679465758820> 花瓶已讓音樂開始撥放。";
 }

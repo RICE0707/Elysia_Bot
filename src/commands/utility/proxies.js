@@ -35,10 +35,10 @@ module.exports = {
 
     if (args[0]) {
       if (PROXY_TYPES.includes(args[0].toLowerCase())) type = args[0].toLowerCase();
-      else return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這三個選項中選擇其一：`http` `socks4` `socks5`。");
+      else return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這三個選項中選擇其一：` http︱socks4︱socks5 `。");
     }
 
-    const msg = await message.channel.send("> <a:r2_rice:868583626227478591> 正在獲取代理，請稍後。");
+    const msg = await message.channel.send("> <a:r2_rice:868583626227478591> 花瓶正在獲取代理...");
     const response = await getProxies(type);
     if (msg.deletable) await msg.delete();
     await message.safeReply(response);
@@ -46,7 +46,7 @@ module.exports = {
 
   async interactionRun(interaction) {
     const type = interaction.options.getString("類型");
-    await interaction.followUp("> <a:r2_rice:868583626227478591> 正在獲取代理，請稍後。");
+    await interaction.followUp("> <a:r2_rice:868583626227478591> 花瓶正在獲取代理...");
     const response = await getProxies(type);
     await interaction.editReply(response);
   },

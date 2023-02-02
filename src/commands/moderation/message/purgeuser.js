@@ -11,7 +11,7 @@ module.exports = {
   botPermissions: ["ManageMessages", "ReadMessageHistory"],
   command: {
     enabled: true,
-    usage: "<使用者代號|使用者> [數量]",
+    usage: "<使用者代號︱使用者> [數量]",
     aliases: ["purgeusers"],
     minArgsCount: 1,
   },
@@ -27,7 +27,7 @@ module.exports = {
     }
 
     const { channel } = message;
-    const response = await purgeMessages(message.member, message.channel, "USER", amount, target);
+    const response = await purgeMessages(message.member, message.channel, "使用者", amount, target);
 
     if (typeof response === "number") {
       return channel.safeSend(`> <a:r3_rice:868583679465758820> 已刪除\` ${response} \`則訊息。`, 5);

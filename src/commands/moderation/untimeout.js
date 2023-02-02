@@ -13,7 +13,7 @@ module.exports = {
   command: {
     enabled: true,
     aliases: ["unmute"],
-    usage: "<使用者代號|使用者> [原因]",
+    usage: "<使用者代號︱使用者> [原因]",
     minArgsCount: 1,
   },
   slashCommand: {
@@ -57,6 +57,6 @@ async function untimeout(issuer, target, reason) {
   if (typeof response === "boolean") return `> <a:r3_rice:868583679465758820> 已解除禁言\` ${target.user.tag} \`。`;
   if (response === "BOT_PERM") return `> <a:r2_rice:868583626227478591> 花瓶沒有權限解除禁言\` ${target.user.tag} \`。`;
   else if (response === "MEMBER_PERM") return `> <a:r2_rice:868583626227478591> 你沒有權限解除禁言\` ${target.user.tag} \`。`;
-  else if (response === "NO_TIMEOUT") return `> <a:r3_rice:868583679465758820> 沒有被禁言\` ${target.user.tag} \`。`;
-  else return `> <a:r2_rice:868583626227478591> 無法解除封禁\` ${target.user.tag} \`。`;
+  else if (response === "NO_TIMEOUT") return `> <a:r3_rice:868583679465758820> \` ${target.user.tag} \`沒有被禁言。`;
+  else return `> <a:r2_rice:868583626227478591> 花瓶無法解除封禁\` ${target.user.tag} \`。`;
 }

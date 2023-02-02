@@ -53,5 +53,5 @@ function seekTo({ client, guildId }, time) {
   }
 
   player.seek(seekTo);
-  return `> <a:r3_rice:868583679465758820> 以跳轉至 ${prettyMs(seekTo, { colonNotation: true, secondsDecimalDigits: 0 })}。`;
+  return `> <a:r3_rice:868583679465758820> 花瓶已將歌曲時間跳轉至\` ${prettyMs(seekTo, { colonNotation: true, secondsDecimalDigits: 0 })} \`。`;
 }

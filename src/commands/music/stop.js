@@ -34,5 +34,5 @@ async function stop({ client, guildId }) {
   const player = client.musicManager.getPlayer(guildId);
   player.disconnect();
   await client.musicManager.destroyPlayer(guildId);
-  return "> <a:r3_rice:868583679465758820> 已停止撥放，播放清單也已清除。";
+  return "> <a:r3_rice:868583679465758820> 花瓶已停止音樂撥放，也已清除剩餘的待播音樂。";
 }

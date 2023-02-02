@@ -45,8 +45,8 @@ async function volume({ client, guildId }, volume) {
   const player = client.musicManager.getPlayer(guildId);
 
   if (!volume) return `> <a:r3_rice:868583679465758820> 已設置聲量為\` ${player.volume} \`。`;
-  if (volume < 1 || volume > 100) return "> <a:r2_rice:868583626227478591> 你需要輸入 1 ~ 100 之間的數值。";
+  if (volume < 1 || volume > 100) return "> <a:r2_rice:868583626227478591> 你需要輸入\` 1 ~ 100 \`之間的數值。";
 
   await player.setVolume(volume);
-  return `> <a:r3_rice:868583679465758820> 已設置聲量為\` ${volume} \`。`;
+  return `> <a:r3_rice:868583679465758820> 已設置花瓶的聲量為\` ${volume} \`。`;
 }

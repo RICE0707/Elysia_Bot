@@ -16,7 +16,7 @@ module.exports = {
     enabled: true,
     aliases: ["lb"],
     minArgsCount: 1,
-    usage: "<經驗|邀請|愛心>",
+    usage: "<經驗︱邀請︱愛心>",
   },
   slashCommand: {
     enabled: true,
@@ -51,7 +51,7 @@ module.exports = {
     if (type === "經驗") response = await getXpLeaderboard(message, message.author, data.settings);
     else if (type === "邀請") response = await getInviteLeaderboard(message, message.author, data.settings);
     else if (type === "愛心") response = await getRepLeaderboard(message.author);
-    else response = "> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗 `、` 邀請 `。";
+    else response = "> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗︱邀請 `。";
     await message.safeReply(response);
   },
 
@@ -62,7 +62,7 @@ module.exports = {
     if (type === "經驗") response = await getXpLeaderboard(interaction, interaction.user, data.settings);
     else if (type === "邀請") response = await getInviteLeaderboard(interaction, interaction.user, data.settings);
     else if (type === "愛心") response = await getRepLeaderboard(interaction.user);
-    else response = "> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗 `、` 邀請 `。";
+    else response = "> <a:r2_rice:868583626227478591> 未知的類型，請使用：` 經驗︱邀請 `。";
 
     await interaction.followUp(response);
   },

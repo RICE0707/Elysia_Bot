@@ -4,7 +4,7 @@ const { ECONOMY, EMBED_COLORS } = require("@root/config");
 
 module.exports = async (self, target, coins) => {
   if (isNaN(coins) || coins <= 0) return "> <a:r2_rice:868583626227478591> 請輸入有效的數字才能轉帳喔（非現實貨幣）。";
-  if (target.bot) return "> <a:r2_rice:868583626227478591> 你不能將錢轉給機器人（非現實貨幣）。";
+  if (target.bot) return "> <a:r2_rice:868583626227478591> 你不能將錢轉給花瓶（非現實貨幣）。";
   if (target.id === self.id) return "> <a:r2_rice:868583626227478591> 你不能將錢轉給自己（非現實貨幣）。";
 
   const userDb = await getUser(self);

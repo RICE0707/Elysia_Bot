@@ -34,8 +34,8 @@ function skip({ client, guildId }) {
   const player = client.musicManager.getPlayer(guildId);
 
   // check if current song is playing
-  if (!player.queue.current) return "> <a:r2_rice:868583626227478591> 當前沒有正在撥放的歌曲。";
+  if (!player.queue.current) return "> <a:r2_rice:868583626227478591> 花瓶當前沒有正在撥放的歌曲。";
 
   const { title } = player.queue.current;
-  return player.queue.next() ? `> <a:r3_rice:868583679465758820> 已跳過\` ${title} \`。` : "> <a:r2_rice:868583626227478591> 沒有歌曲可以被跳過了。";
+  return player.queue.next() ? `> <a:r3_rice:868583679465758820> 花瓶已跳過\` ${title} \`。` : "> <a:r2_rice:868583626227478591> 沒有歌曲可以被花瓶跳過了。";
 }

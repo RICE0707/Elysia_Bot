@@ -75,5 +75,5 @@ async function removeRR(guild, channel, messageId) {
     return "> <a:r2_rice:868583626227478591> 喔不，發生了讓花瓶碎掉的問題，請重新設置。";
   }
 
-  return "> <a:r3_rice:868583679465758820> 你已成功設置，數據已保存。";
+  return "> <a:r3_rice:868583679465758820> 設置已保存。";
 }

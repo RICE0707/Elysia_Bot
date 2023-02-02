@@ -12,7 +12,7 @@ module.exports = {
   command: {
     enabled: true,
     aliases: ["invitetracking"],
-    usage: "<ON|OFF>",
+    usage: "<開啟︱關閉>",
     minArgsCount: 1,
   },
   slashCommand: {

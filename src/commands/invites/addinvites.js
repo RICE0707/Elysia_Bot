@@ -14,7 +14,7 @@ module.exports = {
   botPermissions: ["EmbedLinks"],
   command: {
     enabled: true,
-    usage: "<使用者|使用者代號> <邀請次數>",
+    usage: "<使用者︱使用者代號> <邀請次數>",
     minArgsCount: 2,
   },
   slashCommand: {

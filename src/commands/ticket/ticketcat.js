@@ -17,7 +17,7 @@ module.exports = {
         description: "",
       },
       {
-        trigger: "新增 <類別> | <客服單管理員身份組>",
+        trigger: "新增 <類別>︱客服單管理員身份組>",
         description: "新增客服單類別",
       },
       {

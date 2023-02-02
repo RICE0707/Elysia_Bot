@@ -13,15 +13,15 @@ module.exports = {
     minArgsCount: 2,
     subcommands: [
       {
-        trigger: "限制檔案 <開啟|關閉>",
+        trigger: "限制檔案 <開啟︱關閉>",
         description: "是否允許使用者發送檔案",
       },
       {
-        trigger: "限制邀請 <開啟|關閉>",
+        trigger: "限制邀請 <開啟︱關閉>",
         description: "是否允許使用者發送邀請",
       },
       {
-        trigger: "限制連結 <開啟|關閉>",
+        trigger: "限制連結 <開啟︱關閉>",
         description: "是否允許使用者發送連結",
       },
       {
@@ -126,21 +126,21 @@ module.exports = {
 
     if (sub == "限制檔案") {
       const status = args[1].toLowerCase();
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。`");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。`");
       response = await antiAttachments(settings, status);
     }
 
     //
     else if (sub === "限制邀請") {
       const status = args[1].toLowerCase();
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await antiInvites(settings, status);
     }
 
     //
     else if (sub == "限制連結") {
       const status = args[1].toLowerCase();
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：` 是/否 `。");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：` 是︱否 `。");
       response = await antilinks(settings, status);
     }
 
@@ -178,8 +178,8 @@ async function antiAttachments(settings, input) {
   const status = input.toUpperCase() === "是" ? true : false;
   settings.automod.anti_attachments = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，${
-    status ? "現在將會移除帶有檔案的訊息。" : "現在不再會移除帶有檔案的訊息。"
+  return `> <a:r3_rice:868583679465758820> ${
+    status ? "現在花瓶會移除帶有檔案的訊息。" : "現在花瓶不再會移除帶有檔案的訊息。"
   }`;
 }
 
@@ -187,8 +187,8 @@ async function antiInvites(settings, input) {
   const status = input.toUpperCase() === "是" ? true : false;
   settings.automod.anti_invites = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，${
-    status ? "現在將會移除帶有邀請的訊息。" : "現在不再會移除帶有邀請的訊息。"
+  return `> <a:r3_rice:868583679465758820> ${
+    status ? "現在花瓶會移除帶有邀請的訊息。" : "現在花瓶不再會移除帶有邀請的訊息。"
   }`;
 }
 
@@ -196,7 +196,7 @@ async function antilinks(settings, input) {
   const status = input.toUpperCase() === "是" ? true : false;
   settings.automod.anti_links = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，${status ? "現在將會移除帶有連結的訊息。" : "現在不再會移除帶有連結的訊息。"}`;
+  return `> <a:r3_rice:868583679465758820> ${status ? "現在花瓶會移除帶有連結的訊息。" : "現在花瓶不再會移除帶有連結的訊息。"}`;
 }
 
 async function maxLines(settings, input) {
@@ -207,7 +207,7 @@ async function maxLines(settings, input) {
   await settings.save();
   return `${
     input === 0
-      ? "> <a:r3_rice:868583679465758820> 已關閉行數限制，現在可以暢所欲言了。"
+      ? "> <a:r3_rice:868583679465758820> 已關閉行數限制。"
       : `> <a:r3_rice:868583679465758820> 現在超過\` ${input} \`行的訊息將會被花瓶移除。`
   }`;
 }

@@ -59,7 +59,7 @@ function getQueue({ client, guild }, pgNo) {
   const tracks = queue.tracks.slice(start, end);
 
   if (queue.current) embed.addFields({ name: "當前撥放中...", value: `[${queue.current.title}](${queue.current.uri})` });
-  if (!tracks.length) embed.setDescription(`沒有曲目 ${page > 1 ? `頁數 ${page}` : "於隊列中"}.`);
+  if (!tracks.length) embed.setDescription(`沒有曲目 ${page > 1 ? `頁數 ${page}` : "於播放清單中"}.`);
   else embed.setDescription(tracks.map((track, i) => `${start + ++i} - [${track.title}](${track.uri})`).join("\n"));
 
   const maxPages = Math.ceil(queue.tracks.length / multiple);

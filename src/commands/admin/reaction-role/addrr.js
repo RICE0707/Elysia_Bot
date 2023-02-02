@@ -117,5 +117,5 @@ async function addRR(guild, channel, messageId, reaction, role) {
   }
 
   await addReactionRole(guild.id, channel.id, targetMessage.id, emoji, role.id);
-  return (reply += "> <a:r3_rice:868583679465758820> 你已成功設置，數據已保存。");
+  return (reply += "> <a:r3_rice:868583679465758820> 設置已保存。");
 }

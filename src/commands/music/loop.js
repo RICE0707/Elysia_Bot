@@ -13,7 +13,7 @@ module.exports = {
   command: {
     enabled: true,
     minArgsCount: 1,
-    usage: "<播放清單循環|單曲循環>",
+    usage: "<播放清單循環︱單曲循環>",
   },
   slashCommand: {
     enabled: true,
@@ -61,12 +61,12 @@ function toggleLoop({ client, guildId }, type) {
   // track
   if (type === "單曲循環") {
     player.queue.setLoop(LoopType.Song);
-    return "> <a:r3_rice:868583679465758820> 已切換為` 單曲循環 `模式。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已切換為` 單曲循環 `模式。";
   }
 
   // queue
   else if (type === "播放清單循環") {
     player.queue.setLoop(1);
-    return "> <a:r3_rice:868583679465758820> 已切換為` 播放清單循環 `模式。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已切換為` 播放清單循環 `模式。";
   }
 }

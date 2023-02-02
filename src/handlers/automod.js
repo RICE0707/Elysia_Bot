@@ -171,11 +171,11 @@ async function performAutomod(message, settings) {
     // send automod log
     if (logChannel) {
       const logEmbed = new EmbedBuilder()
-        .setAuthor({ name: "自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+        .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
         .setThumbnail(author.displayAvatarURL())
         .setColor(AUTOMOD.LOG_EMBED)
         .addFields(fields)
-        .setDescription(`**頻道：** ${channel.toString()}\n**內容：**\n${content}`)
+        .setDescription(`**違規頻道：**\n> ${channel.toString()}\n**違規內容：**\n> \` ${content} \``)
         .setTimestamp()
         .setFooter({
           text: `來自花瓶星球的科技支援 v3.0 - ${author.tag}︱${author.id}`,
@@ -189,14 +189,14 @@ async function performAutomod(message, settings) {
     const strikeEmbed = new EmbedBuilder()
       .setColor(AUTOMOD.DM_EMBED)
       .setThumbnail(guild.iconURL())
-      .setAuthor({ name: "自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+      .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
       .addFields(fields)
       .setTimestamp()
       .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })    
       .setDescription(
-        `你收到了來自 ${strikesTotal} 的群組警告！\n\n` +
-          `**群組：** ${guild.name}\n` +
-          `**警告：** ${memberDb.strikes}次，達到${automod.strikes}次後將被自動處分。`
+        `> 你收到了\` ${strikesTotal} \`個群組警告！\n\n` +
+          `**警告群組：** \n> \` ${guild.name} \`\n` +
+          `**警告次數：** \n> \` ${memberDb.strikes} \`次（達到\` ${automod.strikes} \`次後將被自動處分。)`
       );
 
     author.send({ embeds: [strikeEmbed] }).catch((ex) => {});
@@ -207,7 +207,7 @@ async function performAutomod(message, settings) {
       memberDb.strikes = 0;
 
       // Add Moderation Action
-      await addModAction(guild.members.me, member, "自動管理系統：收到的最大警告數", automod.action).catch(() => {});
+      await addModAction(guild.members.me, member, "> 已達到最高警告數。", automod.action).catch(() => {});
     }
 
     await memberDb.save();

@@ -23,7 +23,7 @@ module.exports = async (member, messageId) => {
 
   try {
     await giveaway.reroll();
-    return "> <a:r3_rice:868583679465758820> 主辦者重啟了這個抽獎。";
+    return "> <a:r3_rice:868583679465758820> 花瓶重啟了這個抽獎。";
   } catch (error) {
     member.client.logger.error("Giveaway Reroll", error);
     return `> <a:r2_rice:868583626227478591> 花瓶在重啟抽獎時碎掉了：${error.message}`;

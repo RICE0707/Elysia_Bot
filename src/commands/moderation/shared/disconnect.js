@@ -14,5 +14,5 @@ module.exports = async ({ member }, target, reason) => {
   if (response === "NO_VOICE") {
     return `> <a:r2_rice:868583626227478591> \` ${target.user.tag} \`不在語音頻道中。`;
   }
-  return `> <a:r2_rice:868583626227478591> 無法讓\` ${target.user.tag} \`斷線。`;
+  return `> <a:r2_rice:868583626227478591> 花瓶無法讓\` ${target.user.tag} \`斷線。`;
 };

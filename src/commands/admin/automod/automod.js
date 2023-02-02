@@ -23,11 +23,11 @@ module.exports = {
         description: "設置使用者能接收的警告最大值",
       },
       {
-        trigger: "處分 <禁言|踢出成員|封禁>",
+        trigger: "處分 <禁言︱踢出成員︱封禁>",
         description: "設置使用者達到警告最大值後的處分",
       },
       {
-        trigger: "調適 <開啟|關閉>",
+        trigger: "調適 <開啟︱關閉>",
         description: "是否讓管理員也會被自動管理偵測",
       },
       {
@@ -54,7 +54,7 @@ module.exports = {
         type: ApplicationCommandOptionType.Subcommand,
       },
       {
-        name: "警告",
+        name: "警告數",
         description: "設置使用者能接收的警告最大值",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
@@ -68,12 +68,12 @@ module.exports = {
       },
       {
         name: "處分",
-        description: "設置使用者達到警告最大值後處分",
+        description: "選擇使用者達到警告最大值後的處分",
         type: ApplicationCommandOptionType.Subcommand,
         options: [
           {
             name: "嚴重程度",
-            description: "選擇使用者達到警告最大值後的處分",
+            description: "嚴重程度",
             type: ApplicationCommandOptionType.String,
             required: true,
             choices: [
@@ -128,7 +128,7 @@ module.exports = {
         options: [
           {
             name: "頻道",
-            description: "將一個頻道加入白名單",
+            description: "選擇頻道",
             required: true,
             type: ApplicationCommandOptionType.Channel,
             channelTypes: [ChannelType.GuildText],
@@ -142,7 +142,7 @@ module.exports = {
         options: [
           {
             name: "頻道",
-            description: "將一個頻道從白名單中移除",
+            description: "選擇頻道",
             required: true,
             type: ApplicationCommandOptionType.Channel,
             channelTypes: [ChannelType.GuildText],
@@ -159,20 +159,20 @@ module.exports = {
     let response;
     if (input === "狀態") {
       response = await getStatus(settings, message.guild);
-    } else if (input === "警告") {
+    } else if (input === "警告數") {
       const strikes = args[1];
       if (isNaN(strikes) || Number.parseInt(strikes) < 1) {
-        return message.safeReply("> <a:r2_rice:868583626227478591> 此數值必須大於0，並且必須為數字。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 此數值必須大於\` 0 \`，並且必須為數字");
       }
       response = await setStrikes(settings, strikes);
-    } else if (input === "嚴重程度") {
+    } else if (input === "處分") {
       const action = args[1].toUpperCase();
       if (!action || !["禁言", "踢出成員", "封禁"].includes(action))
-        return message.safeReply("> <a:r2_rice:868583626227478591> 無效的處分類型，處分類型必須為：` 禁言 `/` 踢出成員 `/` 封禁 `其一。");
+        return message.safeReply("> <a:r2_rice:868583626227478591> 處分類型必須為：` 禁言︱踢出成員︱封禁 `其一。`");
       response = await setAction(settings, message.guild, action);
     } else if (input === "調適") {
       const status = args[1].toLowerCase();
-      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 無效的選擇，請在這兩個選項中選擇其一：`是/否`。");
+      if (!["是", "否"].includes(status)) return message.safeReply("> <a:r2_rice:868583626227478591> 請在這兩個選項中選擇其一：`是︱否`。`");
       response = await setDebug(settings, status);
     }
 
@@ -184,7 +184,7 @@ module.exports = {
     // whitelist add
     else if (input === "白名單新增") {
       const match = message.guild.findMatchingChannels(args[1]);
-      if (!match.length) return message.safeReply(`> <a:r2_rice:868583626227478591> \` ${args[1]} \`頻道並不存在。`);
+      if (!match.length) return message.safeReply(`> <a:r2_rice:868583626227478591> \` ${args[1]} \`頻道並不存在`);
       response = await whiteListAdd(settings, match[0].id);
     }
 
@@ -207,7 +207,7 @@ module.exports = {
     let response;
 
     if (sub === "狀態") response = await getStatus(settings, interaction.guild);
-    else if (sub === "警告") response = await setStrikes(settings, interaction.options.getInteger("最大值"));
+    else if (sub === "警告數") response = await setStrikes(settings, interaction.options.getInteger("最大值"));
     else if (sub === "處分")
       response = await setAction(settings, interaction.guild, interaction.options.getString("嚴重程度"));
     else if (sub === "調適") response = await setDebug(settings, interaction.options.getString("是否啟用"));
@@ -235,7 +235,7 @@ async function getStatus(settings, guild) {
   // String Builder
   let desc = stripIndent`
     **限制最大行數**：${automod.max_lines || "無設置。"}
-    **防一次性標註多人**：${automod.anti_massmention > 0 ? "已啟用" : "未啟用"}
+    **防多標註**：${automod.anti_massmention > 0 ? "已啟用" : "未啟用"}
     **限制檔案**：${automod.anti_attachment ? "已啟用" : "未啟用"}
     **限制連結**：${automod.anti_links ? "已啟用" : "未啟用"}
     **限制邀請**：${automod.anti_invites ? "已啟用" : "未啟用"}
@@ -257,7 +257,7 @@ async function getStatus(settings, guild) {
         inline: true,
       },
       {
-        name: "最高警告數",
+        name: "可被警告數",
         value: automod.strikes.toString(),
         inline: true,
       },
@@ -279,38 +279,38 @@ async function getStatus(settings, guild) {
 async function setStrikes(settings, strikes) {
   settings.automod.strikes = strikes;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在最高警告數為：\` ${strikes} \`。`;
+  return `> <a:r3_rice:868583679465758820> 現在可被警告數為：\` ${strikes} \`。`;
 }
 
 async function setAction(settings, guild, action) {
   if (action === "禁言") {
     if (!guild.members.me.permissions.has("ModerateMembers")) {
-      return "> <a:r2_rice:868583626227478591> 你沒有權限禁言其他成員。";
+      return "> <a:r2_rice:868583626227478591> 花瓶沒有權限禁言其他成員。";
     }
   }
 
   if (action === "踢出成員") {
     if (!guild.members.me.permissions.has("KickMembers")) {
-      return "> <a:r2_rice:868583626227478591> 你沒有權限踢出其他成員。";
+      return "> <a:r2_rice:868583626227478591> 花瓶沒有權限踢出其他成員。";
     }
   }
 
   if (action === "封禁") {
     if (!guild.members.me.permissions.has("BanMembers")) {
-      return "> <a:r2_rice:868583626227478591> 你沒有權限封禁其他成員。";
+      return "> <a:r2_rice:868583626227478591> 花瓶沒有權限封禁其他成員。";
     }
   }
 
   settings.automod.action = action;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 滿警告處分為：\` ${action} \`。`;
+  return `> <a:r3_rice:868583679465758820> 花瓶已調整滿警告處分為：\` ${action} \`。`;
 }
 
 async function setDebug(settings, input) {
   const status = input.toLowerCase() === "是" ? true : false;
   settings.automod.debug = status;
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 調適模式已\` ${status ? "開啟" : "關閉"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 調適模式已\` ${status ? "開啟" : "關閉"} \`。"}`;
 }
 
 function getWhitelist(guild, settings) {
@@ -324,19 +324,19 @@ function getWhitelist(guild, settings) {
     if (channel) channels.push(channel.toString());
   }
 
-  return `白名單頻道：${channels.join("， ")}。`;
+  return `白名單頻道：${channels.join("︱")}`;
 }
 
 async function whiteListAdd(settings, channelId) {
   if (settings.automod.wh_channels.includes(channelId)) return "> <a:r3_rice:868583679465758820> 此頻道已被列入白名單。";
   settings.automod.wh_channels.push(channelId);
   await settings.save();
-  return `此頻道已被列入白名單。`;
+  return `> <a:r3_rice:868583679465758820> 此頻道已被列入白名單。`;
 }
 
 async function whiteListRemove(settings, channelId) {
-  if (!settings.automod.wh_channels.includes(channelId)) return "> <a:r2_rice:868583626227478591> 此頻道不在白名單中。";
+  if (!settings.automod.wh_channels.includes(channelId)) return "> <a:r2_rice:868583626227478591> 此頻道已不在白名單中。";
   settings.automod.wh_channels.splice(settings.automod.wh_channels.indexOf(channelId), 1);
   await settings.save();
-  return `此頻道已從白名單中移除。`;
+  return `> <a:r2_rice:868583626227478591> 此頻道已不在白名單中。`;
 }

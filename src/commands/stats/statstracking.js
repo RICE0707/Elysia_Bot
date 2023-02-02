@@ -11,7 +11,7 @@ module.exports = {
   command: {
     enabled: true,
     aliases: ["statssystem", "statstracking"],
-    usage: "<是|否>",
+    usage: "<是︱否>",
     minArgsCount: 1,
   },
   slashCommand: {
@@ -56,5 +56,5 @@ async function setStatus(input, settings) {
   settings.stats.enabled = status;
   await settings.save();
 
-  return `> <a:r3_rice:868583679465758820> 已保存設置，現在將${status ? "會" : "不再"}進行統計。`;
+  return `> <a:r3_rice:868583679465758820> 現在花瓶將${status ? "會" : "不再"}進行統計。`;
 }

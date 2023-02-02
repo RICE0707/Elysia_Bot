@@ -14,7 +14,7 @@ module.exports = {
   botPermissions: ["AttachFiles"],
   command: {
     enabled: true,
-    usage: "[@使用者|使用者代碼]",
+    usage: "[使用者︱使用者代碼]",
   },
   slashCommand: {
     enabled: true,

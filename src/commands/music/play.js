@@ -71,7 +71,7 @@ async function play({ member, guild, channel }, query) {
   try {
     if (guild.client.musicManager.spotify.isSpotifyUrl(query)) {
       if (!process.env.SPOTIFY_CLIENT_ID || !process.env.SPOTIFY_CLIENT_SECRET) {
-        return "> <a:r2_rice:868583626227478591> 無法播放 Spotify 歌曲。 請聯繫機器人所有者。";
+        return "> <a:r2_rice:868583626227478591> 花瓶無法播放\` Spotify \`歌曲。";
       }
 
       const item = await guild.client.musicManager.spotify.load(query);
@@ -113,7 +113,7 @@ async function play({ member, guild, channel }, query) {
           return "> <a:r2_rice:868583626227478591> 搜索歌曲讓花瓶碎了。";
 
         case "NO_MATCHES":
-          return `> <a:r2_rice:868583626227478591> 找不到與 ${query} 匹配的歌曲。`;
+          return `> <a:r2_rice:868583626227478591> 花瓶找不到與\` ${query} \`匹配的歌曲。`;
 
         case "PLAYLIST_LOADED":
           tracks = res.tracks;

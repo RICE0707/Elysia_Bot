@@ -87,7 +87,7 @@ async function search({ member, guild, channel }, query) {
       return "> <a:r2_rice:868583626227478591> 搜索歌曲時花瓶碎了。";
 
     case "NO_MATCHES":
-      return `> <a:r2_rice:868583626227478591> 找不到與\` ${query} \`匹配的歌曲。`;
+      return `> <a:r2_rice:868583626227478591> 花瓶找不到與\` ${query} \`匹配的歌曲。`;
 
     case "TRACK_LOADED": {
       const [track] = res.tracks;

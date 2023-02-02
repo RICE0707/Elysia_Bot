@@ -17,7 +17,7 @@ module.exports = {
   userPermissions: ["BanMembers"],
   command: {
     enabled: true,
-    usage: "<使用者代號|使用者> [原因]",
+    usage: "<使用者代號︱使用者> [原因]",
     minArgsCount: 1,
   },
   slashCommand: {
@@ -115,7 +115,7 @@ async function waitForBan(issuer, reason, sent) {
 
     const status = await unBanTarget(issuer, user, reason);
     if (typeof status === "boolean") return sent.edit({ content: `<a:r3_rice:868583679465758820> \` ${user.tag} \`已被解除封禁。`, components: [] });
-    else return sent.edit({ content: `> <a:r2_rice:868583626227478591> 無法解除封禁 \` ${user.tag} \`。`, components: [] });
+    else return sent.edit({ content: `> <a:r2_rice:868583626227478591> 花瓶無法解除封禁 \` ${user.tag} \`。`, components: [] });
   });
 
   // collect user and unban

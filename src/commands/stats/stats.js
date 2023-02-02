@@ -13,7 +13,7 @@ module.exports = {
   category: "統計類",
   command: {
     enabled: true,
-    usage: "[@使用者|使用者代碼]",
+    usage: "[使用者︱使用者代碼]",
   },
   slashCommand: {
     enabled: true,

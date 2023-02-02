@@ -28,7 +28,7 @@ module.exports = async (member, messageId, addDuration, newPrize, newWinnerCount
       newWinnerCount: newWinnerCount || giveaway.winnerCount,
     });
 
-    return `> <a:r3_rice:868583679465758820> 主辦者更新了這個抽獎。`;
+    return `> <a:r3_rice:868583679465758820> 花瓶更新了這個抽獎。`;
   } catch (error) {
     member.client.logger.error("Giveaway Edit", error);
     return `> <a:r2_rice:868583626227478591> 花瓶在編輯抽獎時碎掉了：${error.message}`;

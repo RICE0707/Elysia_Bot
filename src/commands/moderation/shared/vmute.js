@@ -17,5 +17,5 @@ module.exports = async ({ member }, target, reason) => {
   if (response === "ALREADY_MUTED") {
     return `> <a:r2_rice:868583626227478591> \` ${target.user.tag} \`已被禁音。`;
   }
-  return `> <a:r2_rice:868583626227478591> 無法禁音\` ${target.user.tag} \`。`;
+  return `> <a:r2_rice:868583626227478591> 花瓶無法禁音\` ${target.user.tag} \`。`;
 };

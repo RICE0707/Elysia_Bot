@@ -19,7 +19,7 @@ module.exports = {
   command: {
     enabled: true,
     minArgsCount: 1,
-    usage: "<無|弱|中|高>",
+    usage: "<無︱弱︱中︱高>",
   },
   slashCommand: {
     enabled: true,
@@ -73,5 +73,5 @@ function setBassBoost({ client, guildId }, level) {
   const player = client.musicManager.getPlayer(guildId);
   const bands = new Array(3).fill(null).map((_, i) => ({ band: i, gain: levels[level] }));
   player.setEqualizer(...bands);
-  return `> <a:r3_rice:868583679465758820> 已設置低頻增強級別為\` ${level} \`。`;
+  return `> <a:r3_rice:868583679465758820> 花瓶已設置低頻增強級別為\` ${level} \`。`;
 }
