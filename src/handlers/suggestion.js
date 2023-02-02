@@ -88,7 +88,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
   const approvedEmbed = new EmbedBuilder()
     .setDescription(message.embeds[0].data.description)
     .setColor(SUGGESTIONS.APPROVED_EMBED)
-    .setAuthor({ name: "已批准建議。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: "已批准建議。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${member.user.tag}`, iconURL: member.displayAvatarURL() })
     .setTimestamp();
 
@@ -175,7 +175,7 @@ async function rejectSuggestion(member, channel, messageId, reason) {
   const rejectedEmbed = new EmbedBuilder()
     .setDescription(message.embeds[0].data.description)
     .setColor(SUGGESTIONS.DENIED_EMBED)
-    .setAuthor({ name: "已否決建議", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: "已否決建議", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${member.user.tag}`, iconURL: member.displayAvatarURL() })
     .setTimestamp();
 

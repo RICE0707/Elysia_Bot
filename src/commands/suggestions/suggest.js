@@ -61,7 +61,7 @@ async function suggest(member, suggestion, settings) {
   if (!channel) return "> <a:r2_rice:868583626227478591> 花瓶找不到建議頻道。";
 
   const embed = new EmbedBuilder()
-    .setAuthor({ name: "有酷割酷姐提供建議啦！", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: "有酷割酷姐提供建議啦！", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setThumbnail(member.user.avatarURL())
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     .setColor(SUGGESTIONS.DEFAULT_EMBED)

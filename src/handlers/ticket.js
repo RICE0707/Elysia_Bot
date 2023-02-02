@@ -96,7 +96,7 @@ async function closeTicket(channel, closedBy, reason) {
 
     if (channel.deletable) await channel.delete();
 
-    const embed = new EmbedBuilder().setAuthor({ name: "客服單關閉", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+    const embed = new EmbedBuilder().setAuthor({ name: "客服單關閉", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
     const fields = [];
 
     if (reason) fields.push({ name: "Reason", value: reason, inline: false });
@@ -241,7 +241,7 @@ async function handleTicketOpen(interaction) {
     });
 
     const embed = new EmbedBuilder()
-      .setAuthor({ name: `︱客服支援︱${user.tag}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+      .setAuthor({ name: `︱客服支援︱${user.tag}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setDescription(
         `> 你好，${user.toString()}！\n> 請等候客服人員或管理人員來協助您，\n> 在此之前，您可以先提供事件說明，\n> 越詳細越好，這更有助於釐清並處理事件！\n \n> ${catName ? `**客服單類別：** ${catName}` : ""}
         `
@@ -260,7 +260,7 @@ async function handleTicketOpen(interaction) {
 
     const dmEmbed = new EmbedBuilder()
       .setColor(TICKET.CREATE_EMBED)
-      .setAuthor({ name: "客服單已開啟", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+      .setAuthor({ name: "客服單已開啟", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setThumbnail(guild.iconURL())
       .setDescription(
         `**群組：** ${guild.name}\n${catName ? `**客服單類別：** ${catName}` : ""}

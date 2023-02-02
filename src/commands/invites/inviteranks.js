@@ -39,7 +39,7 @@ async function getInviteRanks({ guild }, settings) {
   });
 
   const embed = new EmbedBuilder()
-    .setAuthor({ name: "本群的邀請獎勵身份組", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: "本群的邀請獎勵身份組", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setTimestamp()
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })

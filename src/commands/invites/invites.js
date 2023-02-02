@@ -46,7 +46,7 @@ async function getInvites({ guild }, user, settings) {
   const inviteData = (await getMember(guild.id, user.id)).invite_data;
 
   const embed = new EmbedBuilder()
-    .setAuthor({ name: `${user.username} 的邀請統計`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot'  })
+    .setAuthor({ name: `${user.username} 的邀請統計`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE'  })
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setThumbnail(user.displayAvatarURL())
     .setTimestamp()

@@ -14,7 +14,7 @@ module.exports = {
     subcommands: [
       {
         trigger: "類別”",
-        description: "查看所有客服單類別",
+        description: "",
       },
       {
         trigger: "新增 <類別>︱客服單管理員身份組>",
@@ -81,7 +81,7 @@ module.exports = {
 
     // add
     else if (sub === "新增") {
-      const split = args.slice(1).join(" ").split("︱");
+      const split = args.slice(1).join(" ").split("|");
       const category = split[0].trim();
       const staff_roles = split[1]?.trim();
       response = await addCategory(message.guild, data, category, staff_roles);
@@ -131,14 +131,14 @@ module.exports = {
 
 function listCategories(data) {
   const categories = data.settings.ticket.categories;
-  if (categories?.length === 0) return "> <a:r2_rice:868583626227478591> 花瓶找不到這個類別。";
+  if (categories?.length === 0) return "> <a:r2_rice:868583626227478591> 花瓶找不到這個類別，";
 
   const fields = [];
   for (const category of categories) {
     const roleNames = category.staff_roles.map((r) => `<@&${r}>`).join(", ");
-    fields.push({ name: category.name, value: `**客服管理：** ${roleNames || "無"}` });
+    fields.push({ name: category.name, value: `**客服管理：**${roleNames || "無"}` });
   }
-  const embed = new EmbedBuilder().setAuthor({ name: "客服單類別", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' }).addFields(fields);
+  const embed = new EmbedBuilder().setAuthor({ name: "客服單類別", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).addFields(fields);
   return { embeds: [embed] };
 }
 
@@ -150,12 +150,12 @@ async function addCategory(guild, data, category, staff_roles) {
     return `> <a:r2_rice:868583626227478591> \` ${category} \`已存在。`;
   }
 
-  const staffRoles = (staff_roles?.split("︱")?.map((r) => r.trim()) || []).filter((r) => guild.roles.cache.has(r));
+  const staffRoles = (staff_roles?.split(",")?.map((r) => r.trim()) || []).filter((r) => guild.roles.cache.has(r));
 
   data.settings.ticket.categories.push({ name: category, staff_roles: staffRoles });
   await data.settings.save();
 
-  return `<a:r3_rice:868583679465758820> 花瓶已創建\` ${category} \` 類別。`;
+  return `<a:r3_rice:868583679465758820> 已創建\` ${category} \` 類別。`;
 }
 
 async function removeCategory(data, category) {
@@ -168,5 +168,5 @@ async function removeCategory(data, category) {
   data.settings.ticket.categories = categories.filter((c) => c.name !== category);
   await data.settings.save();
 
-  return `<a:r3_rice:868583679465758820> 花瓶已移除\` ${category} \` 類別。`;
+  return `<a:r3_rice:868583679465758820> 已移除\` ${category} \` 類別。`;
 }

@@ -4,7 +4,7 @@ const { EMBED_COLORS, SUPPORT_SERVER, VOTEA_SERVER, VOTEB_SERVER, DASHBOARD } = 
 module.exports = (client) => {
   const embed = new EmbedBuilder()
     .setTitle({ name: "機器人邀請資訊" })
-    .setAuthor({ name: '你就是個偷窺狂吧！', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: '你就是個偷窺狂吧！', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setColor(EMBED_COLORS.BOT_EMBED)
     .setThumbnail(client.user.displayAvatarURL())
     .setTimestamp()

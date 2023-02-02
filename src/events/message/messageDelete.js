@@ -19,7 +19,7 @@ module.exports = async (client, message) => {
     if (!logChannel) return;
 
     const embed = new EmbedBuilder()
-      .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！", iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://www.brilliantw.net/' })
+      .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！", iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://discord.gg/c4tKJME4hE' })
       .setDescription(
         `**訊息：**\n${message.content}\n\n` +
           `**屁孩：** ${message.author.tag} \`${message.author.id}\`\n` +
@@ -42,7 +42,8 @@ module.exports = async (client, message) => {
           inline: true,
         }
       )
-      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 發送至：${message.createdAt}` });
+	  .setTimestamp()
+      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 `, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
     logChannel.safeSend({ embeds: [embed] });
   }

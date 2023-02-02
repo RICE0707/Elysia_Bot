@@ -116,7 +116,7 @@ async function listWarnings(target, { guildId }) {
 
   const acc = warnings.map((warning, i) => `#${i + 1} 原因：${warning.reason} [來自 ${warning.admin.tag}]`).join("\n");
   const embed = new EmbedBuilder({
-    author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' },
+    author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' },
     description: acc,
   });
 

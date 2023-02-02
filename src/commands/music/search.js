@@ -99,7 +99,7 @@ async function search({ member, guild, channel }, query) {
 
       const fields = [];
       embed
-        .setAuthor({ name: "已將歌曲添加到播放清單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+        .setAuthor({ name: "已將歌曲添加到播放清單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
         .setDescription(`[${track.info.title}](${track.info.uri})`)
         .setTimestamp()
         .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${member.user.tag}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg'  });
@@ -125,7 +125,7 @@ async function search({ member, guild, channel }, query) {
     case "PLAYLIST_LOADED":
       tracks = res.tracks;
       embed
-        .setAuthor({ name: "將播放列表添加到播放清單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+        .setAuthor({ name: "將播放列表添加到播放清單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
         .setDescription(res.playlistInfo.name)
         .addFields(
           {
@@ -169,7 +169,7 @@ async function search({ member, guild, channel }, query) {
 
       const tempEmbed = new EmbedBuilder()
         .setColor(EMBED_COLORS.BOT_EMBED)
-        .setAuthor({ name: "搜尋結果", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+        .setAuthor({ name: "搜尋結果", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
         .setDescription(`請選擇您要添加到隊列的歌曲`);
 
       const sentMsg = await channel.send({

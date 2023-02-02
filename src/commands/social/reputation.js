@@ -112,7 +112,7 @@ async function viewReputation(target) {
   if (!userData) return `> <a:r2_rice:868583626227478591> ${target.tag} 沒有愛心❤️。`;
 
   const embed = new EmbedBuilder()
-    .setAuthor({ name: `${target.username} 的愛心❤️`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://github.com/RICE0707/Elysia_Bot' })
+    .setAuthor({ name: `${target.username} 的愛心❤️`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setTimestamp()
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     .setColor(EMBED_COLORS.BOT_EMBED)
