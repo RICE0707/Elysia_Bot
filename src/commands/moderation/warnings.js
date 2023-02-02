@@ -114,7 +114,7 @@ async function listWarnings(target, { guildId }) {
   const warnings = await getWarningLogs(guildId, target.id);
   if (!warnings.length) return `> <a:r3_rice:868583679465758820> \` ${target.user.tag} \`沒有被警告。`;
 
-  const acc = warnings.map((warning, i) => `#${i + 1} 原因：${warning.reason} [來自 ${warning.admin.tag}]`).join("\n");
+  const acc = warnings.map((warning, i) => `第\` ${i + 1} \`個\n> ├ 原因：\` ${warning.reason} \`\n> └ 處分者：\` ${warning.admin.tag} \`\n`).join("\n");
   const embed = new EmbedBuilder({
     author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' },
     description: acc,
