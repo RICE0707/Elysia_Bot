@@ -10,7 +10,7 @@ module.exports = {
   userPermissions: ["ManageGuild"],
   command: {
     enabled: true,
-    usage: "<身份組|關閉>",
+    usage: "<身份組︱關閉>",
     minArgsCount: 1,
   },
   slashCommand: {
@@ -24,7 +24,7 @@ module.exports = {
         options: [
           {
             name: "身份組",
-            description: "輸入身份組代",
+            description: "輸入身份組",
             type: ApplicationCommandOptionType.Role,
             required: false,
           },
@@ -98,7 +98,7 @@ module.exports = {
 async function setAutoRole({ guild }, role, settings) {
   if (role) {
     if (role.id === guild.roles.everyone.id) return "> <a:r2_rice:868583626227478591> 此身份組無法被設置，因為這是everyone身份組。";
-    if (!guild.members.me.permissions.has("ManageRoles")) return "> <a:r2_rice:868583626227478591> 花瓶缺少了 ` 管理身份組 ` 的權限。";
+    if (!guild.members.me.permissions.has("ManageRoles")) return "> <a:r2_rice:868583626227478591> 花瓶缺少了` 管理身份組 `的權限。";
     if (guild.members.me.roles.highest.position < role.position)
       return "> <a:r2_rice:868583626227478591> 此身份組無法被分配，因為花瓶沒有權限。";
     if (role.managed) return "> <a:r2_rice:868583626227478591> 此身份組無法被分配，它只能由Discord系統分配。";
@@ -108,5 +108,5 @@ async function setAutoRole({ guild }, role, settings) {
   else settings.autorole = role.id;
 
   await settings.save();
-  return `> <a:r3_rice:868583679465758820> 你已成功設置，自動身份組功能目前已\` ${!role ? "關閉" : "開啟"} \`。`;
+  return `> <a:r3_rice:868583679465758820> 入群自動身份組功能目前已\` ${!role ? "關閉" : "開啟"} \`。`;
 }
