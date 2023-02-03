@@ -87,19 +87,6 @@ module.exports = {
         ],
       },
       {
-        name: "限制",
-        description: "限制能開啟的客服單數量",
-        type: ApplicationCommandOptionType.Subcommand,
-        options: [
-          {
-            name: "數量",
-            description: "輸入數字",
-            type: ApplicationCommandOptionType.Integer,
-            required: true,
-          },
-        ],
-      },
-      {
         name: "關閉",
         description: "關閉指定的客服單（只能使用在客服單頻道）",
         type: ApplicationCommandOptionType.Subcommand,
@@ -379,7 +366,7 @@ async function setupLogChannel(target, settings) {
 }
 
 async function setupLimit(limit, settings) {
-  if (Number.parseInt(limit, 10) < 5) return "> <a:r2_rice:868583626227478591> 客服單限制不能少於\` 5 \`。";
+  if (Number.parseInt(limit, 10) < 1) return "> <a:r2_rice:868583626227478591> 客服單限制不能少於\` 1 \`。";
 
   settings.ticket.limit = limit;
   await settings.save();
