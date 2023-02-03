@@ -207,7 +207,7 @@ async function performAutomod(message, settings) {
       memberDb.strikes = 0;
 
       // Add Moderation Action
-      await addModAction(guild.members.me, member, "> 已達到最高警告數。", automod.action).catch(() => {});
+      await addModAction(guild.members.me, member, "已達到最高警告數。", automod.action).catch(() => {});
     }
 
     await memberDb.save();

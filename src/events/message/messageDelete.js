@@ -21,9 +21,10 @@ module.exports = async (client, message) => {
     const embed = new EmbedBuilder()
       .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
+      .setColor(0xFF8080)
       .setDescription(
         `**訊息：**\n${message.content}\n\n` +
-          `**屁孩：**\` ${message.author.tag} \`\`（${message.author.id}）\`\n` +
+          `**屁孩：**\` ${message.author.tag}（${message.author.id}）\`\n` +
           `**頻道：**${message.channel.toString()}`
       )
       .addFields(

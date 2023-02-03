@@ -43,11 +43,11 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
   const fields = [];
   switch (type.toUpperCase()) {
     case "清除訊息":
-      embed.setAuthor({ name: `花瓶的制裁 - ${type}` });
+      embed.setAuthor({ name: `花瓶的制裁 - ${type}`, iconURL: 'https://cdn.discordapp.com/attachments/1067011834642698280/1068834656948068445/3.png', url: 'https://discord.gg/c4tKJME4hE' });
       fields.push(
-        { name: "清除類型", value: data.purgeType, inline: true },
-        { name: "訊息", value: data.deletedCount.toString(), inline: true },
-        { name: "頻道", value: `#${data.channel.name} [${data.channel.id}]`, inline: false }
+        { name: "清除類型", value: `\` ${data.purgeType} \``, inline: true },
+        { name: "瓶清除了", value: `\` ${data.deletedCount.toString()} \`則訊息`, inline: true },
+        { name: "清除頻道", value: `\` ${data.channel.name}（${data.channel.id}）`, inline: false }
       );
       break;
 
@@ -101,15 +101,15 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
   }
 
   if (type.toUpperCase() !== "清除訊息") {
-    embed.setAuthor({ name: `花瓶的制裁 - ${type}` }).setThumbnail(target.displayAvatarURL());
+    embed.setAuthor({ name: `花瓶的制裁 - ${type}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setThumbnail(target.displayAvatarURL());
 
     if (target instanceof GuildMember) {
-      fields.push({ name: "被處分者", value: `${target.displayName} [${target.id}]`, inline: false });
+      fields.push({ name: "被處分者", value: `> \` ${target.displayName}（${target.id}） \``, inline: false });
     } else {
-      fields.push({ name: "使用者", value: `${target.tag} [${target.id}]`, inline: false });
+      fields.push({ name: "使用者", value: `> \` ${target.tag}（${target.id}） \``, inline: false });
     }
 
-    fields.push({ name: "原因", value: reason || "無提供原因", inline: false });
+    fields.push({ name: "原因", value: `> \` ${reason || "無提供原因"} \`。`, inline: false });
 
     if (type.toUpperCase() === "禁言") {
       fields.push({

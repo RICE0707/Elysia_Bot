@@ -29,13 +29,13 @@ const getVotesMessage = (upVotes, downVotes) => {
   const total = upVotes + downVotes;
   if (total === 0) {
     return stripIndents`
-  > 贊成：無
-  > 反對：無
+  > \` 贊成：無 \`
+  > \` 反對：無 \`
   `;
   } else {
     return stripIndents`
-  > 贊成：\` ${upVotes} \`票︱\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)}% \`得票率
-  > 反對：\` ${downVotes} \`票︱\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)}% \`得票率
+  > \` 贊成：${upVotes} \`票︱\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)}% \`得票率
+  > \` 反對：${downVotes} \`票︱\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)}% \`得票率
   `;
   }
 };
@@ -107,7 +107,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
   }
 
   // update reason
-  if (reason) fields.push({ name: "**決策理由**", value: "> " + reason + " " });
+  if (reason) fields.push({ name: "**決策理由**", value: "> \` " + reason + " \`" });
 
   approvedEmbed.addFields(fields);
 
@@ -195,7 +195,7 @@ async function rejectSuggestion(member, channel, messageId, reason) {
   }
 
   // update reason
-  if (reason) fields.push({ name: "**決策理由**", value: "> " + reason + " " });
+  if (reason) fields.push({ name: "**決策理由**", value: "> \` " + reason + " \`" });
 
   rejectedEmbed.addFields(fields);
 
