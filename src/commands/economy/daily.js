@@ -59,6 +59,6 @@ async function daily(user) {
       `> 你從每日金錢禮包獲得了\` ${ECONOMY.DAILY_COINS}${ECONOMY.CURRENCY} \`（非現實貨幣）\n` +
         `> 你目前擁有\` ${userDb.coins}${ECONOMY.CURRENCY} \`（非現實貨幣）`
     );
-
+ 
   return { embeds: [embed] };
 }

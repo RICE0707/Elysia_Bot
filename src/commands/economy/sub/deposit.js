@@ -35,6 +35,6 @@ module.exports = async (user, coins) => {
         inline: true,
       }
     );
-
+ 
   return { embeds: [embed] };
 };

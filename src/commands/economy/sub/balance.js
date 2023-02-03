@@ -28,6 +28,6 @@ module.exports = async (user) => {
         inline: true,
       }
     );
-
+ 
   return { embeds: [embed] };
 };

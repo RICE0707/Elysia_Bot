@@ -53,6 +53,6 @@ async function beg(user) {
       `> ${users[Math.floor(Math.random() * users.length)]}捐給你了\` ${amount}${ECONOMY.CURRENCY} \`（非現實貨幣）\n` +
         `> 你目前擁有\` ${userDb.coins}${ECONOMY.CURRENCY} \`（非現實貨幣）`
     );
-
+ 
   return { embeds: [embed] };
 }

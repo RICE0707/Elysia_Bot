@@ -113,6 +113,6 @@ async function gamble(user, betAmount) {
     .setThumbnail("https://i.pinimg.com/originals/9a/f1/4e/9af14e0ae92487516894faa9ea2c35dd.gif")
     .setDescription(str)
     .setFooter({ text: `${result}\n來自花瓶星球的科技支援 v3.0 - 你目前擁有：${userDb?.coins}${ECONOMY.CURRENCY}（非現實貨幣）`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg'  });
-
+ 
   return { embeds: [embed] };
 }
