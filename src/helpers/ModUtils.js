@@ -109,7 +109,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
       fields.push({ name: "使用者", value: `> \` ${target.tag}（${target.id}） \``, inline: false });
     }
 
-    fields.push({ name: "原因", value: `> \` ${reason || "無提供原因"} \`。`, inline: false });
+    fields.push({ name: "處分原因", value: `> \` ${reason || "無提供原因。"} \``, inline: false });
 
     if (type.toUpperCase() === "禁言") {
       fields.push({
