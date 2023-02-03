@@ -21,17 +21,17 @@ module.exports = async (user, coins) => {
     .addFields(
       {
         name: "錢包（非現實貨幣）",
-        value: `${userDb.coins}${ECONOMY.CURRENCY}`,
+        value: `\` ${userDb.coins}${ECONOMY.CURRENCY} \``,
         inline: true,
       },
       {
         name: "銀行（非現實貨幣）",
-        value: `${userDb.bank}${ECONOMY.CURRENCY}`,
+        value: `\` ${userDb.bank}${ECONOMY.CURRENCY} \``,
         inline: true,
       },
       {
         name: "總資產（非現實貨幣）",
-        value: `${userDb.coins + userDb.bank}${ECONOMY.CURRENCY}`,
+        value: `\` ${userDb.coins + userDb.bank}${ECONOMY.CURRENCY} \``,
         inline: true,
       }
     );

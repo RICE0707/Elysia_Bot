@@ -50,8 +50,8 @@ async function beg(user) {
     .setTimestamp()
     .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
     .setDescription(
-      `**${users[Math.floor(Math.random() * users.length)]}**捐給你了** ${amount}** ${ECONOMY.CURRENCY}（非現實貨幣）\n` +
-        `**你目前擁有：** **${userDb.coins}** ${ECONOMY.CURRENCY}（非現實貨幣）`
+      `> ${users[Math.floor(Math.random() * users.length)]}捐給你了\` ${amount}${ECONOMY.CURRENCY} \`（非現實貨幣）\n` +
+        `> 你目前擁有\` ${userDb.coins}${ECONOMY.CURRENCY} \`（非現實貨幣）`
     );
 
   return { embeds: [embed] };

@@ -89,8 +89,8 @@ async function gamble(user, betAmount) {
   const slot3 = getEmoji();
 
   const str = `
-    **下賭金額（非現實貨幣）：** ${betAmount}${ECONOMY.CURRENCY}\n
-    **賭博倍率：** 雙倍
+    **下賭金額（非現實貨幣）：**\` ${betAmount}${ECONOMY.CURRENCY} \`\n
+    **賭博倍率：**雙倍
     ╔══════════╗
     ║ ${getEmoji()} ║ ${getEmoji()} ║ ${getEmoji()} ‎‎‎‎║
     ╠══════════╣
