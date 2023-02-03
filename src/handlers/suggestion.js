@@ -34,8 +34,8 @@ const getVotesMessage = (upVotes, downVotes) => {
   `;
   } else {
     return stripIndents`
-  > 贊成：\` ${upVotes} \`票︱\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)} \`％得票率
-  > 反對：\` ${downVotes} \`票︱\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)} \`％得票率
+  > 贊成：\` ${upVotes} \`票︱\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)}% \`得票率
+  > 反對：\` ${downVotes} \`票︱\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)}% \`得票率
   `;
   }
 };
