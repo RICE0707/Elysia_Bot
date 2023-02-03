@@ -96,19 +96,19 @@ async function closeTicket(channel, closedBy, reason) {
 
     if (channel.deletable) await channel.delete();
 
-    const embed = new EmbedBuilder().setAuthor({ name: "客服單關閉", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+    const embed = new EmbedBuilder().setAuthor({ name: "花瓶已關閉客服單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
     const fields = [];
 
     if (reason) fields.push({ name: "Reason", value: reason, inline: false });
     fields.push(
       {
         name: "開單人",
-        value: ticketDetails.user ? ticketDetails.user.tag : "未知使用者",
+        value: `\` ${ticketDetails.user ? ticketDetails.user.tag : "未知使用者"} \``,
         inline: true,
       },
       {
         name: "關單人",
-        value: closedBy ? closedBy.tag : "未知使用者",
+        value: `\` ${closedBy ? closedBy.tag : "未知使用者"} \``,
         inline: true,
       }
     );
@@ -124,7 +124,7 @@ async function closeTicket(channel, closedBy, reason) {
     // send embed to user
     if (ticketDetails.user) {
       const dmEmbed = embed
-        .setDescription(`**群組：** ${channel.guild.name}\n**類別：** ${ticketDetails.catName}`)
+        .setDescription(`**開單群組：**\` ${channel.guild.name} \`\n**開單類別：**\` ${ticketDetails.catName} \``)
         .setThumbnail(channel.guild.iconURL());
       ticketDetails.user.send({ embeds: [dmEmbed], components }).catch((ex) => {});
     }
@@ -260,10 +260,10 @@ async function handleTicketOpen(interaction) {
 
     const dmEmbed = new EmbedBuilder()
       .setColor(TICKET.CREATE_EMBED)
-      .setAuthor({ name: "客服單已開啟", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+      .setAuthor({ name: "花瓶已開啟客服單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setThumbnail(guild.iconURL())
       .setDescription(
-        `**群組：** ${guild.name}\n${catName ? `**客服單類別：** ${catName}` : ""}
+        `**開單群組：**\` ${guild.name} \`\n${catName ? `**開單類別：**\` ${catName} \`` : ""}
         `
       );
 
@@ -273,7 +273,7 @@ async function handleTicketOpen(interaction) {
 
     user.send({ embeds: [dmEmbed], components: [row] }).catch((ex) => {});
 
-    await interaction.editReply(`> <a:r3_rice:868583679465758820> 客服單已開啟。`);
+    await interaction.editReply(`> <a:r3_rice:868583679465758820> 花瓶已開啟客服單。`);
   } catch (ex) {
     error("handleTicketOpen", ex);
     return interaction.editReply("> <a:r2_rice:868583626227478591> 開啟客服單讓花瓶碎了。");

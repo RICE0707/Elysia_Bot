@@ -22,7 +22,7 @@ module.exports = async (client, interaction) => {
   else if (interaction.isContextMenuCommand()) {
     const context = client.contextMenus.get(interaction.commandName);
     if (context) await contextHandler.handleContext(interaction, context);
-    else return interaction.reply({ content: "> <a:r2_rice:868583626227478591> 發生了錯誤", ephemeral: true }).catch(() => {});
+    else return interaction.reply({ content: "> <a:r2_rice:868583626227478591> 這個操作讓花瓶碎掉了。", ephemeral: true }).catch(() => {});
   }
 
   // Buttons

@@ -160,12 +160,12 @@ module.exports = {
         desc += `\`${prefix}${invoke || cmd.name} ${sub.trigger}\`\n└ ${sub.description}\n\n`;
       });
       if (cmd.cooldown) {
-        desc += `**冷卻時間：**${timeformat(cmd.cooldown)}`;
+        desc += `**冷卻時間：**\` ${timeformat(cmd.cooldown)} \``;
       }
     } else {
       desc += `\`\`\`css\n${prefix}${invoke || cmd.name} ${cmd.command.usage}\`\`\``;
-      if (cmd.description !== "") desc += `\n**如何使用花瓶：**${cmd.description}`;
-      if (cmd.cooldown) desc += `\n**冷卻時間：**${timeformat(cmd.cooldown)}`;
+      if (cmd.description !== "") desc += `\n> **如何使用花瓶：**\` ${cmd.description} \``;
+      if (cmd.cooldown) desc += `\n> **冷卻時間：**\` ${timeformat(cmd.cooldown)} \``;
     }
 
     const embed = new EmbedBuilder().setColor(EMBED_COLORS.BOT_EMBED).setDescription(desc);
@@ -184,11 +184,11 @@ module.exports = {
         desc += `\`/${cmd.name} ${sub.name}\`\n└ ${sub.description}\n\n`;
       });
     } else {
-      desc += `\`/${cmd.name}\`\n\n**如何使用花瓶：**${cmd.description}`;
+      desc += `\`/${cmd.name}\`\n\n> **如何使用花瓶：**\` ${cmd.description} \``;
     }
 
     if (cmd.cooldown) {
-      desc += `\n**冷卻時間：**${timeformat(cmd.cooldown)}`;
+      desc += `\n**> 冷卻時間：**\` ${timeformat(cmd.cooldown)} \``;
     }
 
     return new EmbedBuilder().setColor(EMBED_COLORS.BOT_EMBED).setDescription(desc);

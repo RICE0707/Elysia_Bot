@@ -20,20 +20,21 @@ module.exports = async (client, message) => {
 
     const embed = new EmbedBuilder()
       .setAuthor({ name: "花瓶偵測到有屁孩在亂標囉！", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+      .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
       .setDescription(
         `**訊息：**\n${message.content}\n\n` +
-          `**屁孩：** ${message.author.tag} \`${message.author.id}\`\n` +
-          `**頻道：** ${message.channel.toString()}`
+          `**屁孩：**\` ${message.author.tag} \`\`（${message.author.id}）\`\n` +
+          `**頻道：**${message.channel.toString()}`
       )
       .addFields(
         {
-          name: "成員",
-          value: members.size.toString(),
+          name: "標到了",
+          value: `\` ${members.size.toString()} \`位成員`,
           inline: true,
         },
         {
-          name: "身份組",
-          value: roles.size.toString(),
+          name: "標到了",
+          value: `\` ${roles.size.toString() } \`個身分組`,
           inline: true,
         },
         {
@@ -42,7 +43,7 @@ module.exports = async (client, message) => {
           inline: true,
         }
       )
-	  .setTimestamp()
+	    .setTimestamp()
       .setFooter({ text: `來自花瓶星球的科技支援 v3.0 `, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
 
     logChannel.safeSend({ embeds: [embed] });

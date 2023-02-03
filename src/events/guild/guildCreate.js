@@ -8,7 +8,7 @@ const { getSettings: registerGuild } = require("@schemas/Guild");
 module.exports = async (client, guild) => {
   if (!guild.available) return;
   if (!guild.members.cache.has(guild.ownerId)) await guild.fetchOwner({ cache: true }).catch(() => {});
-  client.logger.log(`花瓶進入了：${guild.name} 成員數有：${guild.memberCount}`);
+  client.logger.log(`花瓶進入了：${guild.name}，增加了：${guild.memberCount}位使用者。`);
   await registerGuild(guild);
 
   if (!client.joinLeaveWebhook) return;
@@ -20,17 +20,17 @@ module.exports = async (client, guild) => {
     .addFields(
       {
         name: "群名稱",
-        value: guild.name,
+        value: `\` ${guild.name} \``,
         inline: false,
       },
       {
         name: "群代號",
-        value: guild.id,
+        value: `\` ${guild.id} \``,
         inline: false,
       },
       {
         name: "擁有者",
-        value: `${client.users.cache.get(guild.ownerId).tag} [\`${guild.ownerId}\`]`,
+        value: `\` ${client.users.cache.get(guild.ownerId).tag} \`（\` ${guild.ownerId} \`）`,
         inline: false,
       },
       {

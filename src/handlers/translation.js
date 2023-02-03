@@ -64,7 +64,7 @@ async function handleFlagReaction(emoji, message, user) {
   const btnRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder({
       url: message.url,
-      label: "跳轉至訊息連結",
+      label: "點此跳轉至原訊息",
       style: ButtonStyle.Link,
     })
   );

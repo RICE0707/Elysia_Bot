@@ -72,7 +72,7 @@ module.exports = {
 
   GIVEAWAYS: {
     ENABLED: false,
-    REACTION: "🎁",
+    REACTION: "🍞",
     START_EMBED: "#FF468A",
     END_EMBED: "#FF468A",
   },
@@ -120,8 +120,8 @@ module.exports = {
   SUGGESTIONS: {
     ENABLED: false, // Should the suggestion system be enabled
     EMOJI: {
-      UP_VOTE: "⬆️",
-      DOWN_VOTE: "⬇️",
+      UP_VOTE: "👍",
+      DOWN_VOTE: "👎",
     },
     DEFAULT_EMBED: "#4F545C",
     APPROVED_EMBED: "#43B581",

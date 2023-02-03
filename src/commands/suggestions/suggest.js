@@ -68,15 +68,15 @@ async function suggest(member, suggestion, settings) {
     .setDescription(
       stripIndent`
         **建議內容**
-        > ${suggestion}
+        > \` ${suggestion} \`
 
         **提建議者** 
-        > ${member.user.tag} [${member.id}]
+        > \` ${member.user.tag}（${member.id}）\`
 
         **投票功能**
-        > 使用:arrow_up:代表你支持這個建議；
-        > 反之:arrow_down:代表你不支持這建議，
-        > 投票資訊僅供參考，不代表最後決策結果。
+        > \` 使用👍代表你支持這個建議； \`
+        > \` 反之👎代表你不支持這建議， \`
+        > \` 投票資訊僅供給管理者參考，不代表最後決策結果。 \`
       `
     )
     .setTimestamp();

@@ -14,7 +14,7 @@ module.exports = {
       const remaining = getRemainingCooldown(interaction.user.id, context);
       if (remaining > 0) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 指令冷卻中，請等待：${timeformat(remaining)}。`,
+          content: `> <a:r2_rice:868583626227478591> 指令冷卻中，請等待：\` ${timeformat(remaining)} \`。`,
           ephemeral: true,
         });
       }
@@ -24,7 +24,7 @@ module.exports = {
     if (interaction.member && context.userPermissions && context.userPermissions?.length > 0) {
       if (!interaction.member.permissions.has(context.userPermissions)) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有 ${parsePermissions(context.userPermissions)} 權限。`,
+          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有\` ${parsePermissions(context.userPermissions)} \`權限。`,
           ephemeral: true,
         });
       }

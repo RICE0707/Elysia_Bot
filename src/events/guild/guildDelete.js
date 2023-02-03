@@ -7,7 +7,7 @@ const { getSettings } = require("@schemas/Guild");
  */
 module.exports = async (client, guild) => {
   if (!guild.available) return;
-  client.logger.log(`花瓶離開了：${guild.name} 成員數有：${guild.memberCount}`);
+  client.logger.log(`花瓶離開了：${guild.name}，減少了：${guild.memberCount}位使用者。`);
 
   const settings = await getSettings(guild);
   settings.data.leftAt = new Date();
@@ -21,7 +21,7 @@ module.exports = async (client, guild) => {
     const owner = await client.users.fetch(ownerId);
     ownerTag = owner.tag;
   } catch (err) {
-    ownerTag = "已刪除使用者";
+    ownerTag = "已刪除的使用者";
   }
 
   const embed = new EmbedBuilder()
@@ -31,17 +31,17 @@ module.exports = async (client, guild) => {
     .addFields(
       {
         name: "群名稱",
-        value: guild.name || "無",
+        value: `\` ${guild.name} \`` || "無",
         inline: false,
       },
       {
         name: "群代號",
-        value: guild.id,
+        value: `\` ${guild.id} \``,
         inline: false,
       },
       {
         name: "所有者",
-        value: `${ownerTag} [\`${ownerId}\`]`,
+        value: `\` ${ownerTag} \`（\` ${ownerId} \`）`,
         inline: false,
       },
       {

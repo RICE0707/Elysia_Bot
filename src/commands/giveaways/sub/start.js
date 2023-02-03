@@ -32,8 +32,8 @@ module.exports = async (member, giveawayChannel, duration, prize, winners, host,
       messages: {
         giveaway: "> <a:m8_rice:985142595405623306> 抽獎開始啦！",
         giveawayEnded: "> <a:r2_rice:868583626227478591> 抽獎結束了。",
-        inviteToParticipate: "> 點擊\` 🎁 \`以參與抽獎！",
-        dropMessage: "點擊\` 🎁 \`成為第一位參與抽獎的酷割或帥姐。",
+        inviteToParticipate: "> 點擊\` 🍞 \`以參與抽獎！",
+        dropMessage: "點擊\` 🍞 \`成為第一位參與抽獎的酷割或帥姐。",
         hostedBy: `\n> 主辦者：${host.tag}`,
       },
     };

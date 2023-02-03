@@ -34,8 +34,8 @@ const getVotesMessage = (upVotes, downVotes) => {
   `;
   } else {
     return stripIndents`
-  > 贊成：\` ${upVotes} \`票 - [\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)}% \`]
-  > 反對：\` ${downVotes} \`票 - [\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)}% \`]
+  > 贊成：\` ${upVotes} \`票︱\` ${Math.round((upVotes / (upVotes + downVotes)) * 100)} \`％得票率
+  > 反對：\` ${downVotes} \`票︱\` ${Math.round((downVotes / (upVotes + downVotes)) * 100)} \`％得票率
   `;
   }
 };
@@ -63,7 +63,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
   // validate if document exists
   const doc = await findSuggestion(guild.id, messageId);
   if (!doc) return "> <a:r2_rice:868583626227478591> 花瓶找不到建議訊息。";
-  if (doc.status === "APPROVED") return "> <a:r3_rice:868583679465758820> 已批准建議。";
+  if (doc.status === "APPROVED") return "> <a:r3_rice:868583679465758820> 花瓶已批准建議。";
 
   /**
    * @type {import('discord.js').Message}
@@ -88,7 +88,8 @@ async function approveSuggestion(member, channel, messageId, reason) {
   const approvedEmbed = new EmbedBuilder()
     .setDescription(message.embeds[0].data.description)
     .setColor(SUGGESTIONS.APPROVED_EMBED)
-    .setAuthor({ name: "已批准建議。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+    .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
+    .setAuthor({ name: "花瓶已批准建議。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${member.user.tag}`, iconURL: member.displayAvatarURL() })
     .setTimestamp();
 
@@ -134,7 +135,7 @@ async function approveSuggestion(member, channel, messageId, reason) {
     }
 
     await doc.save();
-    return "> <a:r3_rice:868583679465758820> 已批准建議。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已批准建議。";
   } catch (ex) {
     guild.client.logger.error("approveSuggestion", ex);
     return "> <a:r2_rice:868583626227478591> 花瓶無法批准建議。";
@@ -157,7 +158,7 @@ async function rejectSuggestion(member, channel, messageId, reason) {
   // validate if document exists
   const doc = await findSuggestion(guild.id, messageId);
   if (!doc) return "> <a:r2_rice:868583626227478591> 花瓶找不到建議訊息。";
-  if (doc.is_rejected) return "<a:r3_rice:868583679465758820> 建議已否決。";
+  if (doc.is_rejected) return "<a:r3_rice:868583679465758820> 花瓶已否決建議。";
 
   let message;
   try {
@@ -175,7 +176,8 @@ async function rejectSuggestion(member, channel, messageId, reason) {
   const rejectedEmbed = new EmbedBuilder()
     .setDescription(message.embeds[0].data.description)
     .setColor(SUGGESTIONS.DENIED_EMBED)
-    .setAuthor({ name: "已否決建議", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+    .setThumbnail(`https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg`)
+    .setAuthor({ name: "花瓶已否決建議", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - ${member.user.tag}`, iconURL: member.displayAvatarURL() })
     .setTimestamp();
 
@@ -221,7 +223,7 @@ async function rejectSuggestion(member, channel, messageId, reason) {
     }
 
     await doc.save();
-    return "> <a:r3_rice:868583679465758820> 已否決建議。";
+    return "> <a:r3_rice:868583679465758820> 花瓶已否決建議。";
   } catch (ex) {
     guild.client.logger.error("rejectSuggestion", ex);
     return "> <a:r2_rice:868583626227478591> 花瓶無法否決建議。";
@@ -244,7 +246,7 @@ async function deleteSuggestion(member, channel, messageId, reason) {
   try {
     await channel.messages.delete(messageId);
     await deleteSuggestionDb(guild.id, messageId, member.id, reason);
-    return "<a:r3_rice:868583679465758820> 建議已刪除。";
+    return "<a:r3_rice:868583679465758820> 花瓶已刪除建議。";
   } catch (ex) {
     guild.client.logger.error("deleteSuggestion", ex);
     return "> <a:r2_rice:868583626227478591> 花瓶刪不到建議訊息，請手動刪除。";
