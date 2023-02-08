@@ -28,6 +28,7 @@
     "ascii-table": "0.0.9",
     "btoa": "^1.2.1",
     "chatgpt": "^4.1.1",
+    "chatgpt-official": "^1.1.2",
     "common-tags": "^1.8.2",
     "connect-mongo": "^4.6.0",
     "country-emoji-languages": "^1.0.0",
