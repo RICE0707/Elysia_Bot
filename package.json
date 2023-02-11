@@ -25,6 +25,7 @@
     "@lavaclient/queue": "^2.1.1",
     "@lavaclient/spotify": "^3.1.0",
     "@vitalets/google-translate-api": "^9.0.0",
+    "@waylaidwanderer/chatgpt-api": "^1.13.2",
     "ascii-table": "0.0.9",
     "btoa": "^1.2.1",
     "chatgpt": "^4.1.1",
