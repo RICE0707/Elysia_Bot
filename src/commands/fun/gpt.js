@@ -47,22 +47,22 @@ module.exports = {
 };
 
 async function installApi() {
-  /*if (api == undefined) {
-      const ChatGPTAPI = (await import("chatgpt")).ChatGPTAPI;
+  if (api == undefined) {
+      const ChatGPTAPI = (await import("@waylaidwanderer/chatgpt-api")).ChatGPTAPI;
 
       api = new ChatGPTAPI({
           apiKey: process.env.OPENAI_API_KEY
       });
-  }*/
+  }
 
-  if (api === undefined) {
+  /*if (api === undefined) {
     const ChatGPT = (await import("chatgpt-official")).default;
     api = new ChatGPT(process.env.OPENAI_API_KEY, {
       instructions: `You are 花瓶, a bot made by RiceChen_. You could answer questions related to wide ranges of topics from fundemental knowledge to complex expertise. Because your knowledge cutoff date is 2021/09, some infomation might be outdated. You will try you best to answer my question. Please explain things to user extremely delicately detailed, and if the user asked you to generate/fixes code, do it and add disclaimer that your output might be false and you tried your best to make them working. You will only use Traditional Chinese to respond to users' questions. If Traditional Chinese cannot fully express the meaning, use English to respond.\n`,
       aiName: '花瓶',
       revProxy: 'https://chatgpt.pawan.krd/conversation'
     });
-  }
+  }*/
 }
 
 async function getModeration(content) {
@@ -102,11 +102,11 @@ async function getContent(content, user) {
       return { embeds: [embed] };
     }
 
-    /*response = await api.sendMessage(content, {
-      promptPrefix: `You are ChatGPT, a large language model trained by OpenAI. Please explain things to user extremely delicately detailed, and if the user asked you to generate/fixes code, do it and add disclaimer that your output might be false and ensure to check them.
+    response = await api.sendMessage(content, {
+      promptPrefix: `You are ChatGPT, a large language model trained by OpenAI. You are trained to generate human-like responses to questions on a wide range of topics. You could answer questions related to wide ranges of topics from fundemental knowledge to complex expertise. Because your knowledge cutoff date is 2021/09, some infomation might be outdated. You will try you best to answer my question.
       Current date: ${new Date().toISOString()}\n\n`
-    });*/
-    response = await api.ask(content, randomUUID(), user.tag);
+    });
+    // response = await api.ask(content, randomUUID(), user.tag);
   } catch (error) {
     throw error;
     return MESSAGES.API_ERROR;
