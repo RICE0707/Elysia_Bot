@@ -41,14 +41,14 @@ module.exports = {
     // check user permissions
     if (cmd.userPermissions && cmd.userPermissions?.length > 0) {
       if (!message.channel.permissionsFor(message.member).has(cmd.userPermissions)) {
-        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要你擁有\` ${parsePermissions(cmd.userPermissions)} \`權限。`);
+        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要你擁有 ${parsePermissions(cmd.userPermissions)} 權限。`);
       }
     }
 
     // check bot permissions
     if (cmd.botPermissions && cmd.botPermissions.length > 0) {
       if (!message.channel.permissionsFor(message.guild.members.me).has(cmd.botPermissions)) {
-        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有\` ${parsePermissions(cmd.botPermissions)} \`權限。`);
+        return message.safeReply(`> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有 ${parsePermissions(cmd.botPermissions)} 權限。`);
       }
     }
 
@@ -107,7 +107,7 @@ module.exports = {
     if (interaction.member && cmd.userPermissions?.length > 0) {
       if (!interaction.member.permissions.has(cmd.userPermissions)) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有\` ${parsePermissions(cmd.userPermissions)} \`權限。`,
+          content: `> <a:r2_rice:868583626227478591> 這個指令需要你擁有 ${parsePermissions(cmd.userPermissions)} 權限。`,
           ephemeral: true,
         });
       }
@@ -117,7 +117,7 @@ module.exports = {
     if (cmd.botPermissions && cmd.botPermissions.length > 0) {
       if (!interaction.guild.members.me.permissions.has(cmd.botPermissions)) {
         return interaction.reply({
-          content: `> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有\` ${parsePermissions(cmd.botPermissions)} \`權限。`,
+          content: `> <a:r2_rice:868583626227478591> 這個指令需要花瓶擁有 ${parsePermissions(cmd.botPermissions)} 權限。`,
           ephemeral: true,
         });
       }
