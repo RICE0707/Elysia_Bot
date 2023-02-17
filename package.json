@@ -33,6 +33,7 @@
     "common-tags": "^1.8.2",
     "connect-mongo": "^4.6.0",
     "country-emoji-languages": "^1.0.0",
+    "discord-banner": "^1.6.7",
     "discord-giveaways": "^6.0.1",
     "discord-together": "^1.3.31",
     "discord.js": "^14.7.1",
