@@ -96,7 +96,7 @@ async function closeTicket(channel, closedBy, reason) {
 
     if (channel.deletable) await channel.delete();
 
-    const embed = new EmbedBuilder().setAuthor({ name: "花瓶已關閉客服單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+    const embed = new EmbedBuilder().setAuthor({ name: "花瓶已關閉客服單", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setColor(TICKET.CLOSE_EMBED).setTimestamp().setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
     const fields = [];
 
     if (reason) fields.push({ name: "Reason", value: reason, inline: false });
@@ -241,12 +241,12 @@ async function handleTicketOpen(interaction) {
     });
 
     const embed = new EmbedBuilder()
-      .setAuthor({ name: `︱客服支援︱${user.tag}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+      .setAuthor({ name: `︱客服支援︱${user.tag}`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setDescription(
         `> 你好，${user.toString()}！\n> 請等候客服人員或管理人員來協助您，\n> 在此之前，您可以先提供事件說明，\n> 越詳細越好，這更有助於釐清並處理事件！\n \n> ${catName ? `**客服單類別：** ${catName}` : ""}
         `
       )
-      .setFooter({ text: "事件已處理完畢？你可以點擊下方的按鈕關閉客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+      .setFooter({ text: "事件已處理完畢？你可以點擊下方的按鈕關閉客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
     let buttonsRow = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
@@ -260,7 +260,7 @@ async function handleTicketOpen(interaction) {
 
     const dmEmbed = new EmbedBuilder()
       .setColor(TICKET.CREATE_EMBED)
-      .setAuthor({ name: "花瓶已開啟客服單", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+      .setAuthor({ name: "花瓶已開啟客服單", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .setThumbnail(guild.iconURL())
       .setDescription(
         `**開單群組：**\` ${guild.name} \`\n${catName ? `**開單類別：**\` ${catName} \`` : ""}

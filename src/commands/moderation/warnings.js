@@ -116,7 +116,7 @@ async function listWarnings(target, { guildId }) {
 
   const acc = warnings.map((warning, i) => `第\` ${i + 1} \`個\n> ├ 原因：\` ${warning.reason} \`\n> └ 處分者：\` ${warning.admin.tag} \`\n`).join("\n");
   const embed = new EmbedBuilder({
-    author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' },
+    author: { name: `${target.user.tag} 的警告`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' },
     description: acc,
   });
 

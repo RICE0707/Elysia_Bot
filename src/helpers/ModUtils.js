@@ -101,7 +101,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
   }
 
   if (type.toUpperCase() !== "清除訊息") {
-    embed.setAuthor({ name: `花瓶的制裁 - ${type}`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setThumbnail(target.displayAvatarURL());
+    embed.setAuthor({ name: `花瓶的制裁 - ${type}`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' }).setThumbnail(target.displayAvatarURL());
 
     if (target instanceof GuildMember) {
       fields.push({ name: "被處分者", value: `> \` ${target.displayName}（${target.id}） \``, inline: false });

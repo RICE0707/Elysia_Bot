@@ -339,9 +339,9 @@ async function ticketModalSetup({ guild, channel, member }, targetChannel, setti
   // send ticket message
   const embed = new EmbedBuilder()
     .setColor(EMBED_COLORS.BOT_EMBED)
-    .setAuthor({ name: title || "客服單支援", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+    .setAuthor({ name: title || "客服單支援", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' })
     .setDescription(description || "> <a:r3_rice:868583679465758820> 點擊下方的按鈕以開啟一個客服單。")
-    .setFooter({ text: footer || "你一次只能創建一個客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+    .setFooter({ text: footer || "你一次只能創建一個客服單。", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
   const tktBtnRow = new ActionRowBuilder().addComponents(
     new ButtonBuilder().setLabel("點擊此按鈕開啟客服單").setCustomId("TICKET_CREATE").setStyle(ButtonStyle.Success)

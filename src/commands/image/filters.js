@@ -94,7 +94,7 @@ module.exports = {
       .setColor(EMBED_COLORS.TRANSPARENT)
       .setImage("attachment://attachment.png")
       .setTimestamp()
-      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 attachment`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 attachment`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
     await message.safeReply({ embeds: [embed], files: [attachment] });
   },
@@ -124,7 +124,7 @@ module.exports = {
       .setColor(EMBED_COLORS.TRANSPARENT)
       .setTimestamp()
       .setImage("attachment://attachment.png")
-      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 attachment`, iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' });
+      .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 attachment`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
     await interaction.followUp({ embeds: [embed], files: [attachment] });
   },

@@ -171,7 +171,7 @@ async function performAutomod(message, settings) {
     // send automod log
     if (logChannel) {
       const logEmbed = new EmbedBuilder()
-        .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+        .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' })
         .setThumbnail(author.displayAvatarURL())
         .setColor(AUTOMOD.LOG_EMBED)
         .addFields(fields)
@@ -189,10 +189,10 @@ async function performAutomod(message, settings) {
     const strikeEmbed = new EmbedBuilder()
       .setColor(AUTOMOD.DM_EMBED)
       .setThumbnail(guild.iconURL())
-      .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg', url: 'https://discord.gg/c4tKJME4hE' })
+      .setAuthor({ name: "花瓶自動管理系統", iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg', url: 'https://discord.gg/c4tKJME4hE' })
       .addFields(fields)
       .setTimestamp()
-      .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })    
+      .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' })    
       .setDescription(
         `> 你收到了\` ${strikesTotal} \`個群組警告！\n\n` +
           `**警告群組：** \n> \` ${guild.name} \`\n` +

@@ -115,7 +115,7 @@ const resultEmbed = (toss) =>
   new EmbedBuilder()
     .setDescription(`拋出了：${toss}`)
     .setTimestamp()
-    .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1067805752183488663/1068501885193039973/1015210055_61696d776b439.jpg' })
+    .setFooter({ text: '來自花瓶星球的科技支援 v3.0', iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' })
     .setImage(toss === "正面" ?  "https://cdn.discordapp.com/attachments/1069112418095071296/1069548120146460692/AddText_01-30-05.21.42.png" : "https://cdn.discordapp.com/attachments/1069112418095071296/1069548120461017139/AddText_01-30-05.22.12.png");
 
 async function flipText(text) {
