@@ -47,7 +47,7 @@ const logModeration = async (issuer, target, reason, type, data = {}) => {
       fields.push(
         { name: "清除類型", value: `\` ${data.purgeType} \``, inline: true },
         { name: "瓶清除了", value: `\` ${data.deletedCount.toString()} \`則訊息`, inline: true },
-        { name: "清除頻道", value: `\` ${data.channel.name}（${data.channel.id}）`, inline: false }
+        { name: "清除頻道", value: `\` ${data.channel.name}（${data.channel.id}）\``, inline: false }
       );
       break;
 
