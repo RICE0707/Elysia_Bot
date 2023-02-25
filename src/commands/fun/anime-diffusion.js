@@ -52,8 +52,8 @@ async function getContent(prompt, user) {
             'Authorization': `Bearer ${process.env.HUGGING_FACE_TOKEN}`
         },
         body: JSON.stringify({
-            inputs: prompt
-        })
+          inputs: `${prompt} (${Math.floor(Math.random() * 1919810)}:0)`
+      })
     });
 	
 	if (response.status == 200) {
@@ -72,7 +72,7 @@ async function getContent(prompt, user) {
 	} else if (response.status == 503) {
 	  const embed = new EmbedBuilder()
         .setColor(EMBED_COLORS.ERROR)
-        .setTitle("花瓶需要一點時間載資料！（預計需要 20 秒）")
+        .setTitle("花瓶需要一點時間載入資料！（預計需要 20 秒）")
         .setTimestamp()
         .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 Huggingface`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
