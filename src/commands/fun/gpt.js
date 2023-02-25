@@ -116,7 +116,7 @@ async function getContent(content, user) {
 
   if (text.length > 4050) {
     const embed1 = new EmbedBuilder()
-    .setColor(EMBED_COLORS.TRANSPARENT)
+    .setColor(EMBED_COLORS.BOT_EMBED)
     .setFields(
       { name: "回應", value: text.slice(0, 4050) }
     )
@@ -124,7 +124,7 @@ async function getContent(content, user) {
     .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 OpenAI`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 
     const embed2 = new EmbedBuilder()
-    .setColor(EMBED_COLORS.TRANSPARENT)
+    .setColor(EMBED_COLORS.BOT_EMBED)
     .setFields(
       { name: "回應", value: text.slice(4050, text.length - 1) }
     )
@@ -135,7 +135,7 @@ async function getContent(content, user) {
   }
 
   const embed = new EmbedBuilder()
-    .setColor(EMBED_COLORS.TRANSPARENT)
+    .setColor(EMBED_COLORS.BOT_EMBED)
     .setFields(
       { name: "回應", value: text }
     )
