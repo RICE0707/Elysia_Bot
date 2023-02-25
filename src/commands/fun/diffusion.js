@@ -54,8 +54,8 @@ async function getContent(prompt, user) {
 	if (response.length > 0) {
 	  const embed = new EmbedBuilder()
         .setColor(EMBED_COLORS.BOT_EMBED)
-        .setTitle("你的圖片：")
-		    .setImage(response[0])
+        .setTitle(`${user.username} 透過花瓶AI生成的圖片：`)
+		.setImage(response[0])
         .setTimestamp()
         .setFooter({ text: `來自花瓶星球的科技支援 v3.0 - 取自於 Replicate`, iconURL: 'https://cdn.discordapp.com/attachments/1069112418095071296/1076136176622260335/White_background_white_vase_a_little_pink_4k_8a8ff072-975a-413f-9e36-fb679b97b2c9_auto_x2_auto_x2.jpg' });
 

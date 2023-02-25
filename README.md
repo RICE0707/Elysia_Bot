@@ -44,6 +44,7 @@
 > ` 趣味語音活動 ` - ` 種類（共22種） `<br />
 > ` 趣味聊天 ` - ` 內容（使用OpenAI[ChatGPT]技術）`<br />
 > ` 趣味繪圖 ` - ` 指示詞（使用Stable Diffusion + Midjourney）`<br />
+> ` 趣味動漫繪圖 ` - ` 指示詞（使用Anything 4.0）`<br />
 
 
 **🎉、抽獎類功能**<br />
