@@ -89,11 +89,6 @@ module.exports = {
         description: "取得輝煌伺服器的資訊",
         type: ApplicationCommandOptionType.Subcommand,
       },
-      {
-        name: "輝煌團隊",
-        description: "取得輝煌團隊的資訊",
-        type: ApplicationCommandOptionType.Subcommand,
-      },
     ],
   },
 
@@ -140,11 +135,6 @@ module.exports = {
     // brilliant
     else if (sub === "輝煌伺服器") {
       response = await brilliantInfo(interaction.guild);
-    }
-
-    // team
-    else if (sub === "輝煌團隊") {
-      response = await teamInfo(interaction.guild);
     }
 
     // return
