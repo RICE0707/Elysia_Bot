@@ -5,7 +5,6 @@ const avatar = require("../shared/avatar");
 const emojiInfo = require("../shared/emoji");
 const botInfo = require("../shared/botstats");
 const brilliantInfo = require("../shared/brilliant");
-const teamInfo = require("../shared/team");
 const { ApplicationCommandOptionType } = require("discord.js");
 
 /**
